@@ -9,18 +9,21 @@ def remove_pattern_from_string(text, pattern):
     return modified_text
 
 
+def get_doc_path(number):
+    file_path_prefix = "/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/Documents/CEID/ΕΠΙΛΟΓΕΣ ΧΕΙΜΕΡΙΝΟΥ/ΑΝΑΚΤΗΣΗ ΠΛΗΡΟΦΟΡΙΑΣ/PROJECT/Collection/docs/"
+    file_path_suffix = str(number).zfill(5)
+    file_path = file_path_prefix + file_path_suffix
+    return file_path
+
+
 def create_inverted_index():
     inverted_index = {}
 
-    # Read from file
-    file_path_prefix = "/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/Documents/CEID/ΕΠΙΛΟΓΕΣ ΧΕΙΜΕΡΙΝΟΥ/ΑΝΑΚΤΗΣΗ ΠΛΗΡΟΦΟΡΙΑΣ/PROJECT/Collection/docs/"
-
-    for file_index in range(1, 12):
-        file_path_suffix = str(file_index).zfill(5)
-        file_path = file_path_prefix + file_path_suffix
+    for doc_index in range(1, 1239):
+        doc_path = get_doc_path(doc_index)
 
         try:
-            with open(file_path, "r") as file:
+            with open(doc_path, "r") as file:
                 doc = file.readlines()
 
             # Remove "\n" from words
@@ -31,15 +34,15 @@ def create_inverted_index():
             for i, doc in enumerate(doc):
                 for term in doc.split():
                     if term in inverted_index:
-                        inverted_index[term].add(tuple([file_index, i]))
+                        inverted_index[term].add(tuple([doc_index, i]))
                     else:
-                        inverted_index[term] = {tuple([file_index, i])}
+                        inverted_index[term] = {tuple([doc_index, i])}
 
-            print(f"{file_path_suffix} | {inverted_index}")
+            print(f"{doc_index.zfill(5)} | {inverted_index}")
 
 
         except FileNotFoundError:
-            print(f"ΔΕΝ ΥΠΑΡΧΕΙ ΑΡΧΕΙΟ ΜΕ ΝΟΥΜΕΡΟ {file_index}")
+            print(f"ΔΕΝ ΥΠΑΡΧΕΙ ΑΡΧΕΙΟ ΜΕ ΝΟΥΜΕΡΟ {doc_index}")
 
         finally:
             sorted_inverted_index = dict(sorted(inverted_index.items()))
