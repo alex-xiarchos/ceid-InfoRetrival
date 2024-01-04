@@ -7,9 +7,10 @@ def main_app():
     # # while True:
     #     print("Select 1 for Inverted Index creation")
     #     print("Select 2 for Vector Space Model")
+    #     print("Select 9 for doc length comparison")
     #     print("Select 0 to exit")
         # choice = int(input("SELECT: "))
-        choice = 9
+        choice = 2
 
         if choice == 1:
             inverted_index.create_inverted_index()

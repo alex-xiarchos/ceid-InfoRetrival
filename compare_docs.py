@@ -23,11 +23,11 @@ def compare_doc_lengths():
                     doc_length += 1
 
             doc_lengths[doc_index] = doc_length
-            with open("doc_lengths", "a") as file:
-                file.write(f"{str(doc_index).zfill(5)} | {doc_length}\n")
+            print(f"Το έγγραφο {doc_index} έχει μήκος {doc_length}.")
+
 
         except FileNotFoundError:
-            print(f"ΔΕΝ ΥΠΑΡΧΕΙ ΑΡΧΕΙΟ ΜΕ ΝΟΥΜΕΡΟ {doc_index}")
+            print(f"ΔΕΝ ΥΠΑΡΧΕΙ ΑΡΧΕΙΟ ΜΕ ΝΟΥΜΕΡΟ {doc_index}.")
 
         finally:
             with open('doc_lengths.csv', 'w', newline='') as file:
