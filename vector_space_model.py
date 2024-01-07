@@ -8,12 +8,19 @@ def get_tf_dict(word_dict):
     return tf_dict
 
 
-def get_idf_dict(doc_list):
+def get_idf_dict(word_dict):
     idf_dict = {}
 
-    idf_dict = dict.fromkeys(doc_list[0].keys(), 0)
+    idf_dict = dict.fromkeys(word_dict.keys(), 0)
     for word, val in idf_dict.items():
-        idf_dict[word] = math.log10(1209 / float(val) + 1)
+        idf_dict[word] = math.log10(1209 / (float(val) + 1))
 
     return idf_dict
 
+
+def get_tfidf(tf, idfs):
+    tfidf = {}
+    for word, val in tf.items():
+        tfidf[word] = val * idfs[word]
+
+    return tfidf

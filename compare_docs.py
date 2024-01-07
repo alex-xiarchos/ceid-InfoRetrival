@@ -3,7 +3,8 @@ import csv
 
 
 def compare_doc_lengths():
-    with open('doc_lengths', 'w'): pass # Καθαρίζω το αρχείο
+    with open('doc_lengths.csv', 'w'):
+        pass  # Καθαρίζω το αρχείο
 
     doc_lengths = {}
     for doc_index in range(1, 1239):

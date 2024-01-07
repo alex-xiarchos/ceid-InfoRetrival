@@ -1,15 +1,21 @@
 import inverted_index
+import tools
 import vector_space_model
-import pandas as pd
 
 
 def main_app():
     sorted_inverted_index, word_dict = inverted_index.create_inverted_index()
-    tf_first = vector_space_model.get_idf_dict(word_dict[2])
-    idfs = vector_space_model.get_idf_dict(word_dict[1])
-    print(idfs)
-    # compare_docs.compare_doc_lengths()
+    docs_tf = vector_space_model.get_tf_dict(word_dict[1])  # dict[1] = πρώτο document
+    docs_idfs = vector_space_model.get_idf_dict(word_dict[1])
+    docs_tfidfs = vector_space_model.get_tfidf(docs_tf, docs_idfs)
 
+    queries = tools.get_queries()
+    queries_dict = dict.fromkeys(queries, 1)
+    queries_tf = vector_space_model.get_tf_dict(queries_dict)
+    queries_idfs = vector_space_model.get_idf_dict(queries_dict)
+
+    # Πρέπει να φτιαχτούν τα queries, να ολοκληρωθεί το vector space model και μετά (3), (4).
+    # Ίσως χρειάζεται αναδιοργάνωση των συναρτήσεων από την αρχή για να ενσωματωθούν τα queries.
 
 if __name__ == '__main__':
     main_app()
