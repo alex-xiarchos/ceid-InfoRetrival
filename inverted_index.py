@@ -6,7 +6,7 @@ def create_inverted_index():
     total_words = set()
     word_dict = {}
 
-    for doc_number in range(1, 1240):  # 1239 έγγραφα
+    for doc_number in range(1, 1240):  # 1239 έγγραφα????????????
         doc = tools.get_doc(doc_number)
         try:
             for doc_content in doc:  # Το doc βρίσκεται σε μορφή list, το doc_content το χωρίζει σε λέξεις.
