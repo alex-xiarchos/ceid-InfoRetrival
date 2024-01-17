@@ -36,7 +36,7 @@ def get_doc(doc_number):
 
 
 def get_queries():
-    file_path = "Collection/Queries_20/"
+    file_path = "Collection/Queries_20"
     with open(file_path, 'r') as queries_file:
         queries = queries_file.readlines()
 

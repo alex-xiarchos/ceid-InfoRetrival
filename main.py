@@ -7,6 +7,10 @@ def main_app():
     sorted_inverted_index, total_words = inverted_index.create_inverted_index()
     word_dict = inverted_index.create_word_dict(total_words, sorted_inverted_index)
 
+    # for i in range(1, 100):
+    #         for key, value in word_dict[i].items():
+    #             print(i, key, value)
+
     # docs_tf = vector_space_model.get_tf_dict(word_dict[1])  # dict[1] = πρώτο document
     # docs_idfs = vector_space_model.get_idf_dict(word_dict[1])
     # docs_tfidfs = vector_space_model.get_tfidf(docs_tf, docs_idfs)

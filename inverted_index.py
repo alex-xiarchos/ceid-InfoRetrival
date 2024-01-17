@@ -55,4 +55,6 @@ def create_word_dict(total_words, inverted_index):
             # print(f"key = {key}, value = {value}. doc_number = {doc_number}")
             # print(f"word_dict[{doc_number}][{key}] = {word_dict[doc_number][key]}")
 
+    print(tools.get_queries()[0])
+
     return word_dict
