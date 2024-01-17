@@ -1,15 +1,8 @@
-total_Words = {'ATTENDING', 'AUGUST', ...
-inverted_index = {'CANNOT' = {18, 46}, ...
-
-ii = {'0': {74}, '000005': {62}, '0005': {62}, '001': {93, 47},
-ii.keys() = dict_keys(['0', '000005', '0005', '001', '00131', '005', '02'
-ii.values() = dict_values([{74}, {62}, {62}, {93, 47}, {93}, {62}, {61}, {93},
-
 TODO:
-word_dict = {'INVOLVES': 2, 'SOME': 1, ...
+-> Να φτιαχτούν τα queries
+-> Να ολοκληρωθεί το Vector Space Model
 
-NOW:
-word_dict = {'PROBLEM': 0, 'OCCUR': 0 ...
+
 
 
 ________________________
