@@ -11,7 +11,7 @@ def remove_pattern_from_string(text, pattern):
 # Εισάγεται ένας αριθμός (1-1239) και επιστρέφεται το path του αρχείου με αυτό το νούμερο
 # Δεν υπάρχει ανάγκη για έλεγχο του range του αριθμού, μιας και ελέγχονται τα exceptions
 def get_doc_path(number):
-    file_path_prefix = "/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/Documents/CEID/ΕΠΙΛΟΓΕΣ ΧΕΙΜΕΡΙΝΟΥ/ΑΝΑΚΤΗΣΗ ΠΛΗΡΟΦΟΡΙΑΣ/PROJECT/Collection/docs/"
+    file_path_prefix = "Collection/docs/"
     file_path_suffix = str(number).zfill(5)  # 1 -> 00001
     file_path = file_path_prefix + file_path_suffix
     return file_path
@@ -36,7 +36,7 @@ def get_doc(doc_number):
 
 
 def get_queries():
-    file_path = "/Users/alex/Library/Mobile Documents/com~apple~CloudDocs/Documents/CEID/ΕΠΙΛΟΓΕΣ ΧΕΙΜΕΡΙΝΟΥ/ΑΝΑΚΤΗΣΗ ΠΛΗΡΟΦΟΡΙΑΣ/PROJECT/Collection/Queries_20"
+    file_path = "Collection/Queries_20/"
     with open(file_path, 'r') as queries_file:
         queries = queries_file.readlines()
 
