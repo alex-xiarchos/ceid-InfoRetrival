@@ -17,15 +17,15 @@ ________________________
     for key, value in inverted_index.items():
         print(key, value)
 
-    THEN {58, 66, 47, 23}
-    THEOPHYLLINE {56}
-    THEORETICAL {50}
+    >>> THEN {58, 66, 47, 23}
+    >>> THEOPHYLLINE {56}
+    >>> THEORETICAL {50}
 
 -> RUN THROUGH ALL KEY + VALUES OF word_dict:
    for i in range(1, 100):
         for key, value in word_dict[i].items():
             print(i, key, value)
 
-   98 FATAL 0
-   98 PATTERNS 0
-   98 LEUKOCYTE 0
+   >>> 98 FATAL 0
+   >>> 98 PATTERNS 0
+   >>> 98 LEUKOCYTE 0

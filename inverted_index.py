@@ -42,10 +42,17 @@ def create_inverted_index():
 def create_word_dict(total_words, inverted_index):
     word_dict = {}
 
+    # Αρχικοποίηση word_dict με μηδενικά
     for i in range(1, 1240):
         word_dict[i] = dict.fromkeys(total_words, 0)
+
+    # Για κάθε τιμή του inverted_index, πηγαίνω στην αντίστοιχη γραμμή του word_dict
+    # και προσθέτω +1 στην αντίστοιχη λέξη.
 
     for key, value in inverted_index.items():
         for doc_number in value:
             word_dict[doc_number][key] += 1
-            print(f"word_dict[{doc_number}][{key}] = {word_dict[doc_number][key]}")
+            # print(f"key = {key}, value = {value}. doc_number = {doc_number}")
+            # print(f"word_dict[{doc_number}][{key}] = {word_dict[doc_number][key]}")
+
+    return word_dict
