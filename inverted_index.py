@@ -25,9 +25,9 @@ def create_inverted_index():
             for doc_content in doc:  # Το έγγραφο βρίσκεται σε μορφή list, το doc_content το χωρίζει σε λέξεις.
                 for doc_word in doc_content.split():  # κάθε λέξη του εγγράφου
                     if doc_word in inverted_index:
-                        inverted_index[doc_word].add(doc_number)
+                        inverted_index[doc_word].append(doc_number)
                     else:
-                        inverted_index[doc_word] = {doc_number}
+                        inverted_index[doc_word] = [doc_number]
 
             print(f"Διαβάζονται {doc_number}/1239 έγγραφα για τη δημιουργία του ανεστραμμένου ευρετηρίου")
         except TypeError:
