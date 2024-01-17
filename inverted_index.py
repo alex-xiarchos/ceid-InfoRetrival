@@ -6,7 +6,7 @@ def create_inverted_index():
     total_words = set()
 
     # Δημουργείται ένα set (total_words) με το σύνολο όλων των λέξεων που υπάρχουν στα έγγραφα:
-    for doc_number in range(1, 100):  # 1239 έγγραφα
+    for doc_number in range(1, 1240):  # 1239 έγγραφα
         doc = tools.get_doc(doc_number)
         try:
             for doc_content in doc:  # Το doc βρίσκεται σε μορφή list, το doc_content το χωρίζει σε λέξεις.
@@ -18,12 +18,12 @@ def create_inverted_index():
             pass
 
     # Δημιουργία inverted index:
-    for doc_number in range(1, 100):  # 1239 έγγραφα
+    for doc_number in range(1, 1240):  # 1239 έγγραφα
         doc = tools.get_doc(doc_number)
 
         try:
             for doc_content in doc:  # Το έγγραφο βρίσκεται σε μορφή list, το doc_content το χωρίζει σε λέξεις.
-                for doc_word in doc_content.split(): # κάθε λέξη του εγγράφου
+                for doc_word in doc_content.split():  # κάθε λέξη του εγγράφου
                     if doc_word in inverted_index:
                         inverted_index[doc_word].add(doc_number)
                     else:
@@ -42,12 +42,10 @@ def create_inverted_index():
 def create_word_dict(total_words, inverted_index):
     word_dict = {}
 
-    for i in range(1, 100):
+    for i in range(1, 1240):
         word_dict[i] = dict.fromkeys(total_words, 0)
 
-    for i in range(1, 100):
-        for key, value in inverted_index.items():
-            for doc_number in value:
-                # print(f"BEFORE: word_dict[{doc_number}][{key}] = {word_dict[doc_number][key]}")
-                word_dict[doc_number][key] += 1
-                print(f"AFTER: word_dict[{doc_number}][{key}] = {word_dict[doc_number][key]}")
+    for key, value in inverted_index.items():
+        for doc_number in value:
+            word_dict[doc_number][key] += 1
+            print(f"word_dict[{doc_number}][{key}] = {word_dict[doc_number][key]}")
