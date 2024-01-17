@@ -40,8 +40,11 @@ def get_queries():
     with open(file_path, 'r') as queries_file:
         queries = queries_file.readlines()
 
+    queries_capped = [""] * 20
+
     # Αφαίρεση "\n" χαρακτήρων από το περιεχόμενο του document
     for index, query in enumerate(queries):
         queries[index] = remove_pattern_from_string(queries[index], r"\n")
+        queries_capped[index] = queries[index].upper()
 
-    return queries
+    return queries_capped

@@ -43,7 +43,7 @@ def create_word_dict(total_words, inverted_index):
     word_dict = {}
 
     # Αρχικοποίηση word_dict με μηδενικά
-    for i in range(1, 1240):
+    for i in range(0, 1240):
         word_dict[i] = dict.fromkeys(total_words, 0)
 
     # Για κάθε τιμή του inverted_index, πηγαίνω στην αντίστοιχη γραμμή του word_dict
@@ -55,6 +55,11 @@ def create_word_dict(total_words, inverted_index):
             # print(f"key = {key}, value = {value}. doc_number = {doc_number}")
             # print(f"word_dict[{doc_number}][{key}] = {word_dict[doc_number][key]}")
 
-    print(tools.get_queries()[0])
+    queries = tools.get_queries()
+    for query_sentence in queries:
+        for query_word in query_sentence.split(' '):
+            print(query_word)
+            word_dict[0][query_word] += 1
+
 
     return word_dict
