@@ -35,7 +35,6 @@ def get_tfidf(tf, idfs, word_dict):
     tfidf_dict = []
     tfidf_dict = word_dict
 
-
     for i in range(0, 1240):
         for key, value in tfidf_dict[i].items():
             if value > 1:
