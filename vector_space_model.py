@@ -46,4 +46,45 @@ def get_tfidf(tf, idfs, word_dict):
         for key in tfidf_dict[i]:
             tfidf_dict[i][key] *= tfidf_values[key]
 
-    return tfidf_values
+    # for key, value in tfidf_dict[1].items():
+    #     if value != 0:
+    #         print(key, value)
+
+    return tfidf_dict
+
+
+def magnitudes_calc(tfidf_dict):
+    magnitudes = []
+    sums = 0
+
+    # Στη vsm_sqrts λίστα αποθηκεύεται το ευκλείδειο διάνυσμα όλων των τιμών
+    # Στη 0η τιμή, όπως πάντα, είναι η τιμή του query.
+    for i in range(0, 1240):
+        for key, value in tfidf_dict[i].items():
+            sums += pow(value, 2)
+        magnitudes.append(math.sqrt(sums))
+        sums = 0
+
+    q_dot_magn = []
+    q_dot_magn.append(0) # Θέτουμε ως 0 την τιμή των queries
+
+    for i in range (1, 1240):
+        for key, value in tfidf_dict[i].items():
+            if tfidf_dict[0][key] != 0 and tfidf_dict[i][key] != 0:
+                sums += tfidf_dict[0][key] * tfidf_dict[i][key]     # Q * Di
+        q_dot_magn.append(sums)
+        sums = 0
+
+    return magnitudes, q_dot_magn
+
+
+def cos_calc(magnitudes, q_dot_magn):
+    cosines = []
+
+    for i in range(1, 1240):
+        cosines.append(math.cos(q_dot_magn[i] / (magnitudes[0] * magnitudes[i] + 0.0000001)))
+
+    for i, value in enumerate(cosines):
+        print(i, value)
+
+    print(max(cosines))
