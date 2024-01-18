@@ -13,9 +13,10 @@ def create_inverted_index():
                 for doc_word in doc_content.split():
                     total_words.add(doc_word)
 
-            print(f"Διαβάζονται {doc_number}/1239 έγγραφα για την συλλογή των λέξεων")
+            # print(f"Διαβάζονται {doc_number}/1239 έγγραφα για την συλλογή των λέξεων")
         except TypeError:
             pass
+    print("> Καταγράφτηκε το σύνολο των λέξεων...")
 
     # Δημιουργία inverted index:
     for doc_number in range(1, 1240):  # 1239 έγγραφα
@@ -29,12 +30,12 @@ def create_inverted_index():
                     else:
                         inverted_index[doc_word] = [doc_number]
 
-            print(f"Διαβάζονται {doc_number}/1239 έγγραφα για τη δημιουργία του ανεστραμμένου ευρετηρίου")
+            # print(f"Διαβάζονται {doc_number}/1239 έγγραφα για τη δημιουργία του ανεστραμμένου ευρετηρίου")
         except TypeError:
             pass
 
     sorted_inverted_index = dict(sorted(inverted_index.items()))
-    print("Το ανεστραμμένο ευρετήριο δημιουργήθηκε.")
+    print("> Το ανεστραμμένο ευρετήριο δημιουργήθηκε.")
 
     return sorted_inverted_index, total_words
 

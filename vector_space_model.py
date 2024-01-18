@@ -29,19 +29,22 @@ def get_tfidf(tf, idfs, word_dict):
     tfidf_values = {}
     for key, value in tf.items():
         tfidf_values[key] = value * idfs[key]
-        # print(key, value)
 
     # Δημιουργία dictionary όπου σε κάθε εμφάνιση της λέξης, αποθηκεύεται το weight της.
-    # Χρησιμοποιούμε το word_dict ως βάση που ήδη έχει μηδενικά εκεί όπου δεν εμφανίζεται η λέξη.
+    # Χρησιμοποιούμε το word_dict ως βάση, γιατί ήδη έχει μηδενικά εκεί όπου δεν εμφανίζεται η λέξη.
+    tfidf_dict = []
     tfidf_dict = word_dict
+
 
     for i in range(0, 1240):
         for key, value in tfidf_dict[i].items():
             if value > 1:
-                tfidf_dict[i] = 1
+                tfidf_dict[i][key] = 1
 
+    # Πλέον στο tfidf_dict, όλες οι εμφανίσεις των λέξεων αποθηκεύονται ως 1.
+    # Μένει να πολλαπλασιαστούν με τα βάρη που αποθηκεύσαμε στο tfidf_values.
     for i in range(0, 1240):
-        if tfidf_dict[i] != 0:
-            print(tfidf_dict[i])
+        for key in tfidf_dict[i]:
+            tfidf_dict[i][key] *= tfidf_values[key]
 
     return tfidf_values
