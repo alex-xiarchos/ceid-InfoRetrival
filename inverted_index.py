@@ -39,7 +39,7 @@ def create_inverted_index():
     return sorted_inverted_index, total_words
 
 
-def create_word_dict(total_words, inverted_index):
+def create_word_dict(total_words, inverted_index, query_sentence):
     word_dict = {}
 
     # Αρχικοποίηση word_dict με μηδενικά
@@ -48,7 +48,6 @@ def create_word_dict(total_words, inverted_index):
 
     # Για κάθε τιμή του inverted_index, πηγαίνω στην αντίστοιχη γραμμή του word_dict
     # και προσθέτω +1 στην αντίστοιχη λέξη.
-
     for key, value in inverted_index.items():
         for doc_number in value:
             word_dict[doc_number][key] += 1
@@ -56,10 +55,10 @@ def create_word_dict(total_words, inverted_index):
             # print(f"word_dict[{doc_number}][{key}] = {word_dict[doc_number][key]}")
 
     queries = tools.get_queries()
-    for query_sentence in queries:
-        for query_word in query_sentence.split(' '):
-            print(query_word)
+    for query_word in queries[query_sentence].split(' '):
+        if query_word in word_dict[0]:
             word_dict[0][query_word] += 1
-
+        else:
+            word_dict[0][query_word] = 1
 
     return word_dict
