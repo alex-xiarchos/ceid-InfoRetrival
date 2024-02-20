@@ -14,5 +14,6 @@ def main_app():
     vsm.cos_calc(magnitudes, q_dot_magn)
 
 
+
 if __name__ == '__main__':
     main_app()
