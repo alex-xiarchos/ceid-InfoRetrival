@@ -6,7 +6,7 @@ def create_inverted_index():
     inverted_index = {}
 
     # Δημιουργία inverted index:
-    for doc_number in range(1, 1240):  # 1239 έγγραφα
+    for doc_number in range(1, 1240):  # 1239 έγγραφα ξεκινώντας από το 1
         doc = tools.get_doc(doc_number)
 
         try:
@@ -20,18 +20,20 @@ def create_inverted_index():
         except TypeError:
             pass
 
+    inverted_index.pop("") # αφαιρεί άδεια strings που προκύπτουν από τις κενές γραμμές στο τέλος των documents
+
     sorted_inverted_index = dict(sorted(inverted_index.items()))
     print("> Το ανεστραμμένο ευρετήριο δημιουργήθηκε.")
 
     return sorted_inverted_index
 
 
-def create_word_dict(total_words, inverted_index, query_sentence):
+def create_word_dict(inverted_index, query_sentence):
     word_dict = {}
 
-    # Αρχικοποίηση word_dict με μηδενικά
-    for i in range(0, 1240):
-        word_dict[i] = dict.fromkeys(total_words, 0)
+    # Αρχικοποίηση λίστας με word_dicts
+    for doc_number in range(0, 1240):  # 0: queries, 1...1239: docs
+        word_dict[doc_number] = {key: 0 for key in inverted_index.keys()}
 
     # Για κάθε τιμή του inverted_index, πηγαίνω στην αντίστοιχη γραμμή του word_dict
     # και προσθέτω +1 στην αντίστοιχη λέξη.

@@ -1,4 +1,6 @@
 import math
+import tools
+
 
 
 def get_tf_dict(sorted_inverted_index):
@@ -12,6 +14,8 @@ def get_tf_dict(sorted_inverted_index):
     # από τις λέξεις στο inverted index.
     for key, value in sorted_inverted_index.items():
         tf_dict[key] = len(value)
+
+
 
     return tf_dict
 
