@@ -5,10 +5,6 @@ def create_inverted_index():
     # δημιουργούμε ένα αρχικό dictionary όπου θα αποτελέσει το ευρετήριο που θα αποθηκευτούν αρχικά οι λέξεις
     inverted_index = {}
 
-    # Δημουργείται ένα set που θα αποθηκεύει το σύνολο όλων των λέξεων που υπάρχουν στα έγγραφα:
-    # Αποτελείται πρακτικά από τα keys του inverted_index.
-    total_words = set()
-
     # Δημιουργία inverted index:
     for doc_number in range(1, 1240):  # 1239 έγγραφα
         doc = tools.get_doc(doc_number)
@@ -27,7 +23,7 @@ def create_inverted_index():
     sorted_inverted_index = dict(sorted(inverted_index.items()))
     print("> Το ανεστραμμένο ευρετήριο δημιουργήθηκε.")
 
-    return sorted_inverted_index, total_words
+    return sorted_inverted_index
 
 
 def create_word_dict(total_words, inverted_index, query_sentence):

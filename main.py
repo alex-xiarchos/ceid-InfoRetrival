@@ -3,7 +3,7 @@ import vector_space_model as vsm
 
 
 def main_app():
-    sorted_inverted_index, total_words = ii.create_inverted_index()
+    sorted_inverted_index = ii.create_inverted_index()
     # query_sentence = 0
     # word_dict = ii.create_word_dict(total_words, sorted_inverted_index, query_sentence)
     #
