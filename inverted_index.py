@@ -6,33 +6,19 @@ def create_inverted_index():
     inverted_index = {}
 
     # Δημουργείται ένα set που θα αποθηκεύει το σύνολο όλων των λέξεων που υπάρχουν στα έγγραφα:
-    # Αυτό το set έχει ως περιεχόμενο πρακτικά τα keys του inverted_index.
+    # Αποτελείται πρακτικά από τα keys του inverted_index.
     total_words = set()
-
-    # Προσθέτουμε τις λέξεις στο total_words, κάνοντας ανάγνωση της συλλογής.
-    for doc_number in range(1, 1240):  # 1239 έγγραφα
-        doc = tools.get_doc(doc_number)
-        try:
-            for doc_content in doc:  # Το doc βρίσκεται σε μορφή list, το doc_content το χωρίζει σε λέξεις.
-                for doc_word in doc_content.split():
-                    total_words.add(doc_word)
-
-            # print(f"Διαβάζονται {doc_number}/1239 έγγραφα για την συλλογή των λέξεων")
-        except TypeError:
-            pass
-    print("> Καταγράφτηκε το σύνολο των λέξεων...")
 
     # Δημιουργία inverted index:
     for doc_number in range(1, 1240):  # 1239 έγγραφα
         doc = tools.get_doc(doc_number)
 
         try:
-            for doc_content in doc:  # Το έγγραφο βρίσκεται σε μορφή list, το doc_content το χωρίζει σε λέξεις.
-                for doc_word in doc_content.split():  # κάθε λέξη του εγγράφου
-                    if doc_word in inverted_index:
-                        inverted_index[doc_word].append(doc_number)
-                    else:
-                        inverted_index[doc_word] = [doc_number]
+            for doc_word in doc:  # κάθε λέξη του εγγράφου
+                if doc_word in inverted_index:
+                    inverted_index[doc_word].append(doc_number)
+                else:
+                    inverted_index[doc_word] = [doc_number]
 
             # print(f"Διαβάζονται {doc_number}/1239 έγγραφα για τη δημιουργία του ανεστραμμένου ευρετηρίου")
         except TypeError:
