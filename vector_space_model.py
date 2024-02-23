@@ -2,9 +2,9 @@ import math
 import tools
 
 
-
 def get_tf_dict(sorted_inverted_index):
     tf_dict = {}
+    tf_dict_norm = {}
 
     # Αρχικοποίηση tf_dict με όλες τις πιθανές λέξεις.
     for i in range(1, 1240):
@@ -15,16 +15,20 @@ def get_tf_dict(sorted_inverted_index):
     for key, value in sorted_inverted_index.items():
         tf_dict[key] = len(value)
 
+    max_tf = max(tf_dict.values())
+
+    # Κανονικοποιώ -> 0.5 + 0.5*(tf/max(tf))
+    for key, value in sorted_inverted_index.items():
+        tf_dict_norm[key] = 0.5 + 0.5*(tf_dict[key]/max_tf)
+
+    return tf_dict, tf_dict_norm
 
 
-    return tf_dict
-
-
-def get_idf_dict(tf_dict):
+def get_idf_dict(tf_dict, tf_dict_norm):
     idf_dict = tf_dict
 
-    for key, value in idf_dict.items():
-        idf_dict[key] = math.log10(1209 / (float(value) + 1))
+    for key, value in tf_dict.items():
+        idf_dict[key] = math.log10(1209 / float(value))
 
     return idf_dict
 
