@@ -1,10 +1,10 @@
 import math
 import numpy as np
 import pandas as pd
-import tools
 
 
 def get_tf_dict(inverted_index):
+    # dictionary με το πλήθος των εμφανίσεων (tf) κάθε λήμματος σε όλα τα έγγραφα -> 'λήμμα' = x αριθμός εμφανίσεων
     word_occurances = {}
     tf_dict = [{} for i in range(len(inverted_index))]   # Κανονικοποίηση βάσει του 0.5 + 0.5*(tf/max(tf))
 

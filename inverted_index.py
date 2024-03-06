@@ -2,7 +2,7 @@ import tools
 
 
 def create_inverted_index():
-    # δημιουργούμε ένα αρχικό dictionary όπου θα αποτελέσει το ευρετήριο που θα αποθηκευτούν αρχικά οι λέξεις
+    # Dictionary ανεστραμμένου ευρετηρίου -> 'λήμμα': [έγγραφα που το περιέχουν]
     inverted_index = {}
 
     # Δημιουργία inverted index:
