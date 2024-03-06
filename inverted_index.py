@@ -28,11 +28,12 @@ def create_inverted_index():
     return sorted_inverted_index
 
 
+# Χρειάζεται;;;
 def create_word_dict(inverted_index, query_sentence):
     word_dict = {}
 
     # Αρχικοποίηση λίστας με word_dicts
-    for doc_number in range(0, 1240):  # 0: queries, 1...1239: docs
+    for doc_number in range(0, 1240):
         word_dict[doc_number] = {key: 0 for key in inverted_index.keys()}
 
     # Για κάθε τιμή του inverted_index, πηγαίνω στην αντίστοιχη γραμμή του word_dict

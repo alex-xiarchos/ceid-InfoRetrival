@@ -1,34 +1,38 @@
 import math
+import numpy as np
+import pandas as pd
 import tools
 
 
-def get_tf_dict(sorted_inverted_index):
-    tf_dict = {}
-    tf_dict_norm = {}
+def get_tf_dict(inverted_index):
+    word_occurances = {}
+    tf_dict = [{} for i in range(len(inverted_index))]   # Κανονικοποίηση βάσει του 0.5 + 0.5*(tf/max(tf))
 
-    # Αρχικοποίηση tf_dict με όλες τις πιθανές λέξεις.
+    # Αρχικοποίηση word_occurances
     for i in range(1, 1240):
-        tf_dict = dict.fromkeys(sorted_inverted_index.keys(), 0)
+        word_occurances = dict.fromkeys(inverted_index.keys(), 0)
 
-    # Σε κάθε λέξη του tf_dict αποθηκεύεται ο συνολικός αριθμός των εμφανίσεων
-    # από τις λέξεις στο inverted index.
-    for key, value in sorted_inverted_index.items():
-        tf_dict[key] = len(value)
+    for key, value in inverted_index.items():
+        # word_occurances: "λήμμα": αριθμός εγγράφων που εμφανίζεται
+        word_occurances[key] = len(set(value))
 
-    max_tf = max(tf_dict.values())
+    # max_tf = max(tf_dict.values())
 
-    # Κανονικοποιώ -> 0.5 + 0.5*(tf/max(tf))
-    for key, value in sorted_inverted_index.items():
-        tf_dict_norm[key] = 0.5 + 0.5*(tf_dict[key]/max_tf)
+    # # Κανονικοποίηση
+    # for key, value in inverted_index.items():
+    #     tf_dict_norm[key] = 0.5 + 0.5*(tf_dict[key]/max_tf)
 
-    return tf_dict, tf_dict_norm
+    return word_occurances
 
 
-def get_idf_dict(tf_dict, tf_dict_norm):
-    idf_dict = tf_dict
+def get_idf_dict(word_occurances, tf_dict_norm):
+    idf_dict = word_occurances
+    num_of_total_docs = 1209    # Συνολικός αριθμός documents
 
-    for key, value in tf_dict.items():
-        idf_dict[key] = math.log10(1209 / float(value))
+    for key, value in word_occurances.items():
+        idf_dict[key] = np.log10(num_of_total_docs / float(value))
+
+    idf_df = pd.DataFrame(idf_dict.items(), columns=['term', 'idf'])
 
     return idf_dict
 

@@ -1,23 +1,8 @@
 TODO:
--> Μπορώ να ΜΗΝ χρησιμοποιήσω το word_dict;
-   Ψάξιμο για άλλες υλοποιήσεις του tf-idf.
+->
 
 -> Έλεγχος τιμών υπολογισμού cosines
    Βγαίνουν 1.0 τιμές.
 -> Τέλος 2ου ερωτήματος, έλεγχος
    με build-in συναρτήσεις και
    στη συνέχεια (3), (4)...
-
-________________________
--> PRINT DICTIONARY KEY + VALUE:
-    for key, value in inverted_index.items():
-        print(key, value)
-
-    >>> THEN {58, 66, 47, 23}
-
--> RUN THROUGH ALL KEY + VALUES OF word_dict:
-   for i in range(1, 100):
-        for key, value in word_dict[i].items():
-            print(i, key, value)
-
-   >>> 98 FATAL 0
