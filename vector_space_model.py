@@ -1,38 +1,54 @@
 import math
 import numpy as np
-import pandas as pd
+
+GROSS_NUMBER_OF_DOCS = 1240
+NET_NUMBER_OF_DOCS = 1209
 
 
-def get_tf_dict(inverted_index):
+def get_tf_dicts(inverted_index):
     # dictionary με το πλήθος των εμφανίσεων (tf) κάθε λήμματος σε όλα τα έγγραφα -> 'λήμμα' = x αριθμός εμφανίσεων
-    word_occurances = {}
-    tf_dict = [{} for i in range(len(inverted_index))]   # Κανονικοποίηση βάσει του 0.5 + 0.5*(tf/max(tf))
+    word_occur_total = {}
 
-    # Αρχικοποίηση word_occurances
-    for i in range(1, 1240):
-        word_occurances = dict.fromkeys(inverted_index.keys(), 0)
+    # λίστα με το πλήθος εμφανίσεων λημμάτων για κάθε έγγραφο
+    word_occur_docs = [{} for _ in range(1, GROSS_NUMBER_OF_DOCS + 1)]
+
+    # Αρχικοποίηση word_occur_total:
+    word_occur_total = dict.fromkeys(inverted_index.keys(), 0)
 
     for key, value in inverted_index.items():
-        # word_occurances: "λήμμα": αριθμός εγγράφων που εμφανίζεται
-        word_occurances[key] = len(set(value))
+        word_occur_total[key] = len(set(value))
 
-    # max_tf = max(tf_dict.values())
+    # Αρχικοποίηση word_occur_docs:
+    for i in range(1, GROSS_NUMBER_OF_DOCS):
+        word_occur_docs[i] = dict.fromkeys(inverted_index.keys(), 0)
 
-    # # Κανονικοποίηση
-    # for key, value in inverted_index.items():
-    #     tf_dict_norm[key] = 0.5 + 0.5*(tf_dict[key]/max_tf)
+    for term, doc_list in inverted_index.items():
+        for doc in doc_list:
+            word_occur_docs[doc][term] += 1
 
-    return word_occurances
+    max_tf = [0 for _ in range(1, GROSS_NUMBER_OF_DOCS + 1)]
+
+    for i in range(1, GROSS_NUMBER_OF_DOCS):
+        max_tf[i] = max(word_occur_docs[i].values())
+
+    tf_dicts = word_occur_docs
+
+    # Κανονικοποίηση βάσει του 0.5 + 0.5*(tf/max(tf))
+    for i in range(1, GROSS_NUMBER_OF_DOCS):
+        for term in inverted_index.keys():
+            if max_tf[i] == 0:  # για τα έγγραφα που δεν υπάρχουν ως νούμερο
+                tf_dicts[i][term] = 0
+            else:
+                tf_dicts[i][term] = 0.5 + 0.5 * (word_occur_docs[i][term] / max_tf[i])
+
+    return tf_dicts, word_occur_total
 
 
-def get_idf_dict(word_occurances, tf_dict_norm):
-    idf_dict = word_occurances
-    num_of_total_docs = 1209    # Συνολικός αριθμός documents
+def get_idf_dict(word_occur_total):
+    idf_dict = word_occur_total
 
-    for key, value in word_occurances.items():
-        idf_dict[key] = np.log10(num_of_total_docs / float(value))
-
-    idf_df = pd.DataFrame(idf_dict.items(), columns=['term', 'idf'])
+    for key, value in word_occur_total.items():
+        idf_dict[key] = np.log10(NET_NUMBER_OF_DOCS / float(value))
 
     return idf_dict
 
@@ -58,9 +74,9 @@ def get_tfidf(tf, idfs, word_dict):
         for key in tfidf_dict[i]:
             tfidf_dict[i][key] *= tfidf_values[key]
 
-    # for key, value in tfidf_dict[1].items():
-    #     if value != 0:
-    #         print(key, value)
+    for key, value in tfidf_dict[1].items():
+        if value != 0:
+            print(key, value)
 
     return tfidf_dict
 
