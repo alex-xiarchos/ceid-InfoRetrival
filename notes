@@ -1,6 +1,6 @@
 TODO:
--> word_dict στο get_tfidf
-
+-> tf-idf values κομπλέ μάλλον
+-> ολοκλήρωση vector space model
 -> Έλεγχος τιμών υπολογισμού cosines
    Βγαίνουν 1.0 τιμές.
 -> Τέλος 2ου ερωτήματος, έλεγχος

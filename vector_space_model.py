@@ -41,7 +41,7 @@ def get_tf_dicts(inverted_index):
             else:
                 tf_dicts[i][term] = 0.5 + 0.5 * (word_occur_docs[i][term] / max_tf[i])
 
-    return tf_dicts, word_occur_total
+    return tf_dicts, word_occur_total, word_occur_docs
 
 
 def get_idf_dict(word_occur_total):
@@ -53,42 +53,25 @@ def get_idf_dict(word_occur_total):
     return idf_dict
 
 
-def get_tfidf(tf, idfs, word_dict):
-    tfidf_values = {}
-    for key, value in tf.items():
-        tfidf_values[key] = value * idfs[key]
+def get_tfidf(tf_dicts, idf_dict):
+    tfidf_dicts = [{} for _ in range(1, GROSS_NUMBER_OF_DOCS + 1)]
 
-    # Δημιουργία dictionary όπου σε κάθε εμφάνιση της λέξης, αποθηκεύεται το weight της.
-    # Χρησιμοποιούμε το word_dict ως βάση, γιατί ήδη έχει μηδενικά εκεί όπου δεν εμφανίζεται η λέξη.
-    tfidf_dict = []
-    tfidf_dict = word_dict
+    for doc_index, tf_dict in enumerate(tf_dicts):
+        for term, tf_value in tf_dict.items():
+            tfidf = tf_value * idf_dict.get(term, 0)
+            tfidf_dicts[doc_index][term] = tfidf
 
-    for i in range(0, 1240):
-        for key, value in tfidf_dict[i].items():
-            if value > 1:
-                tfidf_dict[i][key] = 1
-
-    # Πλέον στο tfidf_dict, όλες οι εμφανίσεις των λέξεων αποθηκεύονται ως 1.
-    # Μένει να πολλαπλασιαστούν με τα βάρη που αποθηκεύσαμε στο tfidf_values.
-    for i in range(0, 1240):
-        for key in tfidf_dict[i]:
-            tfidf_dict[i][key] *= tfidf_values[key]
-
-    for key, value in tfidf_dict[1].items():
-        if value != 0:
-            print(key, value)
-
-    return tfidf_dict
+    return tfidf_dicts
 
 
-def magnitudes_calc(tfidf_dict):
+def get_magnitudes(tfidf_dicts):
     magnitudes = []
     sums = 0
 
     # Στη vsm_sqrts λίστα αποθηκεύεται το ευκλείδειο διάνυσμα όλων των τιμών
-    # Στη 0η τιμή, όπως πάντα, είναι η τιμή του query.
-    for i in range(0, 1240):
-        for key, value in tfidf_dict[i].items():
+    # Στη 0η τιμή είναι η τιμή του query.
+    for i in range(0, GROSS_NUMBER_OF_DOCS):
+        for key, value in tfidf_dicts[i].items():
             sums += pow(value, 2)
         magnitudes.append(math.sqrt(sums))
         sums = 0
@@ -96,10 +79,10 @@ def magnitudes_calc(tfidf_dict):
     q_dot_magn = []
     q_dot_magn.append(0) # Θέτουμε ως 0 την τιμή των queries
 
-    for i in range (1, 1240):
-        for key, value in tfidf_dict[i].items():
-            if tfidf_dict[0][key] != 0 and tfidf_dict[i][key] != 0:
-                sums += tfidf_dict[0][key] * tfidf_dict[i][key]     # Q * Di
+    for i in range(1, 1240):
+        for key, value in tfidf_dicts[i].items():
+            if tfidf_dicts[0][key] != 0 and tfidf_dicts[i][key] != 0:
+                sums += tfidf_dicts[0][key] * tfidf_dicts[i][key]     # Q * Di
         q_dot_magn.append(sums)
         sums = 0
 
