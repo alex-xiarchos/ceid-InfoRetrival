@@ -1,8 +1,8 @@
 import math
 import numpy as np
 
-GROSS_NUMBER_OF_DOCS = 1240
-NET_NUMBER_OF_DOCS = 1209
+TOTAL_NUMBER_OF_DOCS = 1240
+FILTERED_NUMBER_OF_DOCS = 1209
 
 
 def get_tf_dicts(inverted_index):
@@ -10,7 +10,7 @@ def get_tf_dicts(inverted_index):
     word_occur_total = {}
 
     # λίστα με το πλήθος εμφανίσεων λημμάτων για κάθε έγγραφο
-    word_occur_docs = [{} for _ in range(1, GROSS_NUMBER_OF_DOCS + 1)]
+    word_occur_docs = [{} for _ in range(1, TOTAL_NUMBER_OF_DOCS + 1)]
 
     # Αρχικοποίηση word_occur_total:
     word_occur_total = dict.fromkeys(inverted_index.keys(), 0)
@@ -19,22 +19,22 @@ def get_tf_dicts(inverted_index):
         word_occur_total[key] = len(set(value))
 
     # Αρχικοποίηση word_occur_docs:
-    for i in range(1, GROSS_NUMBER_OF_DOCS):
+    for i in range(1, TOTAL_NUMBER_OF_DOCS):
         word_occur_docs[i] = dict.fromkeys(inverted_index.keys(), 0)
 
     for term, doc_list in inverted_index.items():
         for doc in doc_list:
             word_occur_docs[doc][term] += 1
 
-    max_tf = [0 for _ in range(1, GROSS_NUMBER_OF_DOCS + 1)]
+    max_tf = [0 for _ in range(1, TOTAL_NUMBER_OF_DOCS + 1)]
 
-    for i in range(1, GROSS_NUMBER_OF_DOCS):
+    for i in range(1, TOTAL_NUMBER_OF_DOCS):
         max_tf[i] = max(word_occur_docs[i].values())
 
     tf_dicts = word_occur_docs
 
     # Κανονικοποίηση βάσει του 0.5 + 0.5*(tf/max(tf))
-    for i in range(1, GROSS_NUMBER_OF_DOCS):
+    for i in range(1, TOTAL_NUMBER_OF_DOCS):
         for term in inverted_index.keys():
             if max_tf[i] == 0:  # για τα έγγραφα που δεν υπάρχουν ως νούμερο
                 tf_dicts[i][term] = 0
@@ -48,13 +48,13 @@ def get_idf_dict(word_occur_total):
     idf_dict = word_occur_total
 
     for key, value in word_occur_total.items():
-        idf_dict[key] = np.log10(NET_NUMBER_OF_DOCS / float(value))
+        idf_dict[key] = np.log10(FILTERED_NUMBER_OF_DOCS / float(value))
 
     return idf_dict
 
 
 def get_tfidf(tf_dicts, idf_dict):
-    tfidf_dicts = [{} for _ in range(1, GROSS_NUMBER_OF_DOCS + 1)]
+    tfidf_dicts = [{} for _ in range(1, TOTAL_NUMBER_OF_DOCS + 1)]
 
     for doc_index, tf_dict in enumerate(tf_dicts):
         for term, tf_value in tf_dict.items():
@@ -70,7 +70,7 @@ def get_magnitudes(tfidf_dicts):
 
     # Στη vsm_sqrts λίστα αποθηκεύεται το ευκλείδειο διάνυσμα όλων των τιμών
     # Στη 0η τιμή είναι η τιμή του query.
-    for i in range(0, GROSS_NUMBER_OF_DOCS):
+    for i in range(0, TOTAL_NUMBER_OF_DOCS):
         for key, value in tfidf_dicts[i].items():
             sums += pow(value, 2)
         magnitudes.append(math.sqrt(sums))

@@ -1,6 +1,6 @@
 import tools
 
-GROSS_NUMBER_OF_DOCS = 1240
+TOTAL_NUMBER_OF_DOCS = 1240
 
 
 def create_inverted_index():
@@ -8,17 +8,17 @@ def create_inverted_index():
     inverted_index = {}
 
     # Δημιουργία inverted index:
-    for doc_number in range(1, GROSS_NUMBER_OF_DOCS):  # 1239 έγγραφα ξεκινώντας από το 1
-        doc = tools.get_doc(doc_number)
+    for docID in range(1, TOTAL_NUMBER_OF_DOCS):  # 1239 έγγραφα ξεκινώντας από το 1
+        doc = tools.get_doc(docID)
 
         try:
             for doc_word in doc:  # κάθε λέξη του εγγράφου
                 if doc_word in inverted_index:
-                    inverted_index[doc_word].append(doc_number)
+                    inverted_index[doc_word].append(docID)
                 else:
-                    inverted_index[doc_word] = [doc_number]
+                    inverted_index[doc_word] = [docID]
 
-            # print(f"Διαβάζονται {doc_number}/1239 έγγραφα για τη δημιουργία του ανεστραμμένου ευρετηρίου")
+            # print(f"Διαβάζονται {docID}/1239 έγγραφα για τη δημιουργία του ανεστραμμένου ευρετηρίου")
         except TypeError:
             pass
 
@@ -27,4 +27,9 @@ def create_inverted_index():
     sorted_inverted_index = dict(sorted(inverted_index.items()))
     # print("> Το ανεστραμμένο ευρετήριο δημιουργήθηκε.")
 
+    print(sorted_inverted_index)
+
     return sorted_inverted_index
+
+
+

@@ -17,8 +17,8 @@ def get_doc_path(number):
 
 
 # Δίνεις 5 και επιστρέφεται μια λίστα με το περιεχόμενο του εγγράφου 00005
-def get_doc(doc_number):
-    doc_path = get_doc_path(doc_number)  # το 5 μετατρέπεται σε 00005
+def get_doc(docID):
+    doc_path = get_doc_path(docID)  # το 5 μετατρέπεται σε 00005
 
     try:
         with open(doc_path, "r") as doc_file:
