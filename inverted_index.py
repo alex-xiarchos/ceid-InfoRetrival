@@ -27,9 +27,5 @@ def create_inverted_index():
     sorted_inverted_index = dict(sorted(inverted_index.items()))
     # print("> Το ανεστραμμένο ευρετήριο δημιουργήθηκε.")
 
-    print(sorted_inverted_index)
-
     return sorted_inverted_index
-
-
 

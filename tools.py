@@ -1,37 +1,20 @@
 import re
+import os
 
 
-# Αφαίρεση των \n χαρακτήρων από τα docs χρησιμοποιώντας regex
-def remove_pattern_from_string(text, pattern):
-    replacement = ""
-    modified_text = re.sub(pattern, replacement, text)
-    return modified_text
+def get_docs():
+    docs_directory = 'Collection/docs'
+    filename_list = [file for file in os.listdir(docs_directory)]
 
+    doc_list = []
 
-# Εισάγεται ένας αριθμός (1-1239) και επιστρέφεται το path του αρχείου με αυτό το νούμερο
-def get_doc_path(number):
-    file_path_prefix = "Collection/docs/"
-    file_path_suffix = str(number).zfill(5)  # 1 -> 00001
-    file_path = file_path_prefix + file_path_suffix
-    return file_path
+    for filename in filename_list:
+        with open(os.path.join(docs_directory, filename), 'r') as doc_file:
+            doc = doc_file.readlines()
+            doc = [word.strip() for word in doc]
+            doc_list.append(doc)
 
-
-# Δίνεις 5 και επιστρέφεται μια λίστα με το περιεχόμενο του εγγράφου 00005
-def get_doc(docID):
-    doc_path = get_doc_path(docID)  # το 5 μετατρέπεται σε 00005
-
-    try:
-        with open(doc_path, "r") as doc_file:
-            doc = doc_file.readlines()  # γίνεται ανάγνωση του εγγράφου
-
-        # Αφαίρεση "\n" χαρακτήρων από το περιεχόμενο του document
-        for index, word in enumerate(doc):
-            doc[index] = remove_pattern_from_string(doc[index], r"\n")
-
-        return doc  # επιστρέφεται το έγγραφο
-
-    except FileNotFoundError:
-        pass
+    return doc_list
 
 
 # Επιστρέφονται τα queries

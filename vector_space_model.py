@@ -5,7 +5,7 @@ TOTAL_NUMBER_OF_DOCS = 1240
 FILTERED_NUMBER_OF_DOCS = 1209
 
 
-def get_tf_dicts(inverted_index):
+def get_doc_tf(inverted_index):
     # dictionary με το πλήθος των εμφανίσεων (tf) κάθε λήμματος σε όλα τα έγγραφα -> 'λήμμα' = x αριθμός εμφανίσεων
     word_occur_total = {}
 
@@ -44,7 +44,7 @@ def get_tf_dicts(inverted_index):
     return tf_dicts, word_occur_total, word_occur_docs
 
 
-def get_idf_dict(word_occur_total):
+def get_doc_idf(word_occur_total):
     idf_dict = word_occur_total
 
     for key, value in word_occur_total.items():
@@ -53,7 +53,7 @@ def get_idf_dict(word_occur_total):
     return idf_dict
 
 
-def get_tfidf(tf_dicts, idf_dict):
+def get_doc_tfidf(tf_dicts, idf_dict):
     tfidf_dicts = [{} for _ in range(1, TOTAL_NUMBER_OF_DOCS + 1)]
 
     for doc_index, tf_dict in enumerate(tf_dicts):
