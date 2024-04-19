@@ -17,15 +17,12 @@ def get_docs():
 
 
 def get_queries():
-    file_path = "Collection/Queries_20"
-    with open(file_path, 'r') as queries_file:
-        queries = queries_file.readlines()
+    filename = 'Collection/Queries_20'
 
-    queries_capped = [""] * 20  # αρχικοποίηση 20 άδειων strings
+    query_list = []
 
-    # Αφαίρεση "\n" χαρακτήρων από το περιεχόμενο του document
-    for index, query in enumerate(queries):
-        queries[index] = remove_pattern_from_string(queries[index], r"\n")
-        queries_capped[index] = queries[index].upper()  # αποθήκευση των queries αφού μετατραπούν σε κεφαλαία
+    with open(filename, 'r') as queries_file:
+        query = queries_file.readlines()
+        query_list.append(query)
 
-    return queries_capped
+    return query

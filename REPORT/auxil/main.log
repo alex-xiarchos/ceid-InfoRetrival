@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.3.31) (preloaded format=xelatex 2024.4.18)  19 APR 2024 20:45
+This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.3.31) (preloaded format=xelatex 2024.4.18)  19 APR 2024 21:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -978,7 +978,7 @@ Package fontspec Info: Font family 'TimesNewRoman(0)' created for font 'Times
 (fontspec)             Roman/BI/OT:script=latn;language=dflt;+smcp;"
 
 )
-(W:/PycharmProjects\InfoRetriev\Report\auxil\main.aux)
+(W:/PycharmProjects\InfoRetriev\REPORT\auxil\main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -1120,7 +1120,7 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-(W:/PycharmProjects\InfoRetriev\Report\auxil\main.toc)
+(W:/PycharmProjects\InfoRetriev\REPORT\auxil\main.toc)
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
@@ -1305,7 +1305,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.96603pt}.
 
-[3] (W:/PycharmProjects\InfoRetriev\Report\auxil\main.aux)
+[3] (W:/PycharmProjects\InfoRetriev\REPORT\auxil\main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
@@ -1320,5 +1320,5 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  106i,12n,110p,467b,584s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on W:/PycharmProjects\InfoRetriev\Report\out\main.pdf (4 pages).
+Output written on W:/PycharmProjects\InfoRetriev\REPORT\out\main.pdf (4 pages).
 

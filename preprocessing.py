@@ -5,7 +5,6 @@ import tools
 
 
 def preprocess_collection():
-    # Εισαγωγή εγγράφων
     docs_list = tools.get_docs()
 
     stop_words = set(stopwords.words('english'))
@@ -19,3 +18,19 @@ def preprocess_collection():
 
     with open('stripped_docs.json', 'w') as f:
         json.dump(stripped_docs, f)
+
+
+def preprocess_queries():
+    query_list = tools.get_queries()
+
+    stop_words = set(stopwords.words('english'))
+    stemmer = PorterStemmer()
+
+    stripped_queries = []
+
+    for query in query_list:
+        stripped_query = [stemmer.stem(word.lower()) for word in query.split() if word.lower() not in stop_words]
+        stripped_queries.append(stripped_query)
+
+    with open('stripped_queries.json', 'w') as f:
+        json.dump(stripped_queries, f)
