@@ -1,4 +1,3 @@
-import re
 import os
 
 
@@ -17,7 +16,6 @@ def get_docs():
     return doc_list
 
 
-# Επιστρέφονται τα queries
 def get_queries():
     file_path = "Collection/Queries_20"
     with open(file_path, 'r') as queries_file:

@@ -5,6 +5,7 @@ import tools
 
 
 def preprocess_collection():
+    # Εισαγωγή εγγράφων
     docs_list = tools.get_docs()
 
     stop_words = set(stopwords.words('english'))
