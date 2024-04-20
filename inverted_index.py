@@ -3,8 +3,8 @@ import json
 def create_inverted_index():
     inverted_index = {}
 
-    with open('stripped_docs.json', 'r') as stripped_docs_file:
-        stripped_docs = json.load(stripped_docs_file)
+    with open('stripped_docs_tuples.json', 'r') as stripped_docs_file:
+        stripped_docs_tuples = json.load(stripped_docs_file)
 
 
 
