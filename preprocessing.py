@@ -14,7 +14,7 @@ def preprocess_collection():
 
     for doc_tuple in doc_tuples_list:
         stripped_doc = [stemmer.stem(word.lower()) for word in doc_tuple[1] if word.lower() not in stop_words]
-        stripped_doc_tuple = (stripped_doc, doc_tuple[0])
+        stripped_doc_tuple = (doc_tuple[0], stripped_doc)  # (DocID, <stripped_doc>)
         stripped_docs.append(stripped_doc_tuple)
 
     with open('stripped_docs_tuples.json', 'w') as f:

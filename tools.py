@@ -11,8 +11,7 @@ def get_docs():
         with open(os.path.join(docs_directory, filename), 'r') as doc_file:
             doc = doc_file.readlines()
             doc = [word.strip() for word in doc]
-            doc_tuple = (filename, doc)
-            print(doc_tuple)
+            doc_tuple = (filename, doc) # (DocID, <doc>)
             doc_tuples_list.append(doc_tuple)
 
     return doc_tuples_list
