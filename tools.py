@@ -11,7 +11,7 @@ def get_docs():
         with open(os.path.join(docs_directory, filename), 'r') as doc_file:
             doc = doc_file.readlines()
             doc = [word.strip() for word in doc]
-            doc_list.append(doc)
+            doc_list.append((doc, filename))
 
     return doc_list
 
@@ -19,10 +19,7 @@ def get_docs():
 def get_queries():
     filename = 'Collection/Queries_20'
 
-    query_list = []
-
     with open(filename, 'r') as queries_file:
-        query = queries_file.readlines()
-        query_list.append(query)
+        queries = queries_file.readlines()
 
-    return query
+    return queries
