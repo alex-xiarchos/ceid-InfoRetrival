@@ -1,6 +1,5 @@
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
-import json
 import tools
 
 
@@ -17,8 +16,7 @@ def preprocess_collection():
         stripped_doc_tuple = (doc_tuple[0], stripped_doc)  # (DocID, <stripped_doc>)
         stripped_docs.append(stripped_doc_tuple)
 
-    with open('stripped_docs_tuples.json', 'w') as f:
-        json.dump(stripped_docs, f)
+    return stripped_docs
 
 
 def preprocess_queries():
@@ -33,5 +31,5 @@ def preprocess_queries():
         stripped_query = [stemmer.stem(word.lower()) for word in query.split() if word.lower() not in stop_words]
         stripped_queries.append(stripped_query)
 
-    with open('stripped_queries.json', 'w') as f:
-        json.dump(stripped_queries, f)
+
+    return stripped_queries

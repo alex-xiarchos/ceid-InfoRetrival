@@ -4,12 +4,12 @@ import preprocessing as prep
 
 
 def main_app():
-    prep.preprocess_collection()
-    prep.preprocess_queries()
+    doc_collection = prep.preprocess_collection()   # stripped_docs
+    queries = prep.preprocess_queries()     # stripped_queries
 
-    inverted_index = ii.create_inverted_index()
+    inverted_index = ii.create_inverted_index(doc_collection)
+    results = vsm.run_vsm(doc_collection, queries, inverted_index)
 
-    # tf_dicts, word_occur_total, word_occur_docs = vsm.get_doc_tf(sorted_inverted_index)
     # idf_dict = vsm.get_doc_idf(word_occur_total)
     # docs_tfidfs = vsm.get_tfidf(tf_dicts, idf_dict)
     # magnitudes, q_dot_magn = vsm.get_magnitudes(docs_tfidfs)
