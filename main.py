@@ -7,7 +7,7 @@ def main_app():
     prep.preprocess_collection()
     prep.preprocess_queries()
 
-    sorted_inverted_index = ii.create_inverted_index()
+    inverted_index = ii.create_inverted_index()
 
     # tf_dicts, word_occur_total, word_occur_docs = vsm.get_doc_tf(sorted_inverted_index)
     # idf_dict = vsm.get_doc_idf(word_occur_total)

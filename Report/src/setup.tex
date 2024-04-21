@@ -6,6 +6,7 @@
 \usepackage{tabularray}
 \UseTblrLibrary{booktabs}
 \usepackage{amstex}
+\usepackage{amsmath}
 \usepackage{tcolorbox}
 \usepackage{titlesec}
 \usepackage{setspace}
@@ -37,7 +38,9 @@
 
 \newtcolorbox{headerdark}{colback=darkgray, boxrule=0pt,arc=0pt, boxsep=12pt,left=2pt,right=2pt,leftrule=0pt}
 \newtcolorbox{headerlight}{colback=gray!50, boxrule=0pt,arc=0pt, boxsep=2pt,left=2pt,right=2pt,leftrule=0pt}
+\newtcolorbox{graycomment}{colback=gray!25, boxrule=0pt,arc=0pt, boxsep=2pt,left=2pt,right=2pt,leftrule=1pt, grow to left by=-28pt,  grow to right by=-28pt}
 
+% Το στιλ των νέων κεφαλαίων/sectionσ
 \titleformat{\chapter}[block]
     {\color{black} \fontDinLight \large } % global formatting (number and title)
     {\color{white} \fontDin \colorbox{black!80} {\hspace{7pt}\thechapter\hspace{7pt}}} % label: number and its formatting
@@ -57,6 +60,7 @@
    {0pt}{1em}{0.4em}  % left before after
 
 \titleclass{\chapter}{straight}
+
 
 %% Setting for the column separator
 %\colorlet{shadecol}{black!20}
@@ -84,16 +88,23 @@
 %  {\color{shadecol}\rule[-\fboxsep]{\dimexpr\columnwidth-\wd\labbox}{\dimexpr\ht\labbox+\fboxsep}}%
 %  \vspace{#2}\par}
 
+
+% Ρύθμση αλλαγής γραμμής
 \tolerance=1
 \emergencystretch=\maxdimen
-\hyphenpenalty=10000
+\hyphenpenalty=10000 % Για να μην κάνει συλλαβισμό στις λέξεις
 \hbadness=10000
 
+% Αλλαγή απόστασης μεταξύ παραγράφων
 \setlength{\parskip}{6pt}
 
+% Ρύθμιση Headers/Footers
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0pt}
 \fancyhead{}\fancyfoot{}
 \fancyhead[R]{\fontDinLight ΑΛΕΞΑΝΔΡΟΣ ΞΙΑΡΧΟΣ \(\cdot\) 1059619\hspace{10pt}\colorbox{black!50}{\color{white}\fontDin\thepage}}
+
+% Συνεχόμενη αρίθμηση ανά chapters
+\counterwithout{footnote}{chapter}
 
 \endinput

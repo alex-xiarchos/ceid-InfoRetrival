@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.3.31) (preloaded format=xelatex 2024.4.18)  19 APR 2024 21:04
+This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.3.31) (preloaded format=xelatex 2024.4.18)  21 APR 2024 04:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -543,18 +543,966 @@ LaTeX Info: Redefining \Relbar on input line 971.
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 ))
-(W:\MiKTeX\tex/latex/tcolorbox\tcolorbox.sty
+(W:\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip58
+
+For additional information on amsmath, use the `?' option.
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:145: LaTeX Error: Command \AmSfont alre
+ady defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.145 ...\@xp\@car\f@series\@nil bb\else m\fi}{n}}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:179: LaTeX Error: Command \mspace alrea
+dy defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.179 \newcommand{\mspace}[1]{\mskip#1\relax}
+                                             
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Info: Redefining \primfrac on input line 218.
+LaTeX Info: Redefining \frac on input line 234.
+LaTeX Info: Redefining \dfrac on input line 238.
+LaTeX Info: Redefining \tfrac on input line 239.
+LaTeX Info: Redefining \binom on input line 240.
+LaTeX Info: Redefining \dbinom on input line 241.
+LaTeX Info: Redefining \tbinom on input line 242.
+LaTeX Info: Redefining \genfrac on input line 275.
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:351: LaTeX Error: Command \leftroot alr
+eady defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.351 ...{\@amsmath@err{\Invalid@@\leftroot}\@eha}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:352: LaTeX Error: Command \uproot alrea
+dy defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.352 ...t}{\@amsmath@err{\Invalid@@\uproot}\@eha}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+\uproot@=\count318
+\leftroot@=\count319
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \boxed on input line 400.
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:401: LaTeX Error: Command \implies alre
+ady defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.401 ...mand{\implies}{\DOTSB\;\Longrightarrow\;}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:402: LaTeX Error: Command \impliedby al
+ready defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.402 ...and{\impliedby}{\DOTSB\;\Longleftarrow\;}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:409: LaTeX Error: Command \nobreakdash 
+already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.409 }
+       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count320
+\DOTSCASE@=\count321
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:576: LaTeX Error: Command \dotsi alread
+y defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.576 \newcommand{\dotsi}{\!\@cdots}
+                                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Info: Redefining \cdots on input line 620.
+LaTeX Info: Redefining \dotso on input line 623.
+LaTeX Info: Redefining \dotsc on input line 627.
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:659: LaTeX Error: Command \iint already
+ defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.659 ...ewcommand{\iint}{\DOTSI\MultiIntegral{2}}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:660: LaTeX Error: Command \iiint alread
+y defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.660 ...wcommand{\iiint}{\DOTSI\MultiIntegral{3}}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:661: LaTeX Error: Command \iiiint alrea
+dy defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.661 ...command{\iiiint}{\DOTSI\MultiIntegral{4}}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:662: LaTeX Error: Command \idotsint alr
+eady defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.662 ...mmand{\idotsint}{\DOTSI\MultiIntegral{0}}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Info: Redefining \MultiIntegral on input line 663.
+\Mathstrutbox@=\box81
+\strutbox@=\box82
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen279
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:747: LaTeX Error: Command \dddot alread
+y defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.747    \hbox{\,\normalfont...}\vss}}}}
+                                        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:750: LaTeX Error: Command \ddddot alrea
+dy defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.750    \hbox{\,\normalfont....}\vss}}}}
+                                         
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Package amsmath Warning: Unable to redefine math accent \hat.
+
+
+Package amsmath Warning: Unable to redefine math accent \check.
+
+
+Package amsmath Warning: Unable to redefine math accent \tilde.
+
+
+Package amsmath Warning: Unable to redefine math accent \acute.
+
+
+Package amsmath Warning: Unable to redefine math accent \grave.
+
+
+Package amsmath Warning: Unable to redefine math accent \dot.
+
+
+Package amsmath Warning: Unable to redefine math accent \ddot.
+
+
+Package amsmath Warning: Unable to redefine math accent \breve.
+
+
+Package amsmath Warning: Unable to redefine math accent \bar.
+
+
+Package amsmath Warning: Unable to redefine math accent \vec.
+
+
+Package amsmath Warning: Unable to redefine math accent \mathring.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:801: LaTeX Error: Command \acc@check al
+ready defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.801 \newcommand{\acc@check}{}
+                               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:802: LaTeX Error: Command \acc@error al
+ready defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.802 \newcommand{\acc@error}{}
+                               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+\macc@depth=\count322
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pod on input line 908.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \mod on input line 911.
+LaTeX Info: Redefining \cfrac on input line 913.
+LaTeX Info: Redefining \overset on input line 916.
+LaTeX Info: Redefining \underset on input line 918.
+LaTeX Info: Redefining \overunderset on input line 920.
+LaTeX Info: Redefining \sideset on input line 922.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:991: LaTeX Error: Command \overleftrigh
+tarrow already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.991 ...palette{\overarrow@\leftrightarrowfill@}}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1003: LaTeX Error: Command \underrighta
+rrow already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1003 ...thpalette{\underarrow@\rightarrowfill@}}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1005: LaTeX Error: Command \underleftar
+row already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1005 ...athpalette{\underarrow@\leftarrowfill@}}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1007: LaTeX Error: Command \underleftri
+ghtarrow already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1007 ...lette{\underarrow@\leftrightarrowfill@}}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Info: Redefining \xrightarrow on input line 1028.
+LaTeX Info: Redefining \xleftarrow on input line 1029.
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1042: LaTeX Error: Command \subarray al
+ready defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1042 }
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Info: Redefining \substack on input line 1060.
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1068: LaTeX Error: Command \smallmatrix
+ already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1068 }
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+\c@MaxMatrixCols=\count323
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1098: LaTeX Error: Command \bmatrix alr
+eady defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1098 ...x}{\left[\env@matrix}{\endmatrix\right]}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1103: LaTeX Error: Command \Bmatrix alr
+eady defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1103 }
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1104: LaTeX Error: Command \vmatrix alr
+eady defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1104 ...vert\env@matrix}{\endmatrix\right\rvert}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1105: LaTeX Error: Command \Vmatrix alr
+eady defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1105 ...Vert\env@matrix}{\endmatrix\right\rVert}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1108: LaTeX Error: Command \hdotsfor al
+ready defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1108 ...xp\shdots@for\else\hdots@for\@ne{#1}\fi}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+\dotsspace@=\muskip17
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1128: LaTeX Error: Command \c@parentequ
+ation already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1128 \newcounter{parentequation}
+                                  % Counter for ``parent equation''.
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1142: LaTeX Error: Command \subequation
+s already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1142 }
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Info: Redefining \numberwithin on input line 1143.
+LaTeX Info: Redefining \eqref on input line 1150.
+\dspbrk@lvl=\count324
+LaTeX Info: Redefining \allowdisplaybreaks on input line 1154.
+LaTeX Info: Redefining \displaybreak on input line 1160.
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1193: LaTeX Error: Command \intertext a
+lready defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1193 ...@amsmath@err{\Invalid@@\intertext}\@eha}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+\tag@help=\toks28
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1226: LaTeX Error: Command \thetag alre
+ady defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1226 \newcommand{\thetag}{\leavevmode\tagform@}
+                                                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1272: LaTeX Error: Command \raisetag al
+ready defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1272 }
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1274: LaTeX Error: Command \notag alrea
+dy defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1274 \newcommand{\notag}{\nonumber}
+                                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+\row@=\count325
+\column@=\count326
+\maxfields@=\count327
+\andhelp@=\toks29
+\eqnshift@=\dimen280
+\alignsep@=\dimen281
+\tagshift@=\dimen282
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1317: LaTeX Error: Command \mintagsep a
+lready defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1317 ...{\mintagsep}{.5\fontdimen6\textfont\tw@}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1318: LaTeX Error: Command \minalignsep
+ already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1318 \newcommand{\minalignsep}{10pt}
+                                      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+\tagwidth@=\dimen283
+\totwidth@=\dimen284
+\lineht@=\dimen285
+\@envbody=\toks30
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1494: LaTeX Error: Command \start@align
+ed already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1494 }
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1519: LaTeX Error: Command \aligned alr
+eady defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1519 }
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1520: LaTeX Error: Command \aligned@a a
+lready defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1520 ...ligned@a}[1][c]{\start@aligned{#1}\m@ne}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1526: LaTeX Error: Command \alignedat a
+lready defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1526 }
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1527: LaTeX Error: Command \alignedat@a
+ already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1527 ...{\alignedat@a}[1][c]{\start@aligned{#1}}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1542: LaTeX Error: Command \gathered al
+ready defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1542 }
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1560: LaTeX Error: Command \gather alre
+ady defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1560 }
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1566: LaTeX Error: Command \gather* alr
+eady defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1566 }
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1770: LaTeX Error: Command \alignat alr
+eady defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1770 }
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1775: LaTeX Error: Command \alignat* al
+ready defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1775 }
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1780: LaTeX Error: Command \xalignat al
+ready defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1780 }
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1785: LaTeX Error: Command \xalignat* a
+lready defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1785 }
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1790: LaTeX Error: Command \xxalignat a
+lready defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1790 }
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1805: LaTeX Error: Command \align alrea
+dy defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1805 }
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1810: LaTeX Error: Command \align* alre
+ady defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1810 }
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1815: LaTeX Error: Command \flalign alr
+eady defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1815 }
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:1820: LaTeX Error: Command \flalign* al
+ready defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1820 }
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:2400: LaTeX Error: Command \split alrea
+dy defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2400 }
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+\multlinegap=\skip59
+\multlinetaggap=\skip60
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:2559: LaTeX Error: Command \multline al
+ready defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2559 }
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:2560: LaTeX Error: Command \multline* a
+lready defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2560 ...tart@multline\st@rredtrue}{\endmultline}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+\mathdisplay@stack=\toks31
+
+W:\MiKTeX\tex/latex/amsmath\amsmath.sty:2952: LaTeX Error: Command \equation* a
+lready defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2952 }
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (W:\MiKTeX\tex/latex/tcolorbox\tcolorbox.sty
 Package: tcolorbox 2024/01/10 version 6.2.0 text color boxes
 
 (W:\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
 (W:\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty
 (W:\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
-\pgfutil@everybye=\toks28
-\pgfutil@tempdima=\dimen279
-\pgfutil@tempdimb=\dimen280
+\pgfutil@everybye=\toks32
+\pgfutil@tempdima=\dimen286
+\pgfutil@tempdimb=\dimen287
 )
 (W:\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
-\pgfutil@abb=\box81
+\pgfutil@abb=\box83
 )
 (W:\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex
 (W:\MiKTeX\tex/generic/pgf\pgf.revision.tex)
@@ -577,40 +1525,40 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 107.
 )
-\Gin@req@height=\dimen281
-\Gin@req@width=\dimen282
+\Gin@req@height=\dimen288
+\Gin@req@width=\dimen289
 )
 (W:\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty
 (W:\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 
 (W:\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks29
-\pgfkeys@temptoks=\toks30
+\pgfkeys@pathtoks=\toks33
+\pgfkeys@temptoks=\toks34
 
 (W:\MiKTeX\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks31
+\pgfkeys@tmptoks=\toks35
 ))
-\pgf@x=\dimen283
-\pgf@y=\dimen284
-\pgf@xa=\dimen285
-\pgf@ya=\dimen286
-\pgf@xb=\dimen287
-\pgf@yb=\dimen288
-\pgf@xc=\dimen289
-\pgf@yc=\dimen290
-\pgf@xd=\dimen291
-\pgf@yd=\dimen292
+\pgf@x=\dimen290
+\pgf@y=\dimen291
+\pgf@xa=\dimen292
+\pgf@ya=\dimen293
+\pgf@xb=\dimen294
+\pgf@yb=\dimen295
+\pgf@xc=\dimen296
+\pgf@yc=\dimen297
+\pgf@xd=\dimen298
+\pgf@yd=\dimen299
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count318
-\c@pgf@countb=\count319
-\c@pgf@countc=\count320
-\c@pgf@countd=\count321
-\t@pgf@toka=\toks32
-\t@pgf@tokb=\toks33
-\t@pgf@tokc=\toks34
-\pgf@sys@id@count=\count322
+\c@pgf@counta=\count328
+\c@pgf@countb=\count329
+\c@pgf@countc=\count330
+\c@pgf@countd=\count331
+\t@pgf@toka=\toks36
+\t@pgf@tokb=\toks37
+\t@pgf@tokc=\toks38
+\pgf@sys@id@count=\count332
 
 (W:\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
@@ -626,12 +1574,12 @@ File: pgfsys-dvipdfmx.def 2023-01-15 v3.1.10 (3.1.10)
 (W:\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 )
-\pgfsys@objnum=\count323
+\pgfsys@objnum=\count333
 )))
 (W:\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count324
-\pgfsyssoftpath@bigbuffer@items=\count325
+\pgfsyssoftpath@smallbuffer@items=\count334
+\pgfsyssoftpath@bigbuffer@items=\count335
 )
 (W:\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
@@ -642,12 +1590,12 @@ Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
 (W:\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex
 (W:\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex)
 (W:\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex
-\pgfmath@dimen=\dimen293
-\pgfmath@count=\count326
-\pgfmath@box=\box82
-\pgfmath@toks=\toks35
-\pgfmath@stack@operand=\toks36
-\pgfmath@stack@operation=\toks37
+\pgfmath@dimen=\dimen300
+\pgfmath@count=\count336
+\pgfmath@box=\box84
+\pgfmath@toks=\toks39
+\pgfmath@stack@operand=\toks40
+\pgfmath@stack@operation=\toks41
 )
 (W:\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex)
 (W:\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex)
@@ -660,52 +1608,52 @@ Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
 (W:\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.tex)
 (W:\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex)
 (W:\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count327
+\c@pgfmathroundto@lastzeros=\count337
 ))
 (W:\MiKTeX\tex/generic/pgf/math\pgfint.code.tex)
 (W:\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@picminx=\dimen294
-\pgf@picmaxx=\dimen295
-\pgf@picminy=\dimen296
-\pgf@picmaxy=\dimen297
-\pgf@pathminx=\dimen298
-\pgf@pathmaxx=\dimen299
-\pgf@pathminy=\dimen300
-\pgf@pathmaxy=\dimen301
-\pgf@xx=\dimen302
-\pgf@xy=\dimen303
-\pgf@yx=\dimen304
-\pgf@yy=\dimen305
-\pgf@zx=\dimen306
-\pgf@zy=\dimen307
+\pgf@picminx=\dimen301
+\pgf@picmaxx=\dimen302
+\pgf@picminy=\dimen303
+\pgf@picmaxy=\dimen304
+\pgf@pathminx=\dimen305
+\pgf@pathmaxx=\dimen306
+\pgf@pathminy=\dimen307
+\pgf@pathmaxy=\dimen308
+\pgf@xx=\dimen309
+\pgf@xy=\dimen310
+\pgf@yx=\dimen311
+\pgf@yy=\dimen312
+\pgf@zx=\dimen313
+\pgf@zy=\dimen314
 )
 (W:\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@path@lastx=\dimen308
-\pgf@path@lasty=\dimen309
+\pgf@path@lastx=\dimen315
+\pgf@path@lasty=\dimen316
 )
 (W:\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@shorten@end@additional=\dimen310
-\pgf@shorten@start@additional=\dimen311
+\pgf@shorten@end@additional=\dimen317
+\pgf@shorten@start@additional=\dimen318
 )
 (W:\MiKTeX\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfpic=\box83
-\pgf@hbox=\box84
-\pgf@layerbox@main=\box85
-\pgf@picture@serial@count=\count328
+\pgfpic=\box85
+\pgf@hbox=\box86
+\pgf@layerbox@main=\box87
+\pgf@picture@serial@count=\count338
 )
 (W:\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgflinewidth=\dimen312
+\pgflinewidth=\dimen319
 )
 (W:\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@pt@x=\dimen313
-\pgf@pt@y=\dimen314
-\pgf@pt@temp=\dimen315
+\pgf@pt@x=\dimen320
+\pgf@pt@y=\dimen321
+\pgf@pt@temp=\dimen322
 )
 (W:\MiKTeX\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
@@ -718,20 +1666,20 @@ File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
 (W:\MiKTeX\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowsep=\dimen316
+\pgfarrowsep=\dimen323
 )
 (W:\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@max=\dimen317
-\pgf@sys@shading@range@num=\count329
-\pgf@shadingcount=\count330
+\pgf@max=\dimen324
+\pgf@sys@shading@range@num=\count339
+\pgf@shadingcount=\count340
 )
 (W:\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
 (W:\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfexternal@startupbox=\box86
+\pgfexternal@startupbox=\box88
 )
 (W:\MiKTeX\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
@@ -747,23 +1695,23 @@ File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )))
 (W:\MiKTeX\tex/generic/pgf/modules\pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodeparttextbox=\box87
+\pgfnodeparttextbox=\box89
 )
 (W:\MiKTeX\tex/generic/pgf/modules\pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
 (W:\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
-\pgf@nodesepstart=\dimen318
-\pgf@nodesepend=\dimen319
+\pgf@nodesepstart=\dimen325
+\pgf@nodesepend=\dimen326
 )
 (W:\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
 ))
 (W:\MiKTeX\tex/latex/tools\verbatim.sty
 Package: verbatim 2023-11-06 v1.5v LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks38
-\verbatim@line=\toks39
+\every@verbatim=\toks42
+\verbatim@line=\toks43
 \verbatim@in@stream=\read3
 )
 (W:\MiKTeX\tex/latex/environ\environ.sty
@@ -772,43 +1720,43 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 (W:\MiKTeX\tex/latex/trimspaces\trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
-\tcb@titlebox=\box88
-\tcb@upperbox=\box89
-\tcb@lowerbox=\box90
-\tcb@phantombox=\box91
-\c@tcbbreakpart=\count331
-\c@tcblayer=\count332
-\c@tcolorbox@number=\count333
-\l__tcobox_tmpa_box=\box92
-\l__tcobox_tmpa_dim=\dimen320
-\tcb@temp=\box93
-\tcb@temp=\box94
+\tcb@titlebox=\box90
+\tcb@upperbox=\box91
+\tcb@lowerbox=\box92
+\tcb@phantombox=\box93
+\c@tcbbreakpart=\count341
+\c@tcblayer=\count342
+\c@tcolorbox@number=\count343
+\l__tcobox_tmpa_box=\box94
+\l__tcobox_tmpa_dim=\dimen327
 \tcb@temp=\box95
 \tcb@temp=\box96
+\tcb@temp=\box97
+\tcb@temp=\box98
 )
 (W:\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2023/10/27 v2.16 Sectioning titles
-\ttl@box=\box97
-\beforetitleunit=\skip58
-\aftertitleunit=\skip59
-\ttl@plus=\dimen321
-\ttl@minus=\dimen322
-\ttl@toksa=\toks40
-\titlewidth=\dimen323
-\titlewidthlast=\dimen324
-\titlewidthfirst=\dimen325
+\ttl@box=\box99
+\beforetitleunit=\skip61
+\aftertitleunit=\skip62
+\ttl@plus=\dimen328
+\ttl@minus=\dimen329
+\ttl@toksa=\toks44
+\titlewidth=\dimen330
+\titlewidthlast=\dimen331
+\titlewidthfirst=\dimen332
 )
 (W:\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
 (W:\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2024/03/29 v24.3 The Babel package
-\babel@savecnt=\count334
-\U@D=\dimen326
+\babel@savecnt=\count344
+\U@D=\dimen333
 \l@unhyphenated=\language79
  (W:\MiKTeX\tex/generic/babel\xebabel.def)
 \bbl@readstream=\read4
-\bbl@dirlevel=\count335
+\bbl@dirlevel=\count345
 
 *************************************
 * Local config file bblopts.cfg used
@@ -819,9 +1767,9 @@ File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
 )
 (W:\MiKTeX\tex/latex/babel-greek\greek.ldf
 Language: greek 2023/10/13 1.15 Greek support for the babel system
-\bbl@monogreek=\count336
-\bbl@polygreek=\count337
-\bbl@ancientgreek=\count338
+\bbl@monogreek=\count346
+\bbl@polygreek=\count347
+\bbl@ancientgreek=\count348
 
 (W:\MiKTeX\tex/latex/greek-fontenc\tuenc-greek.def
 File: tuenc-greek.def 2023-09-12 2.5 Greek LICRs for XeTeX and LuaTeX
@@ -839,15 +1787,15 @@ Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
 (W:\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 
-\f@nch@headwidth=\skip60
-\f@nch@O@elh=\skip61
-\f@nch@O@erh=\skip62
-\f@nch@O@olh=\skip63
-\f@nch@O@orh=\skip64
-\f@nch@O@elf=\skip65
-\f@nch@O@erf=\skip66
-\f@nch@O@olf=\skip67
-\f@nch@O@orf=\skip68
+\f@nch@headwidth=\skip63
+\f@nch@O@elh=\skip64
+\f@nch@O@erh=\skip65
+\f@nch@O@olh=\skip66
+\f@nch@O@orh=\skip67
+\f@nch@O@elf=\skip68
+\f@nch@O@erf=\skip69
+\f@nch@O@olf=\skip70
+\f@nch@O@orf=\skip71
 )
 
 Package fontspec Info: Font family 'ConduitITCHelLight(0)' created for font
@@ -978,7 +1926,7 @@ Package fontspec Info: Font family 'TimesNewRoman(0)' created for font 'Times
 (fontspec)             Roman/BI/OT:script=latn;language=dflt;+smcp;"
 
 )
-(W:/PycharmProjects\InfoRetriev\REPORT\auxil\main.aux)
+(W:/PycharmProjects\InfoRetriev\Report\auxil\main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -1105,7 +2053,14 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 5.
 (W:\MiKTeX\tex/latex/ninecolors\ninecolors.sty
 Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
-) [1
+)
+LaTeX Info: Command `\dddot' is already robust on input line 5.
+LaTeX Info: Command `\ddddot' is already robust on input line 5.
+LaTeX Info: Command `\overleftrightarrow' is already robust on input line 5.
+LaTeX Info: Command `\underrightarrow' is already robust on input line 5.
+LaTeX Info: Command `\underleftarrow' is already robust on input line 5.
+LaTeX Info: Command `\underleftrightarrow' is already robust on input line 5.
+ [1
 
 ]
 main.tex:40: Illegal unit of measure (pt inserted).
@@ -1120,7 +2075,7 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-(W:/PycharmProjects\InfoRetriev\REPORT\auxil\main.toc)
+(W:/PycharmProjects\InfoRetriev\Report\auxil\main.toc)
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
@@ -1172,8 +2127,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 main.tex:46: Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.46     \section{VECTOR SPACE MODEL}
-                                     
+l.46 ...     \section{ΥΠΟΛΟΓΙΣΜΟΣ ΒΑΡΩΝ TF \& IDF}
+                                                  
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -1181,47 +2136,14 @@ look up `weird error' in the index to The TeXbook.)
 main.tex:46: Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
-l.46     \section{VECTOR SPACE MODEL}
-                                     
+l.46 ...     \section{ΥΠΟΛΟΓΙΣΜΟΣ ΒΑΡΩΝ TF \& IDF}
+                                                  
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
 To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
-
-main.tex:55: Missing number, treated as zero.
-<to be read again> 
-                   \relax 
-l.55     \section{ΥΠΟΛΟΓΙΣΜΟΣ ΒΑΡΩΝ TF \& IDF}
-                                              
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-main.tex:55: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \relax 
-l.55     \section{ΥΠΟΛΟΓΙΣΜΟΣ ΒΑΡΩΝ TF \& IDF}
-                                              
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-main.tex:60: Misplaced alignment tab character &.
-<argument> ... retrieval, Information Processing &
-                                                   Management, Volume 24, Is...
-l.60 ...ue 5, 1988, Pages 513-523, ISSN 0306-4573}
-                                                  ,
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
 
 > Step: init table outer spec.
 > Step: parse table options.
@@ -1230,11 +2152,11 @@ might try typing `S' now just to see what is salvageable.
 > Step: parse table inner spec.
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
-main.tex:78: Undefined control sequence.
+main.tex:70: Undefined control sequence.
 \l__tblr_c_tl ...ntering \arraybackslash \bgcolor 
                                                   {white}
-l.78     \end
-             {tblr}
+l.70             \end
+                     {tblr}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1242,11 +2164,11 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 > Step: build the whole table.
-main.tex:78: Undefined control sequence.
+main.tex:70: Undefined control sequence.
 \l__tblr_c_tl ...ntering \arraybackslash \bgcolor 
                                                   {white}
-l.78     \end
-             {tblr}
+l.70             \end
+                     {tblr}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1264,10 +2186,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [2]
 \textKappa \textepsilon \textphi \acctonos \textalpha \textlambda \textalpha \t
 extiota \textomicron  2.
-main.tex:81: Illegal unit of measure (pt inserted).
+main.tex:73: Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
-l.81     \chapter{ΥΛΟΠΟΙΗΣΗ}
+l.73     \chapter{ΥΛΟΠΟΙΗΣΗ}
                             
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, bp, or sp; but yours is a new one!
@@ -1276,20 +2198,105 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-main.tex:81: Missing number, treated as zero.
+main.tex:73: Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.81     \chapter{ΥΛΟΠΟΙΗΣΗ}
+l.73     \chapter{ΥΛΟΠΟΙΗΣΗ}
                             
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-main.tex:81: Illegal unit of measure (pt inserted).
+main.tex:73: Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
-l.81     \chapter{ΥΛΟΠΟΙΗΣΗ}
+l.73     \chapter{ΥΛΟΠΟΙΗΣΗ}
                             
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+main.tex:77: Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.77 ...ΡΓΑΣΙΑ ΕΓΓΡΑΦΩΝ \& ΒΟΗΘΗΤΙΚΕΣ ΣΥΝΑΡΤΗΣΕΙΣ}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+main.tex:77: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.77 ...ΡΓΑΣΙΑ ΕΓΓΡΑΦΩΝ \& ΒΟΗΘΗΤΙΚΕΣ ΣΥΝΑΡΤΗΣΕΙΣ}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+main.tex:100: Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.100         \section{ΑΝΕΣΤΡΑΜΜΕΝΟ ΕΥΡΕΤΗΡΙΟ}
+                                              
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+main.tex:100: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.100         \section{ΑΝΕΣΤΡΑΜΜΕΝΟ ΕΥΡΕΤΗΡΙΟ}
+                                              
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+main.tex:117: Missing } inserted.
+<inserted text> 
+                }
+l.117                 \end{graycomment}
+                                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+main.tex:117: Missing } inserted.
+<inserted text> 
+                }
+l.117                 \end{graycomment}
+                                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+main.tex:119: Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.119 ...\section{ΥΛΟΠΟΙΗΣΗ VECTOR SPACE ΜΟΝΤΕΛΟΥ}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+main.tex:119: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.119 ...\section{ΥΛΟΠΟΙΗΣΗ VECTOR SPACE ΜΟΝΤΕΛΟΥ}
+                                                  
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -1305,20 +2312,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.96603pt}.
 
-[3] (W:/PycharmProjects\InfoRetriev\REPORT\auxil\main.aux)
+[3] (W:/PycharmProjects\InfoRetriev\Report\auxil\main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 20463 strings out of 409555
- 454668 string characters out of 5779102
+ 20531 strings out of 409555
+ 456294 string characters out of 5779102
  1935148 words of memory out of 5000000
- 42246 multiletter control sequences out of 15000+600000
- 566341 words of font info for 136 fonts, out of 8000000 for 9000
+ 42297 multiletter control sequences out of 15000+600000
+ 569162 words of font info for 153 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 106i,12n,110p,467b,584s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 106i,14n,110p,506b,586s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on W:/PycharmProjects\InfoRetriev\REPORT\out\main.pdf (4 pages).
+Output written on W:/PycharmProjects\InfoRetriev\Report\out\main.pdf (4 pages).
 

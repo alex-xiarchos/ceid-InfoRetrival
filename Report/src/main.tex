@@ -1,6 +1,6 @@
 \documentclass[12pt]{report}
 \usepackage{arabicore}
-\input{setup.tex}
+\input{setup}
 
 \begin{document}
 
@@ -43,40 +43,81 @@
 
     \chapter{ΕΙΣΑΓΩΓΗ}
 
-    \section{VECTOR SPACE MODEL}
-        % SAMPLE ΚΕΙΜΕΝΟ
-        Το μοντέλο διανυσματικού χώρου (Vector Space Model) αποτελεί μία από τις πιο διαδεδομένες μεθόδους για την αναπαράσταση και επεξεργασία κειμένων
-        σε συστήματα ανάκτησης πληροφορίας. Σύμφωνα με αυτό, κάθε κείμενο αναπαρίσταται ως ένα διάνυσμα σε ένα πολυδιάστατο χώρο, όπου κάθε διάσταση αντιστοιχεί
-        σε ένα όρο του λεξιλογίου. Το μήκος του διανύσματος αντιστοιχεί στη σημασία του κειμένου, ενώ η κατεύθυνση του διανύσματος αντιστοιχεί στο περιεχόμενο του κειμένου.
-        Η ομοιότητα μεταξύ δύο κειμένων μπορεί να υπολογιστεί ως η συνημιτονική γωνία μεταξύ των αντίστοιχων διανυσμάτων. Με αυτόν τον τρόπο,
-        μπορούμε να ταξινομήσουμε τα έγγραφα μιας συλλογής ως προς την ομοιότητά τους με ένα δεδομένο ερώτημα.
+         \section{ΥΠΟΛΟΓΙΣΜΟΣ ΒΑΡΩΝ TF \& IDF}
 
+            Καταρχάς πρέπει να επιλέξουμε την παραλλαγή των βαρών TF και IDF για έγγραφα και ερωτήματα που είναι καταλληλότερη για τη συλλογή μας.
 
-    \section{ΥΠΟΛΟΓΙΣΜΟΣ ΒΑΡΩΝ TF \& IDF}
-    \par Καταρχάς πρέπει να επιλέξουμε την παραλλαγή των βαρών TF και IDF για έγγραφα και ερωτήματα που είναι καταλληλότερη για τη συλλογή μας.
+            Όσον αφορά τα \textbf{έγγραφα}: Μιας και η συλλογή αφορά βάση δεδομένων για τηn Κυστική Ίνωση, δηλαδή πρόκειται για συλλογή
+            με τεχνικές –ιατρικές συγκεκριμένα– ορολογίες {\fontTimes(technical vocabulary and meaningful terms [MED collections])}
+                \footnote{Gerard Salton, Christopher Buckley, Term-weighting approaches in automatic text retrieval, Information Processing \& Management, Volume 24, Issue 5, 1988, Pages 513-523, ISSN 0306-4573},
+            θα χρησιμοποιήσουμε τη \textbf{διπλή 0,5 κανονικοποίηση} {\fontTimes(augmented normalized TF)}: \[ 0.5 + 0.5 \frac{F_{ij}}{max_k F_{kj}} \]
+            για το βάρος που αφορά τα έγγραφα, όπου \boldmath{\(F_{ij}\)} οι φορές που ο όρος εμφανίζεται σε ένα έγγραφο
+                και \boldmath{\( \max_k{F_{kj}}\)} το μεγαλύτερο πλήθος εμφανίσεων κάποιου όρου σε ένα έγγραφο.
 
-    \par Όσον αφορά τα \textbf{έγγραφα}: Μιας και η συλλογή αφορά βάση δεδομένων για τηn Κυστική Ίνωση, δηλαδή πρόκειται για συλλογή
-    με τεχνικές –ιατρικές συγκεκριμένα– ορολογίες {\fontTimes(technical vocabulary and meaningful terms [MED collections])}
-        \footnote{Gerard Salton, Christopher Buckley, Term-weighting approaches in automatic text retrieval, Information Processing & Management, Volume 24, Issue 5, 1988, Pages 513-523, ISSN 0306-4573},
-    θα χρησιμοποιήσουμε τη \textbf{διπλή 0,5 κανονικοποίηση} {\fontTimes(augmented normalized TF)}: \[ 0.5 + 0.5 \frac{F_{ij}}{max_k F_{kj}} \]
-    για το βάρος που αφορά τα έγγραφα, όπου \boldmath{\(F_{ij}\)} οι φορές που ο όρος εμφανίζεται σε ένα έγγραφο
-        και \boldmath{\( \max_k{F_{kj}}\)} το μεγαλύτερο πλήθος εμφανίσεων κάποιου όρου σε ένα έγγραφο.
+            Όσον αφορά τα \textbf{queries}: κάθε λήμμα από τα ερωτήματα είναι σημαντικό (σχεδόν κάθε λέξη είναι ιατρική ορολογία),
+            άρα θα χρησιμοποιήσουμε πάλι τη \textbf{διπλή 0,5 κανονικοποίηση} για το TF βάρος.
 
-    \par Όσον αφορά τα \textbf{queries}: κάθε λήμμα από τα ερωτήματα είναι σημαντικό (σχεδόν κάθε λέξη είναι ιατρική ορολογία),
-    άρα θα χρησιμοποιήσουμε πάλι τη \textbf{διπλή 0,5 κανονικοποίηση} για το TF βάρος.
+            Για το IDF βάρος και σε έγγραφα και σε ερωτήματα, χρησιμοποιούμε την \textbf{απλή ανάστροφη συχνότητα εμφάνισης}:
+               \[\log{\frac{N}{n_i}} \] όπου \boldmath{\(N\)} ο συνολικός αριθμός των εγγράφων και \boldmath{\(n_i\)} ο αριθμός των εγγράφων στα οποία εμπεριέχεται ο όρος.
 
-    \par Για το IDF βάρος και σε έγγραφα και σε ερωτήματα, χρησιμοποιούμε την \textbf{απλή ανάστροφη συχνότητα εμφάνισης}:
-       \[\log{\frac{N}{n_i}} \] όπου \boldmath{\(N\)} ο συνολικός αριθμός των εγγράφων και \boldmath{\(n_i\)} ο αριθμός των εγγράφων στα οποία εμπεριέχεται ο όρος.
+            \noindent
+            \begin{tblr}{
+                colspec={>{\centering\arraybackslash}m{3.5cm}>{\centering\arraybackslash}m{6.1cm}>{\centering\arraybackslash}m{6.1cm}},
+                row{2}={bg=lightgray!50}, row{3}={bg=lightgray}, row{1}={bg=black!90,fg=white}}
+                 \bgcolor{white} & Βάρος εγγράφων &  Βάρος ερωτημάτων \\
+                 \textbf{TF} & \[ 0.5 + 0.5 \frac{F_{ij}}{max_k F_{kj}} \] & \[ 0.5 + 0.5 \frac{F_{ij}}{max_k F_{kj}} \] \\
+                 \textbf{IDF} & \[\log{\frac{N}{n_i}} \] & \[\log{\frac{N}{n_i}} \] \\
+            \end{tblr}
 
-    \noindent
-    \begin{tblr}{
-        colspec={>{\centering\arraybackslash}m{3.5cm}>{\centering\arraybackslash}m{6.1cm}>{\centering\arraybackslash}m{6.1cm}},
-        row{2}={bg=lightgray!50}, row{3}={bg=lightgray}, row{1}={bg=black!90,fg=white}}
-         \bgcolor{white} & Βάρος εγγράφων &  Βάρος ερωτημάτων \\
-         \textbf{TF} & \[ 0.5 + 0.5 \frac{F_{ij}}{max_k F_{kj}} \] & \[ 0.5 + 0.5 \frac{F_{ij}}{max_k F_{kj}} \] \\
-         \textbf{IDF} & \[\log{\frac{N}{n_i}} \] & \[\log{\frac{N}{n_i}} \] \\
-    \end{tblr}
-
-    \pagebreak
+        \pagebreak
     \chapter{ΥΛΟΠΟΙΗΣΗ}
+        Η υλοποίηση έχει χωριστεί στα εξής αρχεία: \\
+
+
+        \section{ΠΡΟΕΠΕΞΕΡΓΑΣΙΑ ΕΓΓΡΑΦΩΝ \& ΒΟΗΘΗΤΙΚΕΣ ΣΥΝΑΡΤΗΣΕΙΣ}
+
+            Το αρχείο {\fontCode\small tools.py} περιλαμβάνει βοηθητικές συναρτήσεις για κάποιες επαναλαμβανόμενες διαδικασίες της υλοποίησης.
+            Περιλαμβάνονται οι συναρτήσεις {\fontCode\small \textbf{get\_docs}()} και {\fontCode\small \textbf{get\_queries}()}.
+
+            Η συνάρτηση {\fontCode\small \textbf{get\_docs}()}, χρησιμοποιώντας την {\fontCode\small os} βιβλιοθήκη
+            διαβάζει το πλήθος των αρχείων της βιβλιοθήκης.\footnote{Να σημειωθεί ότι το πλήθος των εγγράφων διαφέρει από την αύξουσα αρίθμησή τους. Συγκεκριμένα έχουμε 1209 έγγραφα αριθμημένα από το {\fontCode\scriptsize 000001} ως {\fontCode\scriptsize 01239}. Με άλλα λόγια υπάρχουν αριθμοί στη συλλογή που δεν αντιστοιχούν σε έγγραφα. Συνεπώς δεν θα μπορούσαμε να χρησιμοποιήσουμε κάποια αριθμητική επανάληψη, για παράδειγμα, για την εισαγωγή των εγγράφων.}
+            Η συνάρτηση δημιουργεί και επιστρέφει μια λίστα από tuples, με κάθε tuple να αντιστοιχεί σε κάθε αρχείο-έγγραφο. Τα tuples έχουν την δομή:
+
+                \begin{graycomment} \centering
+                {\fontCode\footnotesize ('docID', ['λήμμα\_1', 'λήμμα\_2' ...])}
+                \end{graycomment}
+
+            \noindent όπου {\fontCode\small docID} η αρίθμηση του κάθε εγγράφου και {\fontCode\small doc\_term\_n} η κάθε λέξη-λήμμα του εγγράφου.
+            Η συνάρτηση {\fontCode\small strip()} είναι απαραίτητη για την αφαίρεση των {\fontCode\small \textbackslash n} χαρακτήρων που προέκυψαν από την μορφολογία των εγγράφων (κάθε λέξη είναι σε νέα γραμμή).
+            Αντίστοιχα η συνάρτηση {\fontCode\small \textbf{get\_queries}()} επιστρέφει ????????????
+
+            Στις συναρτήσεις {\fontCode\small \textbf{preprocess\_collection}()} και {\fontCode\small \textbf{preprocess\_queries}()} πραγματοποιείται η προεπεξεργασία των εγγράφων, συγκεκριμένη η αφαίρεση των \textbf{stopwords} και το \textbf{stemming}.
+
+
+            Η αφαίρεση των stopwords και το stemming γίνεται με τη χρήση της {\fontCode\small nltk} βιβλιοθήκης. Τα {\fontCode\small doc\_tuples} της {\fontCode\small get\_docs()} αφού περάσουν από τον {\fontCode\small PorterStemmer} της {\fontCode\small nltk} αποθηκεύονται σε μια λίστα, η οποία στη συνέχεια αποθηκεύεται ως ένα {\fontCode\small .json} αρχείο.
+            Αντίστοιχη διαδικασία πραγματοποιείται και για την προεπεξεργασία των ερωτημάτων, στην {\fontCode\small preprocess\_queries()}
+
+        \section{ΑΝΕΣΤΡΑΜΜΕΝΟ ΕΥΡΕΤΗΡΙΟ}
+
+            Το ανεστραμμένο ευρετήριο δημιουργείται στη συνάρτηση {\fontCode\small \textbf{create\_inverted\_index}()} του αρχείου {\fontCode\small inverted\_index.py}.
+            Στην συνάρτηση εισαγάγονται τα {\fontCode\small .json} αρχεία που δημιουργήθηκαν στις προηγούμενες συναρτήσεις.
+
+            Τα tuples που αντιστοιχούν σε αυτά αποθηκεύονται σε ένα dictionary που θα αποτελέσει το ανεστραμμένο ευρετήριο με την εξής δομή:
+
+                \begin{graycomment} \centering
+                    {\fontCode\footnotesize inverted\_index['λήμμα'] = \\ \{ ('docID στο οποίο εμφανίζεται' = <φορές εμφάνισης>), (\(\cdots\)), \(\ldots\) \}}
+                \end{graycomment}
+
+            Κάθε value του dictionary είναι ένα set\footnote{Έχει επιλεχθεί set για εξοικονόμιση μνήμης, μας και δεν μας ενδιαφέρει η σειρά των tuples.} το οποίο περιλαμβάνει ένα ή περισσότερα tuples με το {\fontCode\small docID} και τη συχνότητα εμφάνισης του λήμματος στο συγκεκριμένο έγγραφο.
+            Η συχνότητα υπολογίζεται μέσω της {\fontCode\small count()} σε όλο το έγγραφο ανά λήμμα. Αυτό είναι ένα παράδειγμα του τελικού ανεστραμμένου ευρετηρίου:
+
+
+                \begin{graycomment} \centering
+                    {\fontCode\scriptsize inverted\_index = \{\(\ldots\) 'coronari': {('01217', 2), ('00779', 1), ('00164', 1)}, \\ 'graft': {('00164', 1)}, 'mobil': {('00673', 2), 'strain': {('00179', 7), \(\ldots\)\} }
+                \end{graycomment}
+
+        \section{ΥΛΟΠΟΙΗΣΗ VECTOR SPACE ΜΟΝΤΕΛΟΥ}
+
+
+
 \end{document}
