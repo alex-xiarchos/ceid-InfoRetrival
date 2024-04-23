@@ -1,72 +1,47 @@
 import math
 from sklearn.metrics.pairwise import cosine_similarity
 
-
-def query_weight_1(tf, idf, term):
-    return (0.5 + (0.5*tf[term])/tf[max(tf)]) * idf
-
-
-def query_weight_2(tf, idf, term):
-    return (0.5 + (0.5*tf[term])/tf[max(tf)]) * idf
-
-
-def doc_weight_1(tf, idf):
-    return tf*idf
-
-
-def doc_weight_2(tf, idf, term):
-    return 0.5 + (0.5*tf[term])/tf[max(tf)]
-
-
 def idf1(N, n):
     return math.log(N/n)
 
 
-def idf2():
-    return math.log(1 + N/n)
-
-
-def vsm(doc_collection, query, inverted_index):
+def vsm1(doc_collection, query, inverted_index):
     placeholder = []
 
-    # dictionary με τις f τιμές του ερωτήματος
-    f = {}
+    # Δημιουργείται ένα dictionary της μορφής {'term': tf_value}, όπου terms τα terms του query
+    query_tfs = {}
     for term in query:
-        f[term] = query.count(term)
+        query_tfs[term] = query.count(term)
 
-    # dictionary με keys τα docID και values lists που αντιστοιχούν στα ??????? ('docID': [])
-    tf_idf_docs = {}
-    for doc in doc_collection:
-        tf_idf_docs[doc[0]] = []
+    doc_tfidfs = {}
 
-    # ?????????
-    tf_idf_queries = []
+    # for doc in doc_collection:
+    #     tf_idf_docs[doc[0]] = []
+
+
+    # Στο query_tfidfs αποθηκεύεται τα συνολικά βάρη όρου ερωτήματος για κάθε term του query
+    query_tfidfs = {}
 
     for term in query:
         if term in inverted_index:
-            # υπολογισμός idf τιμής για το συγκεκριμένο term
+            # υπολογισμός IDF τιμής για το συγκεκριμένο term
+            print(f"term: {term} \t len(inverted_index[term]): {len(inverted_index[term])}")
             idf = idf1(len(doc_collection), len(inverted_index[term]))
             # υπολογισμός tf-idf τιμής για το συγκεκριμένο term (βάρος όρου ερωτήματος) και αποθήκευση
-            tf_idf_queries.append(doc_weight_1(f[term], idf))
+            query_tfidfs[term] = (0.5 + 0.5*(query_tfs[term] / max(query_tfs.values()))) * idf
 
-            tf_list = []    # περιλαμβάνει όλες τις tf τιμές για ένα συγκεκριμένο term όλων των docs
+            # Αφού υπάρχει και υπολογιστεί το query_tfidfs, διατρέχουμε όλα τα έγγραφα,
+            # βρίσκουμε το tf του όρου ανά κείμενο, και υπολογίζουμε το συνολικό tfidf για το έγγραφο.
 
-            # εύρεση και αποθήκευση των tf τιμών για το συγκεκριμένο term απ' όλα τα docs μέσω του inverted index
             for doc in doc_collection:
                 for tuple_ in inverted_index[term]:
-                    tf_list.append(tuple_[1])
+                    print(term, tuple_)
+                    doc_tfidfs[(term, tuple_[0])].append(tuple_[1] * idf1(len(doc_collection), len(inverted_index[term])))
+                    print(doc_tfidfs[(term, tuple[0])])
 
-                # υπολογισμός tf-idf τιμής βάρος όρου εγγράφου για το συγκεκριμένο term και αποθήκευση
-                for tf_value in tf_list:
-                    w = tf_idf_docs(tf_value, idf, term)
-                    tf_idf_docs[doc[0]].append(w)
-                print(tf_idf_docs)
 
-    # sim = {}
-    # for doc in tf_idf_docs:
-    #     sim[doc] = cosine_similarity([tf_idf_queries], [tf_idf_docs[doc]])
-    #
-    # return sorted(sim.items(), key=lambda x:x[1])[-500:][::-1]
+    print(query_tfidfs, end="\n\n")
+
     return placeholder
 
 
@@ -75,7 +50,7 @@ def run_vsm(doc_collection, queries, inverted_index):
 
     for query in queries:
         print(query)
-        results = vsm(doc_collection, query, inverted_index)
+        results = vsm1(doc_collection, query, inverted_index)
         elements = [int(item[0]) for item in results]
         results.append(elements)
 
