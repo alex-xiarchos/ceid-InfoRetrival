@@ -42,24 +42,30 @@
 
 % Το στιλ των νέων κεφαλαίων/sectionσ
 \titleformat{\chapter}[block]
-    {\color{black} \fontDinLight \large } % global formatting (number and title)
+    {\color{black} \fontDin \large } % global formatting (number and title)
     {\color{white} \fontDin \colorbox{black!90} {\hspace{7pt}\thechapter\hspace{7pt}}} % label: number and its formatting
     {} % spacing between number and title
     {\colorbox{gray!25}} % optional (content between number and title)
+\titlespacing*{\chapter}
+   {0pt}{0}{0.4em}  % left before after
+\titleclass{\chapter}{straight}
 
 \titleformat{\section}[block]
     {\color{black} \fontDinLight \large} % global formatting (number and title)
     {\color{white} \fontDin \colorbox{black!90} {\hspace{5pt}\thesection\hspace{5pt}}} % label: number and its formatting
     {} % spacing between number and title
     {\colorbox{gray!25}} % optional (content between number and title)
-
-\titlespacing*{\chapter}
-   {0pt}{0}{0.4em}  % left before after
-
 \titlespacing*{\section}
    {0pt}{1em}{0.4em}  % left before after
 
-\titleclass{\chapter}{straight}
+\titleformat{\subsection}[block]
+    {\fontDinLight \large} % global formatting (number and title)
+    {\fontDin\colorbox{gray!25} {\hspace{5pt}\thesubsection\hspace{5pt}}} % label: number and its formatting
+    {\hspace{5pt}} % spacing between number and title
+    {} % optional (content between number and title)
+\titlespacing*{\subsection}
+   {0pt}{1em}{0.4em}  % left before after
+
 
 
 %% Setting for the column separator
