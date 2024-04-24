@@ -42,13 +42,7 @@
 
 
     \chapter{ΕΙΣΑΓΩΓΗ}
-
-        \section{ΤΟ ΔΙΑΝΥΣΜΑΤΙΚΟ ΜΟΝΤΕΛΟ - VECTOR SPACE MODEL}
-
-        Το Διανυσματικό Μοντέλο αναπαριστά έγγραφα και ερωτήματα ως διανύσματα στο πολυδιάστατο επίπεδο. Οι γωνίες που σχηματίζουν τα διανύσματα μεταξύ τους καθορίζει τον βαθμό ομοιότητας των κειμένων.
-
         \section{ΕΠΙΛΟΓΗ ΣΥΣΤΗΜΑΤΩΝ ΣΤΑΘΜΙΣΗΣ}
-
         Καταρχάς πρέπει να επιλέξουμε δύο συστήματα στάθμισης των βαρών για τους όρους των εγγράφων και των ερωτημάτων.
 
             \subsection{ΠΡΩΤΟ ΣΥΣΤΗΜΑ ΣΤΑΘΜΙΣΗΣ}
@@ -61,9 +55,7 @@
             \[\text{\textbf{Σύστημα \#1:}\hspace{5pt}IDF βάρος}_{\scriptsize\begin{matrix}\text{εγγράφων}\\\text{ερωτημάτων}\end{matrix}}=\hspace{5pt} \log{\frac{N}{n_i}} \]
             όπου \(N\) το πλήθος των εγγράφων και \(n_i\) ο αριθμός των εγγράφων στα οποία εμπεριέχεται ο όρος.\footnote{Το σύστημα αναφέρεται ως παραλλαγή των Salton-Buckley για το λόγο ότι δεν έχει συμπεριληφθεί κάποιος παράγοντας κανονικοποίσης, μιας και τα έγγραφα είναι \textit{περίπου} ισομεγέθη (μέσος όρος 350 λέξεις).}
 
-
             \subsection{ΔΕΥΤΕΡΟ ΣΥΣΤΗΜΑ ΣΤΑΘΜΙΣΗΣ}
-
             Στο δεύτερο σύστημα στάθμισης {\fontTimes (best weighted probabilistic weight)} θα χρησιμοποιήσουμε την \textbf{διπλή 0,5 κανονικοποίηση} για το TF βάρος των εγγράφων:
             \[ \text{\textbf{Σύστημα \#2:}\hspace{5pt}TF βάρος}_{\scriptsize \text{εγγράφων}}=\hspace{5pt} 1 + \log f_{i,j} \]
             το \textbf{μοναδιαίο} σύστημα για το IDF βάρος των εγγράφων και την \textbf{απλή λογαριθμική κανονικοποίηση} για το IDF βάρος των ερωτημάτων:
@@ -71,20 +63,17 @@
 
             Συνολικά έχουμε τα παρακάτω συστήματα:
 
-        \noindent
-        \begin{tblr}{
-            colspec={>{\centering\arraybackslash}m{3.5cm}>{\centering\arraybackslash}m{6.1cm}>{\centering\arraybackslash}m{6.1cm}},
-            row{2}={bg=lightgray!50}, row{3}={bg=lightgray}, row{1}={bg=black!90,fg=white}}
-            Σύστημα στάθμισης & Βάρος όρου εγγράφου &  Βάρος όρου ερωτήματος \\
-            1 & \[f_{i,j} \times \log{\frac{N}{n_i}} \] & \[(0.5 + 0.5 \frac{f_{i,j}}{max_i\hspace{3pt}f_{i,j}}) \times \log{\frac{N}{n_i}} \] \\
-            2 & \[1 + \log f_{i,j}\] & \[ \log(1 + \frac{N}{n_i}) \] \\
-        \end{tblr}
-        \\\\
-
+            \noindent
+            \begin{tblr}{
+                colspec={>{\centering\arraybackslash}m{3.5cm}>{\centering\arraybackslash}m{6.1cm}>{\centering\arraybackslash}m{6.1cm}},
+                row{2}={bg=lightgray!50}, row{3}={bg=lightgray}, row{1}={bg=black!90,fg=white}}
+                Σύστημα στάθμισης & Βάρος όρου εγγράφου &  Βάρος όρου ερωτήματος \\
+                1 & \[f_{i,j} \times \log{\frac{N}{n_i}} \] & \[(0.5 + 0.5 \frac{f_{i,j}}{max_i\hspace{3pt}f_{i,j}}) \times \log{\frac{N}{n_i}} \] \\
+                2 & \[1 + \log f_{i,j}\] & \[ \log(1 + \frac{N}{n_i}) \] \\
+            \end{tblr}
+            \\\\
 
     \chapter{ΥΛΟΠΟΙΗΣΗ}
-        Η υλοποίηση έχει χωριστεί στα εξής αρχεία: \\
-
         \section{ΠΡΟΕΠΕΞΕΡΓΑΣΙΑ ΕΓΓΡΑΦΩΝ \& ΒΟΗΘΗΤΙΚΕΣ ΣΥΝΑΡΤΗΣΕΙΣ}
 
             Το αρχείο {\fontCode\small tools.py} περιλαμβάνει βοηθητικές συναρτήσεις για κάποιες επαναλαμβανόμενες διαδικασίες της υλοποίησης.
