@@ -1,5 +1,6 @@
 ﻿\documentclass[12pt]{report}
 \usepackage{arabicore}
+\usepackage{booktabs}
 \input{setup}
 
 \begin{document}
@@ -9,10 +10,10 @@
 
         \renewcommand{\arraystretch}{1.1} % Increase row height
         \begin{tabularx}{\textwidth}{@{}m{0.9\textwidth}X@{}}
-            \centering \raggedleft \cellcolor{lightgray!25} Αλέξανδρος Ξιάρχος & \centering\cellcolor{darkgray}\fontDin \raisebox{-1pt}{\color{white}1059619}
+            \centering \raggedleft \cellcolor{lightgray!25} Αλέξανδρος Ξιάρχος\\ {\footnotesize st1059619@ceid.upatras.gr} & \centering\cellcolor{darkgray}\fontDin \raisebox{-1pt}{\color{white}1059619 \\}
         \end{tabularx}
 
-        \vspace*{10em}
+        \vspace*{12em}
         \begin{headerlight}
             \begin{Din}
                 \centering
@@ -34,12 +35,12 @@
             \end{Din}
         \end{headerlight}
 
-    \end{titlepage}
+        \vspace*{10em}
 
+    \end{titlepage}
 
     \tableofcontents
     \pagebreak
-
 
     \chapter{ΕΙΣΑΓΩΓΗ}
         \section{ΕΠΙΛΟΓΗ ΣΥΣΤΗΜΑΤΩΝ ΣΤΑΘΜΙΣΗΣ}
@@ -61,8 +62,8 @@
             \[ \text{\textbf{Σύστημα \#2:}\hspace{5pt}βάρος όρου}_{\scriptsize \text{εγγράφων}}=\hspace{5pt} 0.5 + 0.5 \frac{f_{i,j}}{max_i\hspace{3pt}f_{i,j}}\]
             \[ \text{\textbf{Σύστημα \#2:}\hspace{5pt}βάρος όρου}_{\scriptsize \text{ερωτημάτων}}=\hspace{5pt} \log{\frac{N - n_i}{n_i}} \]
 
-
-            Συνολικά έχουμε τα παρακάτω συστήματα:
+            Και τα δύο αυτά συστήματα στάθμισης έχουν επιφέρει τα ακριβέστερα αποτελέσματα στο σύνολο των συλλογών στα οποία έχουν εξεταστεί αλλά και ειδικότερα για ιατρικές συλλογές.
+            Επομένως συνολικά έχουμε:
 
             \noindent
             \begin{tblr}{
@@ -74,6 +75,9 @@
             \end{tblr}
             \\\\
 
+
+
+
     \chapter{ΥΛΟΠΟΙΗΣΗ}
         Η εργασία υλοποιήθηκε σε Python χρησιμοποιώντας τις βιβλιοθήκες:
 
@@ -81,9 +85,41 @@
             colspec={>{\centering\arraybackslash}m{5cm}>{\centering\arraybackslash}m{10cm}},
             row{2,4,6}={bg=lightgray!50}, row{3,5}={bg=lightgray}, row{1}={bg=black!90,fg=white}}
             Βιβλιοθήκη & Περιγραφή \\
-            \textbf{nltk} & φιλτράρισμα stopwords, stemming \\
+            \textbf{nltk} & αφαίρεση stopwords, stemming \\
             \textbf{numpy} & υπολογισμός ομοιότητας συνημιτόνου \\
+            \textbf{math} & υπολογισμός λογαρίθμων \\
         \end{tblr}
+
+        Αυτή είναι η δομή των αρχείων όπου έχει χωριστεί η υλοποίηση:\\
+        \begin{forest}
+          for tree={
+            font=\fontCode\small,
+            grow'=00,
+            child anchor=west,
+            parent anchor=south,
+            anchor=west,
+            calign=first,
+            edge path={
+              \noexpand\path [draw, \forestoption{edge}]
+              (!u.south west) +(7.5pt,0) |- node[fill,inner sep=1.5pt] {} (.child anchor)\forestoption{edge label};
+            },
+            before typesetting nodes={
+              if n=1
+                {insert before={[,phantom]}}
+                {}
+            },
+            fit=band,
+            before computing xy={l=15pt},
+          }
+        [src
+          [compare\_docs.py]
+          [inverted\_index.py]
+          [main.py]
+          [preprocessing.py]
+          [tools.py]
+          [vector\_space\_model.py]
+        ]
+        \end{forest}
 
         \section{ΠΡΟΕΠΕΞΕΡΓΑΣΙΑ ΕΓΓΡΑΦΩΝ \& ΒΟΗΘΗΤΙΚΕΣ ΣΥΝΑΡΤΗΣΕΙΣ}
 
@@ -125,14 +161,49 @@
 
             Κάθε value του dictionary είναι ένα set\footnote{Έχει επιλεχθεί set για εξοικονόμιση μνήμης, μας και δεν μας ενδιαφέρει η σειρά των tuples.} το οποίο περιλαμβάνει ένα ή περισσότερα tuples
             με το {\fontCode\small docID} και τη συχνότητα εμφάνισης του λήμματος στο συγκεκριμένο έγγραφο.
-            Η συχνότητα υπολογίζεται μέσω της {\fontCode\small count()} σε όλο το έγγραφο ανά λήμμα. Αυτό είναι ένα παράδειγμα του τελικού ανεστραμμένου ευρετηρίου \footnote{Τα λήμματα έχουν τη stemming μορφή τους.}:
+            Η συχνότητα υπολογίζεται μέσω της {\fontCode\small count()} σε όλο το έγγραφο ανά λήμμα.
 
+            Αυτό είναι ένα παράδειγμα του τελικού ανεστραμμένου ευρετηρίου\footnote{Τα λήμματα έχουν τη stemming μορφή τους.}:
 
                 \begin{graycomment} \centering
-                    {\fontCode\scriptsize inverted\_index = \{\(\ldots\) 'coronari': {('01217', 2), ('00779', 1), ('00164', 1)}, \\ 'graft': {('00164', 1)}, 'mobil': {('00673', 2), 'strain': {('00179', 7), \(\ldots\)\} }
+                    \fontCode\scriptsize inverted\_index = \{ \(\ldots\) 'coronari': {('01217', 2), ('00779', 1), ('00164', 1)}, \\ 'graft': {('00164', 1)}, 'mobil': {('00673', 2), 'strain': {('00179', 7), \(\ldots\) \}
                 \end{graycomment}
 
         \section{ΥΛΟΠΟΙΗΣΗ VECTOR SPACE ΜΟΝΤΕΛΟΥ}
 
+            Η υλοποίηση του vector space μοντέλου γίνεται στο αρχείο {\fontCode\small vector\_space\_model.py}.
+            Η συνάρτηση {\fontCode\small \textbf{run\_vsm}(doc\_collection, queries, inverted\_index)}, μέσω μιας επανάληψης για να μπορέσουν να καλυφθούν όλα τα queries,
+            καλεί την συνάρτηση {\fontCode\small \textbf{vsm1}(doc\_collection, query, inverted\_index)} ή {\fontCode\small \textbf{vsm2}()}, ανάλογα με το σύστημα στάθμισης που θέλουμε,
 
+            Πριν προχωρήσουμε στις συναρτήσεις {\fontCode\small vsmX()}, από το τρόπο που έχει δομηθεί το ανεστραμμένο ευρετήριο,
+            είναι σαφές πως μπορούμε να υπολογίσουμε αμέσως το πλήθος των εγγράφων όπου υπάρχει ένα συγκεκρίμενο λήμμα ως {\fontCode\small len(inverted\_index[term])},
+            με άλλα λόγια δηλαδή το \(n_i\). Είναι επίσης προφανές ότι \( N = \) {\fontCode\small len(inverted\_index))}.
+
+            Στην συνάρτηση {\fontCode\small vsm1()} αρχικά υπολογίζονται στο λεξικό {\fontCode\small query\_tfs} οι συχνότητες \(f_{i,j}\) κάθε όρου του εκάστοτε ερωτήματος:
+            \begin{graycomment}
+                \fontCode\footnotesize query\_tfs\(_{\textit{\fontCode\hspace{2pt}len(query)}}}\)\ = \{ \(\ldots\) 'calcium': 1, 'effect': 2 \(\ldots\) \}
+            \end{graycomment}
+
+            Στα λεξικά {\fontCode\small query\_tfidfs} και {\fontCode\small doc\_tfidfs} θα αποθηκευτούν οι τελικές τιμές-βάρη που θα αποτελέσουν τα διανύσματα ερωτήματος και εγγράφων.
+            Το λεξικό {\fontCode\small doc\_tfidfs} αρχικοποιείται με άδειες λίστες για κάθε έγγραφο.
+
+            Διατρέχουμε κάθε όρο του ερωτήματος {\fontCode\small query} και αν ο όρος υπάρχει στο ανεστραμμένο ευρετήριο
+            υπολογίζουμε την IDF τιμή του στην συνάρτηση {\fontCode\small idfX()}, και στη συνέχεια το TF-IDF βάρος του ερωτήματος στο {\fontCode\small query\_tfidfs}.
+
+           \begin{graycomment}
+                \fontCode\footnotesize query\_ifidf\(_{\textit{\fontCode\hspace{2pt}len(query)}}}\)\ = \{ \(\ldots\) 'calcium': 3.6318, 'effect': 1.76483 \(\ldots\) \}
+           \end{graycomment}
+
+            Στη συνέχεια διατρέχουμε όλα τα έγγραφα της συλλογής. Αν το έγγραφο περιλαμβάνει τον όρο του ερωτήματος που εξετάζουμε (κάτι που ελέγχουμε από τη λίστα {\fontCode\small docs\_containing\_term}),
+            τότε μέσω του ανεστραμμένου ευρετηρίου, αποθηκεύεται η TF τιμή του, υπολογίζεται το TF-IDF βάρος του εγγράφου και αποθηκεύεται στο {\fontCode\small doc\_tfidfs[docID]}.
+            Αν το έγγραφο δεν περιλαμβάνει τον όρο, αποθηκεύουμε 0.
+
+            \begin{graycomment}
+                \fontCode\footnotesize doc\_ifidf\(_{\textit{\fontCode\hspace{2pt}len(doc\_collection)}}}\)\ = \{'000001': [0, 0, 0.0, 1.76, 1.5]_{\textit{\fontCode len(query)}}} \(\ldots\)\}
+            \end{graycomment}
+
+            Εν τέλει έχουμε δημιουργήσει το διάνυσμα ερωτήματος και 1209 διανύσματα εγγράφων, τα οποία έχουν μήκος όσο και το διάνυσμα ερωτήματος. Στην λίστα {\fontCode\small similarity}
+            υπολογίζουμε την ομοιότητα συνημιτόνου μεταξύ του διανύσματος ερωτήματος και κάθε διανύσματος εγγράφου. Τέλος, ταξινομούμε την λίστα και επιστρέφουμε τα 100 κείμενα με την μεγαλύτερη ομοιότητα.
+
+            Η ίδια διαδικασία ακολουθείται και στην συνάρτηση {\fontCode\small vsm2()}, με τις απαραίτητες αλλαγές για το διαφορετικό σύστημα στάθμισης.
 \end{document}

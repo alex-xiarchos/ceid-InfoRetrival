@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.3.31) (preloaded format=xelatex 2024.4.25)  25 APR 2024 14:21
+This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.3.31) (preloaded format=xelatex 2024.4.25)  26 APR 2024 01:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -232,7 +232,27 @@ and I'll forget about whatever was undefined.
 \@Arabitempboxa=\box51
 \llahheight=\skip50
 \Decimalheight=\skip51
-) (setup.tex (W:\MiKTeX\tex/latex/geometry\geometry.sty
+) (W:\MiKTeX\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen141
+\lightrulewidth=\dimen142
+\cmidrulewidth=\dimen143
+\belowrulesep=\dimen144
+\belowbottomsep=\dimen145
+\aboverulesep=\dimen146
+\abovetopsep=\dimen147
+\cmidrulesep=\dimen148
+\cmidrulekern=\dimen149
+\defaultaddspace=\dimen150
+\@cmidla=\count193
+\@cmidlb=\count194
+\@aboverulesep=\dimen151
+\@belowrulesep=\dimen152
+\@thisruleclass=\count195
+\@lastruleclass=\count196
+\@thisrulewidth=\dimen153
+) (setup.tex
+(W:\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
 (W:\MiKTeX\tex/latex/graphics\keyval.sty
@@ -244,17 +264,17 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
  (W:\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
-\Gm@cnth=\count193
-\Gm@cntv=\count194
-\c@Gm@tempcnt=\count195
-\Gm@bindingoffset=\dimen141
-\Gm@wd@mp=\dimen142
-\Gm@odd@mp=\dimen143
-\Gm@even@mp=\dimen144
-\Gm@layoutwidth=\dimen145
-\Gm@layoutheight=\dimen146
-\Gm@layouthoffset=\dimen147
-\Gm@layoutvoffset=\dimen148
+\Gm@cnth=\count197
+\Gm@cntv=\count198
+\c@Gm@tempcnt=\count199
+\Gm@bindingoffset=\dimen154
+\Gm@wd@mp=\dimen155
+\Gm@odd@mp=\dimen156
+\Gm@even@mp=\dimen157
+\Gm@layoutwidth=\dimen158
+\Gm@layoutheight=\dimen159
+\Gm@layouthoffset=\dimen160
+\Gm@layoutvoffset=\dimen161
 \Gm@dimlist=\toks19
  (W:\MiKTeX\tex/latex/geometry\geometry.cfg))
 (W:\MiKTeX\tex/latex/fontspec\fontspec.sty
@@ -264,11 +284,11 @@ Package: expl3 2024-03-14 L3 programming layer (loader)
 
 (W:\MiKTeX\tex/latex/l3backend\l3backend-xetex.def
 File: l3backend-xetex.def 2024-03-14 L3 backend support: XeTeX
-\g__graphics_track_int=\count196
+\g__graphics_track_int=\count266
 \l__pdf_internal_box=\box52
-\g__pdf_backend_object_int=\count197
-\g__pdf_backend_annotation_int=\count198
-\g__pdf_backend_link_int=\count199
+\g__pdf_backend_object_int=\count267
+\g__pdf_backend_annotation_int=\count268
+\g__pdf_backend_link_int=\count269
 ))
 Package: xparse 2024-03-14 L3 Experimental document command parser
 )
@@ -277,20 +297,20 @@ Package: fontspec 2024/02/13 v2.9a Font selection for XeLaTeX and LuaLaTeX
 (W:\MiKTeX\tex/latex/fontspec\fontspec-xetex.sty
 Package: fontspec-xetex 2024/02/13 v2.9a Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count266
-\l__fontspec_language_int=\count267
-\l__fontspec_strnum_int=\count268
-\l__fontspec_tmp_int=\count269
-\l__fontspec_tmpa_int=\count270
-\l__fontspec_tmpb_int=\count271
-\l__fontspec_tmpc_int=\count272
-\l__fontspec_em_int=\count273
-\l__fontspec_emdef_int=\count274
-\l__fontspec_strong_int=\count275
-\l__fontspec_strongdef_int=\count276
-\l__fontspec_tmpa_dim=\dimen149
-\l__fontspec_tmpb_dim=\dimen150
-\l__fontspec_tmpc_dim=\dimen151
+\l__fontspec_script_int=\count270
+\l__fontspec_language_int=\count271
+\l__fontspec_strnum_int=\count272
+\l__fontspec_tmp_int=\count273
+\l__fontspec_tmpa_int=\count274
+\l__fontspec_tmpb_int=\count275
+\l__fontspec_tmpc_int=\count276
+\l__fontspec_em_int=\count277
+\l__fontspec_emdef_int=\count278
+\l__fontspec_strong_int=\count279
+\l__fontspec_strongdef_int=\count280
+\l__fontspec_tmpa_dim=\dimen162
+\l__fontspec_tmpb_dim=\dimen163
+\l__fontspec_tmpc_dim=\dimen164
 
 (W:\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
@@ -321,9 +341,9 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
 Package: colortbl 2024/02/20 v1.0g Color table columns (DPC)
  (W:\MiKTeX\tex/latex/tools\array.sty
 Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
-\col@sep=\dimen152
+\col@sep=\dimen165
 \ar@mcellbox=\box53
-\extrarowheight=\dimen153
+\extrarowheight=\dimen166
 \NC@list=\toks20
 \extratabsurround=\skip52
 \backup@length=\skip53
@@ -331,127 +351,107 @@ Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 )
 \everycr=\toks21
 \minrowclearance=\skip54
-\rownum=\count277
+\rownum=\count281
 ) (W:\MiKTeX\tex/latex/tools\tabularx.sty
 Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
-\TX@col@width=\dimen154
-\TX@old@table=\dimen155
-\TX@old@col=\dimen156
-\TX@target=\dimen157
-\TX@delta=\dimen158
-\TX@cols=\count278
+\TX@col@width=\dimen167
+\TX@old@table=\dimen168
+\TX@old@col=\dimen169
+\TX@target=\dimen170
+\TX@delta=\dimen171
+\TX@cols=\count282
 \TX@ftn=\toks22
 )
 (W:\MiKTeX\tex/latex/tabularray\tabularray.sty
 Package: tabularray 2024-02-16 v2024A Typeset tabulars and arrays with LaTeX3
-\l__tblr_a_int=\count279
-\l__tblr_c_int=\count280
-\l__tblr_r_int=\count281
-\l__tblr_d_dim=\dimen159
-\l__tblr_h_dim=\dimen160
-\l__tblr_o_dim=\dimen161
-\l__tblr_p_dim=\dimen162
-\l__tblr_q_dim=\dimen163
-\l__tblr_r_dim=\dimen164
-\l__tblr_s_dim=\dimen165
-\l__tblr_t_dim=\dimen166
-\l__tblr_v_dim=\dimen167
-\l__tblr_w_dim=\dimen168
+\l__tblr_a_int=\count283
+\l__tblr_c_int=\count284
+\l__tblr_r_int=\count285
+\l__tblr_d_dim=\dimen172
+\l__tblr_h_dim=\dimen173
+\l__tblr_o_dim=\dimen174
+\l__tblr_p_dim=\dimen175
+\l__tblr_q_dim=\dimen176
+\l__tblr_r_dim=\dimen177
+\l__tblr_s_dim=\dimen178
+\l__tblr_t_dim=\dimen179
+\l__tblr_v_dim=\dimen180
+\l__tblr_w_dim=\dimen181
 \l__tblr_a_box=\box55
 \l__tblr_b_box=\box56
 \l__tblr_c_box=\box57
 \l__tblr_d_box=\box58
-\g__tblr_table_count_int=\count282
-\c@colnum=\count283
-\c@rowcount=\count284
-\c@colcount=\count285
-\abovesep=\dimen169
-\belowsep=\dimen170
-\leftsep=\dimen171
-\rightsep=\dimen172
-\g_tblr_level_int=\count286
-\g__tblr_data_row_key_count_int=\count287
-\g__tblr_data_column_key_count_int=\count288
-\g__tblr_data_cell_key_count_int=\count289
-\g__tblr_array_int=\count290
-\l__tblr_key_count_int=\count291
-\l__tblr_key_quotient_int=\count292
-\l__tblr_key_quotient_two_int=\count293
-\l__tblr_key_remainder_int=\count294
-\g__tblr_data_str_value_count_int=\count295
-\rulewidth=\dimen173
-\l__tblr_strut_dp_dim=\dimen174
-\l__tblr_strut_ht_dim=\dimen175
-\g__tblr_cell_wd_dim=\dimen176
-\g__tblr_cell_ht_dim=\dimen177
-\g__tblr_cell_head_dim=\dimen178
-\g__tblr_cell_foot_dim=\dimen179
-\l__column_target_dim=\dimen180
+\g__tblr_table_count_int=\count286
+\c@colnum=\count287
+\c@rowcount=\count288
+\c@colcount=\count289
+\abovesep=\dimen182
+\belowsep=\dimen183
+\leftsep=\dimen184
+\rightsep=\dimen185
+\g_tblr_level_int=\count290
+\g__tblr_data_row_key_count_int=\count291
+\g__tblr_data_column_key_count_int=\count292
+\g__tblr_data_cell_key_count_int=\count293
+\g__tblr_array_int=\count294
+\l__tblr_key_count_int=\count295
+\l__tblr_key_quotient_int=\count296
+\l__tblr_key_quotient_two_int=\count297
+\l__tblr_key_remainder_int=\count298
+\g__tblr_data_str_value_count_int=\count299
+\rulewidth=\dimen186
+\l__tblr_strut_dp_dim=\dimen187
+\l__tblr_strut_ht_dim=\dimen188
+\g__tblr_cell_wd_dim=\dimen189
+\g__tblr_cell_ht_dim=\dimen190
+\g__tblr_cell_head_dim=\dimen191
+\g__tblr_cell_foot_dim=\dimen192
+\l__column_target_dim=\dimen193
 \l__tblr_caption_box=\box59
 \l__tblr_caption_left_box=\box60
 \l__tblr_row_head_box=\box61
 \l__tblr_row_foot_box=\box62
-\l__tblr_row_head_foot_dim=\dimen181
-\tablewidth=\dimen182
+\l__tblr_row_head_foot_dim=\dimen194
+\tablewidth=\dimen195
 \l__tblr_table_firsthead_box=\box63
 \l__tblr_table_middlehead_box=\box64
 \l__tblr_table_lasthead_box=\box65
 \l__tblr_table_firstfoot_box=\box66
 \l__tblr_table_middlefoot_box=\box67
 \l__tblr_table_lastfoot_box=\box68
-\l__tblr_remain_height_dim=\dimen183
-\l__tblr_long_from_int=\count296
-\l__tblr_long_to_int=\count297
-\l__tblr_curr_i_int=\count298
-\l__tblr_prev_i_int=\count299
-\l__tblr_table_page_int=\count300
+\l__tblr_remain_height_dim=\dimen196
+\l__tblr_long_from_int=\count300
+\l__tblr_long_to_int=\count301
+\l__tblr_curr_i_int=\count302
+\l__tblr_prev_i_int=\count303
+\l__tblr_table_page_int=\count304
 \l__tblr_table_head_box=\box69
 \l__tblr_table_foot_box=\box70
-\l__tblr_table_head_foot_dim=\dimen184
-\l__tblr_table_head_body_foot_dim=\dimen185
+\l__tblr_table_head_foot_dim=\dimen197
+\l__tblr_table_head_body_foot_dim=\dimen198
 \l__tblr_table_box=\box71
 \l__tblr_table_hlines_box=\box72
 \l__tblr_hline_box=\box73
 \l__tblr_row_box=\box74
-\l__tblr_col_o_wd_dim=\dimen186
-\l__tblr_col_b_wd_dim=\dimen187
-\l__tblr_hline_leftskip_dim=\dimen188
-\l__tblr_hline_rightskip_dim=\dimen189
-\l__tblr_row_ht_dim=\dimen190
-\l__tblr_row_dp_dim=\dimen191
-\l__tblr_row_abovesep_dim=\dimen192
-\l__tblr_row_belowsep_dim=\dimen193
+\l__tblr_col_o_wd_dim=\dimen199
+\l__tblr_col_b_wd_dim=\dimen256
+\l__tblr_hline_leftskip_dim=\dimen257
+\l__tblr_hline_rightskip_dim=\dimen258
+\l__tblr_row_ht_dim=\dimen259
+\l__tblr_row_dp_dim=\dimen260
+\l__tblr_row_abovesep_dim=\dimen261
+\l__tblr_row_belowsep_dim=\dimen262
 \l__tblr_row_vlines_box=\box75
 \l__tblr_vline_box=\box76
 \l__tblr_cell_box=\box77
-\l__row_upper_dim=\dimen194
-\l__row_lower_dim=\dimen195
-\l__row_vpace_dim=\dimen196
-\l__tblr_vline_aboveskip_dim=\dimen197
-\l__tblr_vline_belowskip_dim=\dimen198
-\l__tblr_cell_wd_dim=\dimen199
-\l__tblr_cell_ht_dim=\dimen256
+\l__row_upper_dim=\dimen263
+\l__row_lower_dim=\dimen264
+\l__row_vpace_dim=\dimen265
+\l__tblr_vline_aboveskip_dim=\dimen266
+\l__tblr_vline_belowskip_dim=\dimen267
+\l__tblr_cell_wd_dim=\dimen268
+\l__tblr_cell_ht_dim=\dimen269
 \l__tblr_diag_box=\box78
-)
-(W:\MiKTeX\tex/latex/booktabs\booktabs.sty
-Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen257
-\lightrulewidth=\dimen258
-\cmidrulewidth=\dimen259
-\belowrulesep=\dimen260
-\belowbottomsep=\dimen261
-\aboverulesep=\dimen262
-\abovetopsep=\dimen263
-\cmidrulesep=\dimen264
-\cmidrulekern=\dimen265
-\defaultaddspace=\dimen266
-\@cmidla=\count301
-\@cmidlb=\count302
-\@aboverulesep=\dimen267
-\@belowrulesep=\dimen268
-\@thisruleclass=\count303
-\@lastruleclass=\count304
-\@thisrulewidth=\dimen269
 )
 (W:\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
@@ -1797,6 +1797,192 @@ Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@O@olf=\skip70
 \f@nch@O@orf=\skip71
 )
+(W:\MiKTeX\tex/latex/forest\forest.sty
+Package: forest 2017/07/14 v2.1.5 Drawing (linguistic) trees
+
+(W:\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty
+(W:\MiKTeX\tex/latex/pgf/utilities\pgffor.sty
+(W:\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty
+(W:\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex))
+(W:\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(W:\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex))
+(W:\MiKTeX\tex/generic/pgf/utilities\pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen334
+\pgffor@skip=\dimen335
+\pgffor@stack=\toks45
+\pgffor@toks=\toks46
+))
+(W:\MiKTeX\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+
+(W:\MiKTeX\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count349
+\pgfplotmarksize=\dimen336
+)
+\tikz@lastx=\dimen337
+\tikz@lasty=\dimen338
+\tikz@lastxsaved=\dimen339
+\tikz@lastysaved=\dimen340
+\tikz@lastmovetox=\dimen341
+\tikz@lastmovetoy=\dimen342
+\tikzleveldistance=\dimen343
+\tikzsiblingdistance=\dimen344
+\tikz@figbox=\box100
+\tikz@figbox@bg=\box101
+\tikz@tempbox=\box102
+\tikz@tempbox@bg=\box103
+\tikztreelevel=\count350
+\tikznumberofchildren=\count351
+\tikznumberofcurrentchild=\count352
+\tikz@fig@count=\count353
+
+(W:\MiKTeX\tex/generic/pgf/modules\pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count354
+\pgfmatrixcurrentcolumn=\count355
+\pgf@matrix@numberofcolumns=\count356
+)
+\tikz@expandcount=\count357
+
+(W:\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code
+.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(W:\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.code.
+tex
+File: tikzlibraryshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(W:\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.geome
+tric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(W:\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(W:\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.misc.
+code.tex
+File: tikzlibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(W:\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(W:\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.symbo
+ls.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(W:\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(W:\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.arrow
+s.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(W:\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(W:\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.callo
+uts.code.tex
+(W:\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.callouts.code.tex)
+)
+(W:\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.multi
+part.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(W:\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodepartlowerbox=\box104
+\pgfnodeparttwobox=\box105
+\pgfnodepartthreebox=\box106
+\pgfnodepartfourbox=\box107
+\pgfnodeparttwentybox=\box108
+\pgfnodepartnineteenbox=\box109
+\pgfnodeparteighteenbox=\box110
+\pgfnodepartseventeenbox=\box111
+\pgfnodepartsixteenbox=\box112
+\pgfnodepartfifteenbox=\box113
+\pgfnodepartfourteenbox=\box114
+\pgfnodepartthirteenbox=\box115
+\pgfnodeparttwelvebox=\box116
+\pgfnodepartelevenbox=\box117
+\pgfnodeparttenbox=\box118
+\pgfnodepartninebox=\box119
+\pgfnodeparteightbox=\box120
+\pgfnodepartsevenbox=\box121
+\pgfnodepartsixbox=\box122
+\pgfnodepartfivebox=\box123
+)))
+(W:\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryfit.code.tex
+File: tikzlibraryfit.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(W:\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarycalc.code.te
+x
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (W:\MiKTeX\tex/generic/pgf/libraries\pgflibraryintersections.code.tex
+(W:\MiKTeX\tex/generic/pgf/libraries\pgflibraryfpu.code.tex)
+\pgf@intersect@solutions=\count358
+)
+(W:\MiKTeX\tex/latex/pgfopts\pgfopts.sty
+Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
+\pgfopts@list@add@a@toks=\toks47
+\pgfopts@list@add@b@toks=\toks48
+)
+(W:\MiKTeX\tex/latex/elocalloc\elocalloc.sty
+Package: elocalloc 2016/12/15 v0.03 local allocation for LaTeX 2015+ (DPC)
+)
+(W:\MiKTeX\tex/latex/inlinedef\inlinedef.sty
+Package: inlinedef 2008/07/10 v1.0 Inlined expansions within definitions
+\ID@toks=\toks49
+\ID@count=\count359
+)
+\ID@usercommands=\toks50
+\safeloop@depth=\count360
+\safeRKloop@depth=\count361
+\forest@temp@dimen=\dimen345
+\forest@temp@count=\count362
+\forest@n=\count363
+\forest@temp@global@count=\count364
+\forest@temp@toks=\toks51
+\forest@temparray@M=\count365
+\forest@temparray@N=\count366
+\forest@global@temparray@M=\count367
+\forest@global@temparray@N=\count368
+\forest@isnum@count=\count369
+\forest@isdim@nonintpart=\count370
+\forest@isdim@dimen=\dimen346
+\forest@sort@m=\count371
+\forest@sort@k=\count372
+\forest@sort@p=\count373
+\bracket@content=\toks52
+\bracket@afterthought=\toks53
+\forest@node@maxid=\count374
+\forest@process@left@M=\count375
+\forest@process@left@N=\count376
+\forest@process@right@M=\count377
+\forest@process@right@N=\count378
+\forest@process@saved@M=\count379
+\forest@process@saved@N=\count380
+\forest@process@result@M=\count381
+\forest@process@result@N=\count382
+\forest@process@n=\count383
+\forest@nodewalk@branch@toks=\toks54
+\forest@nodewalk@shortsteps@resolution=\toks55
+\forest@do@dynamics=\toks56
+\forest@box=\box124
+\forest@xg=\dimen347
+\forest@yg=\dimen348
+\forest@xs=\dimen349
+\forest@ys=\dimen350
+\forest@pi@toks=\toks57
+\forest@segment@toks=\toks58
+\forest@PIi@toks=\toks59
+\forest@PIii@toks=\toks60
+\forest@copy@in=\read5
+\forest@copy@out=\write4
+\forest@externalize@max@outer@n=\count384
+\forest@externalize@inner@n=\count385
+)
 
 Package fontspec Info: Font family 'ConduitITCHelLight(0)' created for font
 (fontspec)             'Conduit ITC Hel Light' with options [Ligatures=TeX].
@@ -1929,28 +2115,28 @@ Package fontspec Info: Font family 'TimesNewRoman(0)' created for font 'Times
 (W:/PycharmProjects\InfoRetriev\Report\auxil\main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 6
 .
 
 (W:\MiKTeX\tex/latex/base\ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
  (W:\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
@@ -1994,83 +2180,117 @@ Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
 
 \symlegacymaths=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 5.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 5.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 5.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 5.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 5.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 5.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 5.
-LaTeX Font Info:    Redeclaring math accent \check on input line 5.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 5.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 5.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 5.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 5.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 5.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 5.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 5.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 5.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 5.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 5.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 5.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 5.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 5.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 5.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 5.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 5.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 6.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 6.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 6.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 6.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 6.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 6.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 6.
+LaTeX Font Info:    Redeclaring math accent \check on input line 6.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 6.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 6.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 6.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 6.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 5.
+(Font)              `operators' in the math version `normal' on input line 6.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/ConduitITCHelLight(0)/m/n on input l
-ine 5.
+ine 6.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 5.
+(Font)              `operators' in the math version `bold' on input line 6.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> TU/ConduitITCHelLight(0)/m/n on input 
-line 5.
+line 6.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  TU/ConduitITCHelLight(0)/m/n --> TU/ConduitITCHelLight(
-0)/m/n on input line 5.
+0)/m/n on input line 6.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> TU/ConduitITCHelLight(0)/m/it on input
- line 5.
+ line 6.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> TU/ConduitITCHelLight(0)/b/n on input 
-line 5.
+line 6.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 5.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 6.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 5.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 6.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  TU/ConduitITCHelLight(0)/m/n --> TU/ConduitITCHelLight(
-0)/b/n on input line 5.
+0)/b/n on input line 6.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> TU/ConduitITCHelLight(0)/b/it on inpu
-t line 5.
+t line 6.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 5.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 6.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 5.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 6.
 (W:\MiKTeX\tex/latex/ninecolors\ninecolors.sty
 Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
 )
-LaTeX Info: Command `\dddot' is already robust on input line 5.
-LaTeX Info: Command `\ddddot' is already robust on input line 5.
-LaTeX Info: Command `\overleftrightarrow' is already robust on input line 5.
-LaTeX Info: Command `\underrightarrow' is already robust on input line 5.
-LaTeX Info: Command `\underleftarrow' is already robust on input line 5.
-LaTeX Info: Command `\underleftrightarrow' is already robust on input line 5.
+LaTeX Info: Command `\dddot' is already robust on input line 6.
+LaTeX Info: Command `\ddddot' is already robust on input line 6.
+LaTeX Info: Command `\overleftrightarrow' is already robust on input line 6.
+LaTeX Info: Command `\underrightarrow' is already robust on input line 6.
+LaTeX Info: Command `\underleftarrow' is already robust on input line 6.
+LaTeX Info: Command `\underleftrightarrow' is already robust on input line 6.
+
+main.tex:14: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14         \end{tabularx}
+                           
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+main.tex:14: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14         \end{tabularx}
+                           
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 
-LaTeX Warning: Command \textendash invalid in math mode on input line 33.
+main.tex:14: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14         \end{tabularx}
+                           
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Command \textendash invalid in math mode on input line 34.
 
 [1
 
 ]
-main.tex:40: Illegal unit of measure (pt inserted).
+main.tex:42: Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
-l.40     \tableofcontents
+l.42     \tableofcontents
                          
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, bp, or sp; but yours is a new one!
@@ -2080,8 +2300,8 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 (W:/PycharmProjects\InfoRetriev\Report\auxil\main.toc)
-\tf@toc=\write4
-\openout4 = `main.toc'.
+\tf@toc=\write5
+\openout5 = `main.toc'.
 
 
 
@@ -2095,31 +2315,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [1]
 \textKappa \textepsilon \textphi \acctonos \textalpha \textlambda \textalpha \t
 extiota \textomicron  1.
-main.tex:44: Illegal unit of measure (pt inserted).
+main.tex:45: Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
-l.44     \chapter{ΕΙΣΑΓΩΓΗ}
-                           
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-main.tex:44: Missing number, treated as zero.
-<to be read again> 
-                   \relax 
-l.44     \chapter{ΕΙΣΑΓΩΓΗ}
-                           
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-main.tex:44: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \relax 
-l.44     \chapter{ΕΙΣΑΓΩΓΗ}
+l.45     \chapter{ΕΙΣΑΓΩΓΗ}
                            
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, bp, or sp; but yours is a new one!
@@ -2131,8 +2330,8 @@ two letters. (See Chapter 27 of The TeXbook.)
 main.tex:45: Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.45 ...    \section{ΕΠΙΛΟΓΗ ΣΥΣΤΗΜΑΤΩΝ ΣΤΑΘΜΙΣΗΣ}
-                                                  
+l.45     \chapter{ΕΙΣΑΓΩΓΗ}
+                           
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -2140,8 +2339,8 @@ look up `weird error' in the index to The TeXbook.)
 main.tex:45: Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
-l.45 ...    \section{ΕΠΙΛΟΓΗ ΣΥΣΤΗΜΑΤΩΝ ΣΤΑΘΜΙΣΗΣ}
-                                                  
+l.45     \chapter{ΕΙΣΑΓΩΓΗ}
+                           
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -2149,19 +2348,19 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-main.tex:48: Missing number, treated as zero.
+main.tex:46: Missing number, treated as zero.
 <to be read again> 
-                   \protect 
-l.48 ...      \subsection{ΠΡΩΤΟ ΣΥΣΤΗΜΑ ΣΤΑΘΜΙΣΗΣ}
+                   \relax 
+l.46 ...    \section{ΕΠΙΛΟΓΗ ΣΥΣΤΗΜΑΤΩΝ ΣΤΑΘΜΙΣΗΣ}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-main.tex:48: Illegal unit of measure (pt inserted).
+main.tex:46: Illegal unit of measure (pt inserted).
 <to be read again> 
-                   \protect 
-l.48 ...      \subsection{ΠΡΩΤΟ ΣΥΣΤΗΜΑ ΣΤΑΘΜΙΣΗΣ}
+                   \relax 
+l.46 ...    \section{ΕΠΙΛΟΓΗ ΣΥΣΤΗΜΑΤΩΝ ΣΤΑΘΜΙΣΗΣ}
                                                   
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, bp, or sp; but yours is a new one!
@@ -2170,28 +2369,19 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 51.
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 53.
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 55.
-
-main.tex:58: Missing number, treated as zero.
+main.tex:49: Missing number, treated as zero.
 <to be read again> 
                    \protect 
-l.58 ...    \subsection{ΔΕΥΤΕΡΟ ΣΥΣΤΗΜΑ ΣΤΑΘΜΙΣΗΣ}
+l.49 ...      \subsection{ΠΡΩΤΟ ΣΥΣΤΗΜΑ ΣΤΑΘΜΙΣΗΣ}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-main.tex:58: Illegal unit of measure (pt inserted).
+main.tex:49: Illegal unit of measure (pt inserted).
 <to be read again> 
                    \protect 
-l.58 ...    \subsection{ΔΕΥΤΕΡΟ ΣΥΣΤΗΜΑ ΣΤΑΘΜΙΣΗΣ}
+l.49 ...      \subsection{ΠΡΩΤΟ ΣΥΣΤΗΜΑ ΣΤΑΘΜΙΣΗΣ}
                                                   
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, bp, or sp; but yours is a new one!
@@ -2201,10 +2391,40 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 61.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 52.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 54.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 56.
+
+main.tex:59: Missing number, treated as zero.
+<to be read again> 
+                   \protect 
+l.59 ...    \subsection{ΔΕΥΤΕΡΟ ΣΥΣΤΗΜΑ ΣΤΑΘΜΙΣΗΣ}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+main.tex:59: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \protect 
+l.59 ...    \subsection{ΔΕΥΤΕΡΟ ΣΥΣΤΗΜΑ ΣΤΑΘΜΙΣΗΣ}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
 
 
 LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 62.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 63.
 
 > Step: init table outer spec.
 > Step: parse table options.
@@ -2214,20 +2434,6 @@ LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 62.
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
-\textKappa \textepsilon \textphi \acctonos \textalpha \textlambda \textalpha \t
-extiota \textomicron  2.
-main.tex:77: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \relax 
-l.77     \chapter{ΥΛΟΠΟΙΗΣΗ}
-                            
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.96603pt, for example:
@@ -2237,19 +2443,33 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.96603pt}.
 
 [2]
-main.tex:77: Missing number, treated as zero.
+\textKappa \textepsilon \textphi \acctonos \textalpha \textlambda \textalpha \t
+extiota \textomicron  2.
+main.tex:81: Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
-l.77     \chapter{ΥΛΟΠΟΙΗΣΗ}
+l.81     \chapter{ΥΛΟΠΟΙΗΣΗ}
+                            
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+main.tex:81: Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.81     \chapter{ΥΛΟΠΟΙΗΣΗ}
                             
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-main.tex:77: Illegal unit of measure (pt inserted).
+main.tex:81: Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
-l.77     \chapter{ΥΛΟΠΟΙΗΣΗ}
+l.81     \chapter{ΥΛΟΠΟΙΗΣΗ}
                             
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, bp, or sp; but yours is a new one!
@@ -2266,19 +2486,19 @@ two letters. (See Chapter 27 of The TeXbook.)
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
-main.tex:88: Missing number, treated as zero.
+main.tex:124: Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.88 ...ΡΓΑΣΙΑ ΕΓΓΡΑΦΩΝ \& ΒΟΗΘΗΤΙΚΕΣ ΣΥΝΑΡΤΗΣΕΙΣ}
+l.124 ...ΓΑΣΙΑ ΕΓΓΡΑΦΩΝ \& ΒΟΗΘΗΤΙΚΕΣ ΣΥΝΑΡΤΗΣΕΙΣ}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-main.tex:88: Illegal unit of measure (pt inserted).
+main.tex:124: Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
-l.88 ...ΡΓΑΣΙΑ ΕΓΓΡΑΦΩΝ \& ΒΟΗΘΗΤΙΚΕΣ ΣΥΝΑΡΤΗΣΕΙΣ}
+l.124 ...ΓΑΣΙΑ ΕΓΓΡΑΦΩΝ \& ΒΟΗΘΗΤΙΚΕΣ ΣΥΝΑΡΤΗΣΕΙΣ}
                                                   
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, bp, or sp; but yours is a new one!
@@ -2287,19 +2507,19 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-main.tex:115: Missing number, treated as zero.
+main.tex:151: Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.115         \section{ΑΝΕΣΤΡΑΜΜΕΝΟ ΕΥΡΕΤΗΡΙΟ}
+l.151         \section{ΑΝΕΣΤΡΑΜΜΕΝΟ ΕΥΡΕΤΗΡΙΟ}
                                               
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-main.tex:115: Illegal unit of measure (pt inserted).
+main.tex:151: Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
-l.115         \section{ΑΝΕΣΤΡΑΜΜΕΝΟ ΕΥΡΕΤΗΡΙΟ}
+l.151         \section{ΑΝΕΣΤΡΑΜΜΕΝΟ ΕΥΡΕΤΗΡΙΟ}
                                               
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, bp, or sp; but yours is a new one!
@@ -2307,28 +2527,6 @@ I'll assume that you meant to say pt, for printer's points.
 To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
-
-main.tex:133: Missing } inserted.
-<inserted text> 
-                }
-l.133                 \end{graycomment}
-                                       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-main.tex:133: Missing } inserted.
-<inserted text> 
-                }
-l.133                 \end{graycomment}
-                                       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2339,19 +2537,41 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.96603pt}.
 
 [3]
-main.tex:135: Missing number, treated as zero.
+main.tex:170: Missing } inserted.
+<inserted text> 
+                }
+l.170                 \end{graycomment}
+                                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+main.tex:170: Missing } inserted.
+<inserted text> 
+                }
+l.170                 \end{graycomment}
+                                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+main.tex:172: Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.135 ...\section{ΥΛΟΠΟΙΗΣΗ VECTOR SPACE ΜΟΝΤΕΛΟΥ}
+l.172 ...\section{ΥΛΟΠΟΙΗΣΗ VECTOR SPACE ΜΟΝΤΕΛΟΥ}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-main.tex:135: Illegal unit of measure (pt inserted).
+main.tex:172: Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
-l.135 ...\section{ΥΛΟΠΟΙΗΣΗ VECTOR SPACE ΜΟΝΤΕΛΟΥ}
+l.172 ...\section{ΥΛΟΠΟΙΗΣΗ VECTOR SPACE ΜΟΝΤΕΛΟΥ}
                                                   
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, bp, or sp; but yours is a new one!
@@ -2359,6 +2579,63 @@ I'll assume that you meant to say pt, for printer's points.
 To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
+
+main.tex:184: Extra }, or forgotten $.
+l.184 ...textit{\fontCode\hspace{2pt}len(query)}}}
+                                                  \)\ = \{ \(\ldots\) 'calci...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+main.tex:194: Extra }, or forgotten $.
+l.194 ...textit{\fontCode\hspace{2pt}len(query)}}}
+                                                  \)\ = \{ \(\ldots\) 'calci...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+main.tex:202: Extra }, or forgotten $.
+l.202 ...ntCode\hspace{2pt}len(doc\_collection)}}}
+                                                  \)\ = \{'000001': [0, 0, 0...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+main.tex:202: Missing $ inserted.
+<inserted text> 
+                $
+l.202 ...\)\ = \{'000001': [0, 0, 0.0, 1.76, 1.5]_
+                                                  {\textit{\fontCode len(que...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+main.tex:202: Extra }, or forgotten $.
+l.202 ...76, 1.5]_{\textit{\fontCode len(query)}}}
+                                                   \(\ldots\)\}
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+main.tex:202: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.202 ... 1.5]_{\textit{\fontCode len(query)}}} \(
+                                                  \ldots\)\}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2368,20 +2645,29 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.89404pt}.
 
-[4] (W:/PycharmProjects\InfoRetriev\Report\auxil\main.aux)
+[4]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.89404pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.89404pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.89404pt}.
+
+[5] (W:/PycharmProjects\InfoRetriev\Report\auxil\main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 20497 strings out of 409555
- 455875 string characters out of 5779102
- 1936148 words of memory out of 5000000
- 42281 multiletter control sequences out of 15000+600000
- 564620 words of font info for 136 fonts, out of 8000000 for 9000
+ 33606 strings out of 409555
+ 815069 string characters out of 5779102
+ 1938148 words of memory out of 5000000
+ 55292 multiletter control sequences out of 15000+600000
+ 564697 words of font info for 141 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 106i,15n,110p,506b,633s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 115i,14n,118p,1617b,1430s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on W:/PycharmProjects\InfoRetriev\Report\out\main.pdf (5 pages).
+Output written on W:/PycharmProjects\InfoRetriev\Report\out\main.pdf (6 pages).
 

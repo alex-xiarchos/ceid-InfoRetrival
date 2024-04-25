@@ -61,7 +61,7 @@ def vsm1(doc_collection, query, inverted_index):
     similarity = {k: 0 if np.isnan(v) else v for k, v in similarity.items()}
     sort_similarity = sorted(similarity.items(), key=get_value)
 
-    return sort_similarity[-500:][::-1]
+    return sort_similarity[-100:][::-1]
 
 
 def vsm2(doc_collection, query, inverted_index):
@@ -104,17 +104,14 @@ def vsm2(doc_collection, query, inverted_index):
     similarity = {k: 0 if np.isnan(v) else v for k, v in similarity.items()}
     sort_similarity = sorted(similarity.items(), key=get_value)
 
-    return sort_similarity[-500:][::-1]
+    return sort_similarity[-100:][::-1]
 
 
 def run_vsm(doc_collection, queries, inverted_index):
     results = []
 
-    results = vsm2(doc_collection, queries[0], inverted_index)
-
-    # for query in queries:
-    #     print(query)
-    #     results = vsm2(doc_collection, query, inverted_index)
+    for query in queries:
+        print(query)
+        results = vsm1(doc_collection, query, inverted_index)
 
     return results
-
