@@ -1,4 +1,4 @@
-\documentclass[12pt]{report}
+﻿\documentclass[12pt]{report}
 \usepackage{arabicore}
 \input{setup}
 
@@ -46,20 +46,21 @@
         Καταρχάς πρέπει να επιλέξουμε δύο συστήματα στάθμισης των βαρών για τους όρους των εγγράφων και των ερωτημάτων.
 
             \subsection{ΠΡΩΤΟ ΣΥΣΤΗΜΑ ΣΤΑΘΜΙΣΗΣ}
-            Το πρώτο σύστημα στάθμισης θα είναι μια παραλλαγή του προτεινόμενου ως καλύτερου συστήματος σύμφωνα με τους Salton-Buckley\footnote{Gerard Salton, Christopher Buckley, Term-weighting approaches in automatic text retrieval, Information Processing \& Management, Volume 24, Issue 5, 1988, Pages 513-523, ISSN 0306-4573}
+            Το πρώτο σύστημα στάθμισης θα είναι μια παραλλαγή του προτεινόμενου ως καλύτερου πλήρως σταθμισμένου συστήματος σύμφωνα με τους Salton-Buckley\footnote{Gerard Salton, Christopher Buckley, Term-weighting approaches in automatic text retrieval, Information Processing \& Management, Volume 24, Issue 5, 1988, Pages 513-523, ISSN 0306-4573}
             {\fontTimes (best fully weighted system)}. Θα χρησιμοποιήσουμε τη \textbf{απλή συχνότητα εμφάνισης} {\fontTimes (raw term frequency)} για το TF βάρος των εγγράφων:
-            \[ \text{\textbf{Σύστημα \#1:}\hspace{5pt}TF βάρος}_{\scriptsize \text{εγγράφων}}=\hspace{5pt} f_{i,j} \]
+            \[ \text{\textbf{Σύστημα \#1:}\hspace{5pt}TF}_{\scriptsize \text{εγγράφων}}=\hspace{5pt} f_{i,j} \]
             όπου \(f_{ij}\) οι φορές που ο όρος εμφανίζεται σε ένα έγγραφο, την \textbf{διπλή 0,5 κανονικοποίηση} για το TF βάρος των ερωτημάτων {\fontTimes(augmented normalized TF)}:
-            \[ \text{\textbf{Σύστημα \#1:}\hspace{5pt}TF βάρος}_{\scriptsize \text{ερωτημάτων}}=\hspace{5pt} 0.5 + 0.5 \frac{f_{i,j}}{max_i\hspace{3pt}f_{i,j}} \]
+            \[ \text{\textbf{Σύστημα \#1:}\hspace{5pt}TF}_{\scriptsize \text{ερωτημάτων}}=\hspace{5pt} 0.5 + 0.5 \frac{f_{i,j}}{max_i\hspace{3pt}f_{i,j}} \]
             και τέλος την \textbf{απλή ανάστροφη συχνότητα εμφάνισης} για το IDF βάρος και των εγγράφων και των ερωτημάτων:
-            \[\text{\textbf{Σύστημα \#1:}\hspace{5pt}IDF βάρος}_{\scriptsize\begin{matrix}\text{εγγράφων}\\\text{ερωτημάτων}\end{matrix}}=\hspace{5pt} \log{\frac{N}{n_i}} \]
+            \[\text{\textbf{Σύστημα \#1:}\hspace{5pt}IDF}_{\scriptsize\begin{matrix}\text{εγγράφων}\\\text{ερωτημάτων}\end{matrix}}=\hspace{5pt} \log{\frac{N}{n_i}} \]
             όπου \(N\) το πλήθος των εγγράφων και \(n_i\) ο αριθμός των εγγράφων στα οποία εμπεριέχεται ο όρος.\footnote{Το σύστημα αναφέρεται ως παραλλαγή των Salton-Buckley για το λόγο ότι δεν έχει συμπεριληφθεί κάποιος παράγοντας κανονικοποίσης, μιας και τα έγγραφα είναι \textit{περίπου} ισομεγέθη (μέσος όρος 350 λέξεις).}
 
             \subsection{ΔΕΥΤΕΡΟ ΣΥΣΤΗΜΑ ΣΤΑΘΜΙΣΗΣ}
-            Στο δεύτερο σύστημα στάθμισης {\fontTimes (best weighted probabilistic weight)} θα χρησιμοποιήσουμε την \textbf{διπλή 0,5 κανονικοποίηση} για το TF βάρος των εγγράφων:
-            \[ \text{\textbf{Σύστημα \#2:}\hspace{5pt}TF βάρος}_{\scriptsize \text{εγγράφων}}=\hspace{5pt} 1 + \log f_{i,j} \]
-            το \textbf{μοναδιαίο} σύστημα για το IDF βάρος των εγγράφων και την \textbf{απλή λογαριθμική κανονικοποίηση} για το IDF βάρος των ερωτημάτων:
-            \[ \text{\textbf{Σύστημα \#2:}\hspace{5pt}IDF βάρος}_{\scriptsize \text{ερωτημάτων}}=\hspace{5pt} \log(1 + \frac{N}{n_i}) \]
+            Ως δεύτερο σύστημα στάθμισης θα χρησιμοποιήσουμε το καλύτερα σταθμισμένο πιθανολογικό σύστημα σύμφωνα με τους Salton-Buckley\footnotemark[1]
+            {\fontTimes (best weighted probabilistic weight)} με
+            \[ \text{\textbf{Σύστημα \#2:}\hspace{5pt}βάρος όρου}_{\scriptsize \text{εγγράφων}}=\hspace{5pt} 0.5 + 0.5 \frac{f_{i,j}}{max_i\hspace{3pt}f_{i,j}}\]
+            \[ \text{\textbf{Σύστημα \#2:}\hspace{5pt}βάρος όρου}_{\scriptsize \text{ερωτημάτων}}=\hspace{5pt} \log{\frac{N - n_i}{n_i}} \]
+
 
             Συνολικά έχουμε τα παρακάτω συστήματα:
 
@@ -69,11 +70,21 @@
                 row{2}={bg=lightgray!50}, row{3}={bg=lightgray}, row{1}={bg=black!90,fg=white}}
                 Σύστημα στάθμισης & Βάρος όρου εγγράφου &  Βάρος όρου ερωτήματος \\
                 1 & \[f_{i,j} \times \log{\frac{N}{n_i}} \] & \[(0.5 + 0.5 \frac{f_{i,j}}{max_i\hspace{3pt}f_{i,j}}) \times \log{\frac{N}{n_i}} \] \\
-                2 & \[1 + \log f_{i,j}\] & \[ \log(1 + \frac{N}{n_i}) \] \\
+                2 & \[0.5 + 0.5 \frac{f_{i,j}}{max_i\hspace{3pt}f_{i,j}} \] & \[\log{\frac{N - n_i}{n_i}} \] \\
             \end{tblr}
             \\\\
 
     \chapter{ΥΛΟΠΟΙΗΣΗ}
+        Η εργασία υλοποιήθηκε σε Python χρησιμοποιώντας τις βιβλιοθήκες:
+
+        \begin{tblr}{
+            colspec={>{\centering\arraybackslash}m{5cm}>{\centering\arraybackslash}m{10cm}},
+            row{2,4,6}={bg=lightgray!50}, row{3,5}={bg=lightgray}, row{1}={bg=black!90,fg=white}}
+            Βιβλιοθήκη & Περιγραφή \\
+            \textbf{nltk} & φιλτράρισμα stopwords, stemming \\
+            \textbf{numpy} & υπολογισμός ομοιότητας συνημιτόνου \\
+        \end{tblr}
+
         \section{ΠΡΟΕΠΕΞΕΡΓΑΣΙΑ ΕΓΓΡΑΦΩΝ \& ΒΟΗΘΗΤΙΚΕΣ ΣΥΝΑΡΤΗΣΕΙΣ}
 
             Το αρχείο {\fontCode\small tools.py} περιλαμβάνει βοηθητικές συναρτήσεις για κάποιες επαναλαμβανόμενες διαδικασίες της υλοποίησης.
@@ -122,12 +133,6 @@
                 \end{graycomment}
 
         \section{ΥΛΟΠΟΙΗΣΗ VECTOR SPACE ΜΟΝΤΕΛΟΥ}
-
-            Η υλοποίηση του Vector Space μοντέλου πραγματοποιείται στο αρχείο {\fontCode\small vsm.py}, στη συνάρτηση {\fontCode\small \textbf{run\_vsm}()},
-            η οποία εναλλάσσει τα ερωτήματα, τα οποία στη συνέχεια εισάγονται στην {\fontCode\small \textbf{vsm}()}, όπου υπολογίζεται όντως η ομοιότητα του συνημιτόνου των διανυσμάτων μεταξύ εγγράφου και ερωτήματος.
-
-            Στόχος είναι να υπολογίσουμε τις tf τιμές από κάθε λήμμα του εκάστοτε ερωτήματος και στη συνέχεια, αν είναι εφικτό, να τα αντιστοιχήσουμε με τα λήμματα των εγγράφων χρησιμοποιώντας το ανεστραμμένο ευρετήριο που έχουμε δημιουργήσει.
-            Συνεπώς αφού υπολογίσουμε ...
 
 
 \end{document}
