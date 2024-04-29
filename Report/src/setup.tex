@@ -1,24 +1,25 @@
-\usepackage{geometry}
-\usepackage{fontspec}
-\usepackage{xcolor}
-\usepackage{colortbl}
-\usepackage{tabularx}
-\usepackage{tabularray}
+\usepackage{geometry} % Page Dimensions
+\geometry{a4paper, total={170mm,260mm}, left=20mm, top=20mm}
+\usepackage{fontspec} % Γραμματοσείρες
+\usepackage{xcolor} % Χρώματα
+\usepackage{colortbl} % Χρωματισμός πινάκων
+\usepackage{tabularx} % Πίνακες με μεταβλητό πλάτος στηλών
+\usepackage{tabularray} % Πίνακες με πιο ευέλικτη διαμόρφωση
+\usepackage{multicol} % Πολλαπλές στήλες (όχι για μαθηματικά)
 \UseTblrLibrary{booktabs}
-\usepackage{amstex}
-\usepackage{amsmath}
-\usepackage{tcolorbox}
-\usepackage{titlesec}
-\usepackage{setspace}
-\usepackage[greek]{babel}
-\usepackage{indentfirst}
-\usepackage{fancyhdr}
-\usepackage{forest}
-\usepackage{graphicx}
+\usepackage{amstex} % Επιπλέον μαθηματικά εργαλεία
+\usepackage{amsmath} % Μαθηματικά εργαλεία
+\usepackage{tcolorbox} %Μορφοποίηση πλαισίων
+\usepackage{titlesec} %Μορφοποίηση τίτλων κεφαλαίων
+\usepackage{setspace} %Διάστιχο
+\usepackage[greek]{babel} %Ελληνική γλώσσα
+\usepackage{indentfirst} %Εσοχή πρώτης παραγράφου
+\usepackage{fancyhdr} %Κεφαλίδες και υποσέλιδα
+\usepackage{forest} %Δημιουργία δέντρων
+\usepackage{graphicx} %Διαχείριση εικόνων
+\usepackage{enumitem} %Διαμόρφωση λιστών
 \graphicspath{ {./img/} }
 %\usepackage[fontsize=13pt]{fontsize}
-
-\geometry{a4paper, total={170mm,260mm}, left=20mm, top=20mm}
 
 \setmainfont{Conduit ITC Hel Light}
 \newfontfamily\fontDin{CF Din Condensed}
@@ -50,7 +51,7 @@
     {} % spacing between number and title
     {\colorbox{gray!25}} % optional (content between number and title)
 \titlespacing*{\chapter}
-   {0pt}{0}{0.4em}  % left before after
+   {0pt}{1em}{0.4em}  % left before after
 \titleclass{\chapter}{straight}
 
 \titleformat{\section}[block]

@@ -1,5 +1,4 @@
 import math
-# from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 from numpy.linalg import norm
 
@@ -54,7 +53,6 @@ def vsm1(doc_collection, query, inverted_index):
 
     similarity = {}
     for doc in doc_tfidfs:
-        # similarity[doc] = cosine_similarity(list(query_tfidfs.values()), doc_tfidfs[doc])
         similarity[doc] = np.dot(list(query_tfidfs.values()), doc_tfidfs[doc]) / (norm(list(query_tfidfs.values())) * norm(doc_tfidfs[doc]))
 
     # μετατροπή nan τιμών σε 0
