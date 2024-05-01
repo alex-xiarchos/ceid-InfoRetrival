@@ -9,29 +9,31 @@
 \UseTblrLibrary{booktabs}
 \usepackage{amstex} % Επιπλέον μαθηματικά εργαλεία
 \usepackage{amsmath} % Μαθηματικά εργαλεία
-\usepackage{tcolorbox} %Μορφοποίηση πλαισίων
-\usepackage{titlesec} %Μορφοποίηση τίτλων κεφαλαίων
-\usepackage{setspace} %Διάστιχο
-\usepackage[greek]{babel} %Ελληνική γλώσσα
-\usepackage{indentfirst} %Εσοχή πρώτης παραγράφου
-\usepackage{fancyhdr} %Κεφαλίδες και υποσέλιδα
-\usepackage{forest} %Δημιουργία δέντρων
-\usepackage{graphicx} %Διαχείριση εικόνων
-\usepackage{enumitem} %Διαμόρφωση λιστών
+\usepackage{tcolorbox} % Μορφοποίηση πλαισίων
+\usepackage{titlesec} % Μορφοποίηση τίτλων κεφαλαίων
+\usepackage{setspace} % Διάστιχο
+\usepackage[greek]{babel} % Ελληνική γλώσσα
+\usepackage{indentfirst} % Εσοχή πρώτης παραγράφου
+\usepackage{fancyhdr} % Κεφαλίδες και υποσέλιδα
+\usepackage{forest} % Δημιουργία δέντρων
+\usepackage{graphicx} % Διαχείριση εικόνων
+\usepackage{enumitem} % Διαμόρφωση λιστών
+\usepackage{listings} % Block κώδικα
 \graphicspath{ {./img/} }
 %\usepackage[fontsize=13pt]{fontsize}
 
 \setmainfont{Conduit ITC Hel Light}
 \newfontfamily\fontDin{CF Din Condensed}
-\newenvironment{Din}{\fontDin}{\par}
+    \newenvironment{Din}{\fontDin}{\par}
 \newfontfamily\fontDinLight{CF Din Light Condensed}
-\newenvironment{Din Light}{\fontDinLight}{\par}
+    \newenvironment{Din Light}{\fontDinLight}{\par}
 \newfontfamily\fontDinMedium{CF Din Medium Condensed}
-\newenvironment{Din Medium}{\fontDinMedium}{\par}
-\newfontfamily\fontCode{Courier New}
-\newenvironment{Code}{\fontCode}{\par}
+    \newenvironment{Din Medium}{\fontDinMedium}{\par}
+%\newfontfamily\fontCode{Courier New}
+    %\newenvironment{Code}{\fontCode}{\par}
+\setmonofont[Scale=0.8]{Courier New}
 \newfontfamily\fontTimes{Times New Roman}
-\newenvironment{Times}{\fontTimes}{\par}
+    \newenvironment{Times}{\fontTimes}{\par}
 
 \newfontfamily\headingfont[]{CF Din Medium Condensed}
 
@@ -65,11 +67,10 @@
 \titleformat{\subsection}[block]
     {\fontDinLight \large} % global formatting (number and title)
     {\fontDin\colorbox{gray!25} {\hspace{5pt}\thesubsection\hspace{5pt}}} % label: number and its formatting
-    {\hspace{5pt}} % spacing between number and title
+    {\hspace{10pt}} % spacing between number and title
     {} % optional (content between number and title)
 \titlespacing*{\subsection}
    {0pt}{1em}{0.4em}  % left before after
-
 
 
 %% Setting for the column separator

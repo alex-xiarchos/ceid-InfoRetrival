@@ -1,6 +1,6 @@
 import json
 import os
-from icecream import ic
+
 
 def get_docs():
     docs_directory = 'Collection/docs'
@@ -12,7 +12,7 @@ def get_docs():
         with open(os.path.join(docs_directory, filename), 'r') as doc_file:
             doc = doc_file.readlines()
             doc = [word.strip() for word in doc]
-            doc_tuple = (filename, doc) # (DocID, <doc>)
+            doc_tuple = (filename, doc)  # (DocID, <doc>)
             doc_tuples_list.append(doc_tuple)
 
     return doc_tuples_list
@@ -27,14 +27,14 @@ def get_queries():
     return queries
 
 
-def return_json(json_file):
+def get_json_file(json_file):
     with open(json_file, 'r') as file:
         json_data = json.load(file)
 
     return json_data
 
 
-def return_relevant():
+def get_relevant():
     relevant_docs = {}
     with open('Collection/Relevant_20', 'r') as file:
         for i, line in enumerate(file):

@@ -46,10 +46,10 @@
 %   ===================================================================================================================
     \chapter{ΕΙΣΑΓΩΓΗ}
         \section{ΕΠΙΛΟΓΗ ΣΥΣΤΗΜΑΤΩΝ ΣΤΑΘΜΙΣΗΣ TF-IDF}
-        Καταρχάς πρέπει να επιλέξουμε δύο συστήματα στάθμισης των βαρών για τους όρους των εγγράφων και των ερωτημάτων.
+        Καταρχάς πρέπει να επιλέξουμε τα δύο συστήματα στάθμισης των βαρών για τα διανύσματα που θα χρησιμοποιήσουμε.
 
             \subsection{ΠΡΩΤΟ ΣΥΣΤΗΜΑ ΣΤΑΘΜΙΣΗΣ}
-            Το πρώτο σύστημα στάθμισης είναι μια παραλλαγή\footnote{Το σύστημα αναφέρεται ως παραλλαγή των Salton-Buckley για το λόγο ότι δεν έχει συμπεριληφθεί κάποιος παράγοντας κανονικοποίσης, μιας και τα έγγραφα είναι \textit{περίπου} ισομεγέθη (μέσος όρος 350 λέξεις).} του προτεινόμενου ως καλύτερου πλήρως σταθμισμένου συστήματος σύμφωνα με τους Salton-Buckley\footnote{Gerard Salton, Christopher Buckley, Term-weighting approaches in automatic text retrieval, Information Processing \& Management, Volume 24, Issue 5, 1988, Pages 513-523, ISSN 0306-4573}
+            Το πρώτο σύστημα στάθμισης θα είναι μια παραλλαγή\footnote{Το σύστημα αναφέρεται ως παραλλαγή των Salton-Buckley για το λόγο ότι δεν έχει συμπεριληφθεί κάποιος παράγοντας κανονικοποίσης, μιας και τα έγγραφα είναι \textit{περίπου} ισομεγέθη (μέσος όρος 350 λέξεις).} του προτεινόμενου ως καλύτερου πλήρως σταθμισμένου συστήματος σύμφωνα με τους Salton-Buckley\footnote{Gerard Salton, Christopher Buckley, Term-weighting approaches in automatic text retrieval, Information Processing \& Management, Volume 24, Issue 5, 1988, Pages 513-523, ISSN 0306-4573}
             {\fontTimes (best fully weighted system)}. \linebreak Θα χρησιμοποιήσουμε την \textbf{απλή συχνότητα εμφάνισης} {\fontTimes (raw term frequency)} για το TF βάρος των εγγράφων,
             \[ \text{\textbf{Σύστημα \#1:}\hspace{5pt}TF}_{\scriptsize \text{εγγράφων}}=\hspace{5pt} f_{i,j} \]
             όπου \(f_{ij}\) οι φορές που ο όρος εμφανίζεται σε ένα έγγραφο, τη \textbf{διπλή 0,5 κανονικοποίηση} για το TF βάρος των ερωτημάτων {\fontTimes(augmented normalized TF)},
@@ -62,10 +62,10 @@
             Ως δεύτερο σύστημα στάθμισης θα χρησιμοποιήσουμε το καλύτερα σταθμισμένο πιθανολογικό σύστημα σύμφωνα με τους Salton-Buckley\footnotemark[1]
             {\fontTimes (best weighted probabilistic weight)} με
             \[ \text{\textbf{Σύστημα \#2:}\hspace{5pt}βάρος όρου}_{\scriptsize \text{εγγράφων}}=\hspace{5pt} 0.5 + 0.5 \frac{f_{i,j}}{max_i\hspace{3pt}f_{i,j}}\]
-            \[ \text{\textbf{Σύστημα \#2:}\hspace{5pt}βάρος όρου}_{\scriptsize \text{ερωτημάτων}}=\hspace{5pt} \log{\frac{N - n_i}{n_i}} \]
+            \[ \text{\textbf{Σύστημα \#2:}\hspace{5pt}βάρος όρου}_{\scriptsize \text{ερωτημάτων}}=\hspace{5pt} \log{\frac{N - n_i}{n_i}}. \]
 
-            Και τα δύο αυτά συστήματα στάθμισης έχουν επιφέρει τα ακριβέστερα αποτελέσματα στο σύνολο των συλλογών στα οποία έχουν εξεταστεί
-            αλλά και ειδικότερα για ιατρικές {\fontTimes (MED)} συλλογές. Επομένως, συνολικά έχουμε:
+            Και τα δύο αυτά συστήματα στάθμισης έχουν επιφέρει τα ακριβέστερα αποτελέσματα και στο σύνολο των συλλογών στα οποία έχουν εξεταστεί
+            αλλά και ειδικότερα σε ιατρικές {\fontTimes (MED)} συλλογές. Επομένως, συνολικά έχουμε:
 
             \noindent
             \begin{tblr}{
@@ -86,20 +86,19 @@
             colspec={>{\centering\arraybackslash}m{5cm}>{\centering\arraybackslash}m{10cm}},
             row{2,4,6,8}={bg=lightgray!50}, row{3,5,7,9}={bg=lightgray}, row{1}={bg=black!90,fg=white}}
             Βιβλιοθήκη & Περιγραφή \\
-            \textbf{os} & σύνδεση με λειτουργικό σύστημα \\
-            \textbf{nltk} & αφαίρεση stopwords, stemming \\
-            \textbf{numpy} & υπολογισμός ομοιότητας συνημιτόνου \\
-            \textbf{math} & υπολογισμός λογαρίθμων \\
-            \textbf{matplotlib} & γραφικές παραστάσεις \\
-            \textbf{json} & αποθήκευση-ανάγνωση JSON αρχείων \\
-            \textbf{pickle} & αποθήκευση αντικειμένων Python
+            \textbf{\texttt{os}} & σύνδεση με λειτουργικό σύστημα \\
+            \textbf{\texttt{json}} & αποθήκευση-ανάγνωση JSON αρχείων \\
+            \textbf{\texttt{nltk}} & αφαίρεση stopwords, stemming \\
+            \textbf{\texttt{numpy}} & υπολογισμός ομοιότητας συνημιτόνου \\
+            \textbf{\texttt{math}} & υπολογισμός λογαρίθμων \\
+            \textbf{\texttt{matplotlib}} & γραφικές παραστάσεις \\
         \end{tblr}
 
         Αυτή είναι η δομή των αρχείων κώδικα όπου έχει χωριστεί η υλοποίηση: \\
         \begin{minipage}{.5\textwidth}\centering
             \begin{forest}
               for tree={
-                font=\fontCode\small,
+                font=\tt,
                 grow'=00,
                 child anchor=west,
                 parent anchor=south,
@@ -129,7 +128,7 @@
         \begin{minipage}{.5\textwidth} \centering
             \begin{forest}
                 for tree={
-                    font=\fontCode\small,
+                    font=\tt,
                     grow'=00,
                     child anchor=west,
                     parent anchor=south,
@@ -155,51 +154,55 @@
             \end{forest}
         \end{minipage}%
 
-        Η υλοποίηση του colBERT μοντέλου έχει πραγματοποιηθεί στο Google Colab ως Juputer Notebook.
+        Τέλος, η υλοποίηση του colBERT μοντέλου έχει πραγματοποιηθεί στο Google Colab ως Juputer Notebook.
 
         \section{ΠΡΟΕΠΕΞΕΡΓΑΣΙΑ ΕΓΓΡΑΦΩΝ \& ΒΟΗΘΗΤΙΚΕΣ ΣΥΝΑΡΤΗΣΕΙΣ}
+            
+            \subsection{\tt tools.py}
 
-            Το αρχείο {\fontCode\small tools.py} περιλαμβάνει βοηθητικές συναρτήσεις για κάποιες επαναλαμβανόμενες διαδικασίες της υλοποίησης.
-            Περιλαμβάνονται οι συναρτήσεις {\fontCode\small \textbf{get\_docs}()} και {\fontCode\small \textbf{get\_queries}()}.
+                Το αρχείο \texttt{tools.py} περιλαμβάνει βοηθητικές συναρτήσεις για κάποιες επαναλαμβανόμενες διαδικασίες της υλοποίησης.
 
-            Η συνάρτηση {\fontCode\small \textbf{get\_docs}()}, χρησιμοποιώντας την {\fontCode\small os} βιβλιοθήκη
-            διαβάζει το πλήθος των αρχείων της βιβλιοθήκης.\footnote{Να σημειωθεί ότι το πλήθος των εγγράφων διαφέρει από την αύξουσα αρίθμησή τους. Συγκεκριμένα έχουμε 1209 έγγραφα αριθμημένα από το {\fontCode\scriptsize 000001} ως {\fontCode\scriptsize 01239}. Με άλλα λόγια υπάρχουν αριθμοί στη συλλογή που δεν αντιστοιχούν σε έγγραφα. Συνεπώς δεν θα μπορούσαμε να χρησιμοποιήσουμε κάποια αριθμητική επανάληψη, για παράδειγμα, για την εισαγωγή των εγγράφων.}
-            Η συνάρτηση, αφού αφαιρέσει το escape character {\fontCode\small '\textbackslash n'}, ο οποίος προκύπτει από την μορφολογία των εγγράφων (η κάθε λέξη είναι τοποθετημένη σε διαφορετική γραμμή),
-            δημιουργεί \linebreak και επιστρέφει μια λίστα από tuples, με κάθε tuple να αντιστοιχεί σε κάθε αρχείο-έγγραφο. \linebreak Τα tuples έχουν την δομή:
-                \begin{graycomment} \centering
-                {\fontCode\footnotesize doc\_tuple = ('docID', ['λήμμα\_1', 'λήμμα\_2' ...])}
-                \end{graycomment}
+                Η συνάρτηση \texttt{\textbf{get\_docs}()}, χρησιμοποιώντας την \texttt{os} βιβλιοθήκη, διαβάζει το πλήθος των αρχείων της συλλογής.\footnote{Να σημειωθεί ότι το πλήθος των εγγράφων διαφέρει από την αύξουσα αρίθμησή τους. Συγκεκριμένα έχουμε 1209 έγγραφα αριθμημένα από το \texttt{000001} ως \texttt{01239}. Με άλλα λόγια υπάρχουν αριθμοί στη συλλογή που δεν αντιστοιχούν σε έγγραφα. Συνεπώς δεν θα μπορούσαμε να χρησιμοποιήσουμε κάποια αριθμητική επανάληψη, για παράδειγμα, για την εισαγωγή των εγγράφων.}
+                Η συνάρτηση, αφού αφαιρέσει το escape character \texttt{'\textbackslash n'}, το οποίο προκύπτει από την μορφολογία των εγγράφων (η κάθε λέξη είναι τοποθετημένη σε διαφορετική γραμμή),
+                δημιουργεί \linebreak και επιστρέφει μια λίστα από tuples, με κάθε tuple να αντιστοιχεί σε κάθε αρχείο-έγγραφο. \linebreak
+                Έτσι τα έγγραφα έχουν τη δομή:
+                    \begin{graycomment} \centering
+                    \verb|doc = ('docID', ['λήμμα_1', 'λήμμα_2' ...])|
+                    \end{graycomment}
 
-            \noindent όπου {\fontCode\small docID} η αρίθμηση του κάθε εγγράφου και {\fontCode\small doc\_term\_n} η κάθε λέξη-λήμμα του εγγράφου. \linebreak
-            Η συνάρτηση {\fontCode\small strip()} είναι απαραίτητη για την αφαίρεση των {\fontCode\small \textbackslash n} χαρακτήρων
-            που προέκυψαν από την μορφολογία των εγγράφων (κάθε λέξη είναι σε νέα γραμμή).
-            Με παρόμοιο τρόπο η συνάρτηση {\fontCode\small \textbf{get\_queries}()} επιστρέφει τη λίστα με τα ερωτήματα της συλλογής.
+                \noindent όπου \texttt{docID} η αρίθμηση του κάθε εγγράφου και \verb|λήμμα_n| η κάθε λέξη-λήμμα του εγγράφου.
+                Αυτός θα είναι ο τρόπος αποθήκευσης και προσπέλασης των εγγράφων σε όλη την υλοποίηση.
 
-            Στις συναρτήσεις {\fontCode\small \textbf{preprocess\_collection}()} και {\fontCode\small \textbf{preprocess\_queries}()}
-            πραγματοποιείται η προεπεξεργασία των εγγράφων, συγκεκριμένα η αφαίρεση των stopwords και το stemming.
+                Η συνάρτηση \texttt{strip()} της \verb|get_docs()| είναι απαραίτητη για την αφαίρεση των \texttt{\textbackslash n} χαρακτήρων
+                που προκύπτουν από τη μορφολογία των εγγράφων (μιας και κάθε λέξη είναι σε νέα γραμμή).
+                Με παρόμοιο τρόπο η συνάρτηση \texttt{\textbf{get\_queries}()} επιστρέφει τη λίστα με τα ερωτήματα της συλλογής,
+                η \texttt{\textbf{get\_relevant}()} τη λίστα με τα σχετικά έγγραφα ανά ερώτημα και η \texttt{\textbf{get\_json\_file}()} τα περιεχόμενα ενός JSON αρχείου.
 
-            Χρησιμοποιούμε τη {\fontCode\small nltk} βιβλιοθήκη. Τα {\fontCode\small doc\_tuples} της
-            {\fontCode\small get\_docs()} αφού περάσουν από τον {\fontCode\small PorterStemmer} της {\fontCode\small nltk} αποθηκεύονται σε μια λίστα,
-            η οποία στη συνέχεια επιστρέφεται.\linebreak
-            Αντίστοιχη διαδικασία πραγματοποιείται και για την προεπεξεργασία των ερωτημάτων, στην {\fontCode\small preprocess\_queries()}.
+            \subsection{\tt preprocessing.py}
+
+                Στο αρχείο \texttt{preprocessing.py}, και συγκεκριμένα στις συναρτήσεις \texttt{\textbf{preprocess\_collection}()} και \texttt{\textbf{preprocess\_queries}()}
+                πραγματοποιείται η προεπεξεργασία των εγγράφων, συγκεκριμένα η αφαίρεση των stopwords και το stemming.
+
+                Χρησιμοποιούμε τη \texttt{nltk} βιβλιοθήκη. Κάθε λέξη από τη συλλογή των εγγράφων αφού περάσουν από τον \texttt{PorterStemmer} της \texttt{nltk}
+                και ελεγχθούν ότι δεν ανήκουν στη λίστα των stopwords, επιστρέφονται σε παρόμοια μορφή όπως δημιουργήθηκαν στη \verb|get_docs()|.
+                Αντίστοιχη διαδικασία πραγματοποιείται και για την προεπεξεργασία των ερωτημάτων, στη \verb|preprocess_queries()|.
 
         \section{ΑΝΕΣΤΡΑΜΜΕΝΟ ΕΥΡΕΤΗΡΙΟ}
 
-            Το ανεστραμμένο ευρετήριο δημιουργείται στη συνάρτηση {\fontCode\small \textbf{create\_inverted\_index}()} του αρχείου {\fontCode\small inverted\_index.py}.
-            Στη συνάρτηση εισάγονται οι λίστες που δημιουργήθηκαν στις προηγούμενες συναρτήσεις. Τα tuples από τα οποία αποτελούνται, αποθηκεύονται σε ένα dictionary που θα αποτελέσει το ανεστραμμένο ευρετήριο με την εξής δομή:
+            Το ανεστραμμένο ευρετήριο δημιουργείται στη συνάρτηση \texttt{\textbf{create\_inverted\_index}()} του αρχείου \verb|inverted_index.py|.
+            Τα έγγραφα, μετά την προεπεξεργασία τους, εισέρχονται σε μια δομή επανάληψης, \linebreak η οποία δημιουργεί το ανεστραμμένο ευρετήριο ως μορφή λεξικού ως εξής:
 
                 \begin{graycomment} \centering
-                    {\fontCode\footnotesize inverted\_index['λήμμα'] = \\ \{ ('docID στο οποίο εμφανίζεται' = <φορές εμφάνισης>), (\(\cdots\)), \(\ldots\) \}}
+                    \texttt{\small \textbf{inverted\_index['λήμμα']} = \\ \{('docID\(_\texttt{1}\)': <φορές εμφάνισης>), ('docID\(_\texttt{2}\)': <φορές εμφάνισης>), \(\ldots\) \}}
                 \end{graycomment}
 
-            Κάθε value του dictionary είναι ένα set\footnote{Έχει επιλεχθεί set για εξοικονόμιση μνήμης, μας και δεν μας ενδιαφέρει η σειρά των tuples.} το οποίο περιλαμβάνει ένα ή περισσότερα tuples
-            με το {\fontCode\small docID} και τη συχνότητα εμφάνισης του λήμματος στο συγκεκριμένο έγγραφο.
-            Η συχνότητα υπολογίζεται μέσω της {\fontCode\small count()} σε όλο το έγγραφο ανά λήμμα.
+            Κάθε value του dictionary είναι ένα σύνολο\footnote{Έχει επιλεχθεί set για εξοικονόμιση μνήμης, μας και δεν μας ενδιαφέρει η σειρά των tuples.} το οποίο περιλαμβάνει ένα ή περισσότερα tuples με το \texttt{docID}
+            και τη συχνότητα εμφάνισης του λήμματος στο συγκεκριμένο έγγραφο. Η συχνότητα υπολογίζεται μέσω της \texttt{count()} σε όλο το έγγραφο ανά λήμμα.
 
-            Αυτό είναι ένα παράδειγμα του τελικού ανεστραμμένου ευρετηρίου\footnote{Τα λήμματα έχουν τη stemming μορφή τους.}:
+            Αυτό είναι ένα παράδειγμα του τελικού ανεστραμμένου ευρετηρίου:
 
                 \begin{graycomment} \centering
-                    \fontCode\footnotesize inverted\_index = \{ \(\ldots\) 'coronari': \{('01217', 2), ('00779', 1)\}, \\ 'mobil': \{('00673', 2)\}, 'strain': \{('00179', 7)\}, \(\ldots\) \}
+                    \tt\small \textbf{inverted\_index} = \{ \(\ldots\) 'coronari': \{('01217', 2), ('00779', 1)\}, \\ 'mobil': \{('00673', 2)\}, 'strain': \{('00179', 7)\}, \(\ldots\) \}
                 \end{graycomment}
 
 
