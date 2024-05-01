@@ -1,5 +1,6 @@
 import math
 import numpy as np
+from icecream import ic
 from numpy.linalg import norm
 
 
@@ -106,10 +107,12 @@ def vsm2(doc_collection, query, inverted_index):
 
 
 def run_vsm(doc_collection, queries, inverted_index):
-    results = []
+    results1 = []
+    results2 = []
 
     for query in queries:
-        print(query)
-        results = vsm1(doc_collection, query, inverted_index)
+        pass
+        results1.append(vsm1(doc_collection, query, inverted_index))
+        results2.append(vsm2(doc_collection, query, inverted_index))
 
-    return results
+    return results1, results2

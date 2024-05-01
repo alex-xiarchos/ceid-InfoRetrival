@@ -1,5 +1,6 @@
+import json
 import os
-
+from icecream import ic
 
 def get_docs():
     docs_directory = 'Collection/docs'
@@ -24,3 +25,19 @@ def get_queries():
         queries = queries_file.readlines()
 
     return queries
+
+
+def return_json(json_file):
+    with open(json_file, 'r') as file:
+        json_data = json.load(file)
+
+    return json_data
+
+
+def return_relevant():
+    relevant_docs = {}
+    with open('Collection/Relevant_20', 'r') as file:
+        for i, line in enumerate(file):
+            relevant_docs[i] = [int(item) for item in line.split()]
+
+    return relevant_docs

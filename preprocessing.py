@@ -15,7 +15,7 @@ def preprocess_collection():
         stripped_doc = [stemmer.stem(word.lower()) for word in doc_tuple[1] if word.lower() not in stop_words]
         stripped_doc_tuple = (doc_tuple[0], stripped_doc)  # (DocID, <stripped_doc>)
         stripped_docs.append(stripped_doc_tuple)
- 
+
     return stripped_docs
 
 
@@ -31,5 +31,9 @@ def preprocess_queries():
         stripped_query = [stemmer.stem(word.lower()) for word in query.split() if word.lower() not in stop_words]
         stripped_queries.append(stripped_query)
 
+    stripped_queries_new = []
+    for query in stripped_queries:
+        query = list(set(query))
+        stripped_queries_new.append(query)
 
-    return stripped_queries
+    return stripped_queries_new

@@ -1,6 +1,7 @@
 ﻿\documentclass[12pt]{report}
 \usepackage{arabicore}
 \usepackage{booktabs}
+\usepackage{titleps}
 \input{setup}
 
 \begin{document}
@@ -44,18 +45,18 @@
 
 %   ===================================================================================================================
     \chapter{ΕΙΣΑΓΩΓΗ}
-        \section{ΕΠΙΛΟΓΗ ΣΥΣΤΗΜΑΤΩΝ ΣΤΑΘΜΙΣΗΣ}
+        \section{ΕΠΙΛΟΓΗ ΣΥΣΤΗΜΑΤΩΝ ΣΤΑΘΜΙΣΗΣ TF-IDF}
         Καταρχάς πρέπει να επιλέξουμε δύο συστήματα στάθμισης των βαρών για τους όρους των εγγράφων και των ερωτημάτων.
 
             \subsection{ΠΡΩΤΟ ΣΥΣΤΗΜΑ ΣΤΑΘΜΙΣΗΣ}
-            Το πρώτο σύστημα στάθμισης θα είναι μια παραλλαγή του προτεινόμενου ως καλύτερου πλήρως σταθμισμένου συστήματος σύμφωνα με τους Salton-Buckley\footnote{Gerard Salton, Christopher Buckley, Term-weighting approaches in automatic text retrieval, Information Processing \& Management, Volume 24, Issue 5, 1988, Pages 513-523, ISSN 0306-4573}
-            {\fontTimes (best fully weighted system)}. Θα χρησιμοποιήσουμε τη \textbf{απλή συχνότητα εμφάνισης} {\fontTimes (raw term frequency)} για το TF βάρος των εγγράφων:
+            Το πρώτο σύστημα στάθμισης είναι μια παραλλαγή\footnote{Το σύστημα αναφέρεται ως παραλλαγή των Salton-Buckley για το λόγο ότι δεν έχει συμπεριληφθεί κάποιος παράγοντας κανονικοποίσης, μιας και τα έγγραφα είναι \textit{περίπου} ισομεγέθη (μέσος όρος 350 λέξεις).} του προτεινόμενου ως καλύτερου πλήρως σταθμισμένου συστήματος σύμφωνα με τους Salton-Buckley\footnote{Gerard Salton, Christopher Buckley, Term-weighting approaches in automatic text retrieval, Information Processing \& Management, Volume 24, Issue 5, 1988, Pages 513-523, ISSN 0306-4573}
+            {\fontTimes (best fully weighted system)}. \linebreak Θα χρησιμοποιήσουμε την \textbf{απλή συχνότητα εμφάνισης} {\fontTimes (raw term frequency)} για το TF βάρος των εγγράφων,
             \[ \text{\textbf{Σύστημα \#1:}\hspace{5pt}TF}_{\scriptsize \text{εγγράφων}}=\hspace{5pt} f_{i,j} \]
-            όπου \(f_{ij}\) οι φορές που ο όρος εμφανίζεται σε ένα έγγραφο, την \textbf{διπλή 0,5 κανονικοποίηση} για το TF βάρος των ερωτημάτων {\fontTimes(augmented normalized TF)}:
+            όπου \(f_{ij}\) οι φορές που ο όρος εμφανίζεται σε ένα έγγραφο, τη \textbf{διπλή 0,5 κανονικοποίηση} για το TF βάρος των ερωτημάτων {\fontTimes(augmented normalized TF)},
             \[ \text{\textbf{Σύστημα \#1:}\hspace{5pt}TF}_{\scriptsize \text{ερωτημάτων}}=\hspace{5pt} 0.5 + 0.5 \frac{f_{i,j}}{max_i\hspace{3pt}f_{i,j}} \]
             και τέλος την \textbf{απλή ανάστροφη συχνότητα εμφάνισης} για το IDF βάρος και των εγγράφων και των ερωτημάτων:
             \[\text{\textbf{Σύστημα \#1:}\hspace{5pt}IDF}_{\scriptsize\begin{matrix}\text{εγγράφων}\\\text{ερωτημάτων}\end{matrix}}=\hspace{5pt} \log{\frac{N}{n_i}} \]
-            όπου \(N\) το πλήθος των εγγράφων και \(n_i\) ο αριθμός των εγγράφων στα οποία εμπεριέχεται ο όρος.\footnote{Το σύστημα αναφέρεται ως παραλλαγή των Salton-Buckley για το λόγο ότι δεν έχει συμπεριληφθεί κάποιος παράγοντας κανονικοποίσης, μιας και τα έγγραφα είναι \textit{περίπου} ισομεγέθη (μέσος όρος 350 λέξεις).}
+            όπου \(N\) το πλήθος των εγγράφων και \(n_i\) ο αριθμός των εγγράφων στα οποία εμπεριέχεται ο όρος.
 
             \subsection{ΔΕΥΤΕΡΟ ΣΥΣΤΗΜΑ ΣΤΑΘΜΙΣΗΣ}
             Ως δεύτερο σύστημα στάθμισης θα χρησιμοποιήσουμε το καλύτερα σταθμισμένο πιθανολογικό σύστημα σύμφωνα με τους Salton-Buckley\footnotemark[1]
@@ -63,8 +64,8 @@
             \[ \text{\textbf{Σύστημα \#2:}\hspace{5pt}βάρος όρου}_{\scriptsize \text{εγγράφων}}=\hspace{5pt} 0.5 + 0.5 \frac{f_{i,j}}{max_i\hspace{3pt}f_{i,j}}\]
             \[ \text{\textbf{Σύστημα \#2:}\hspace{5pt}βάρος όρου}_{\scriptsize \text{ερωτημάτων}}=\hspace{5pt} \log{\frac{N - n_i}{n_i}} \]
 
-            Και τα δύο αυτά συστήματα στάθμισης έχουν επιφέρει τα ακριβέστερα αποτελέσματα στο σύνολο των συλλογών στα οποία έχουν εξεταστεί αλλά και ειδικότερα για ιατρικές συλλογές.
-            Επομένως συνολικά έχουμε:
+            Και τα δύο αυτά συστήματα στάθμισης έχουν επιφέρει τα ακριβέστερα αποτελέσματα στο σύνολο των συλλογών στα οποία έχουν εξεταστεί
+            αλλά και ειδικότερα για ιατρικές {\fontTimes (MED)} συλλογές. Επομένως, συνολικά έχουμε:
 
             \noindent
             \begin{tblr}{
@@ -83,43 +84,78 @@
 
         \begin{tblr}{
             colspec={>{\centering\arraybackslash}m{5cm}>{\centering\arraybackslash}m{10cm}},
-            row{2,4,6}={bg=lightgray!50}, row{3,5}={bg=lightgray}, row{1}={bg=black!90,fg=white}}
+            row{2,4,6,8}={bg=lightgray!50}, row{3,5,7,9}={bg=lightgray}, row{1}={bg=black!90,fg=white}}
             Βιβλιοθήκη & Περιγραφή \\
+            \textbf{os} & σύνδεση με λειτουργικό σύστημα \\
             \textbf{nltk} & αφαίρεση stopwords, stemming \\
             \textbf{numpy} & υπολογισμός ομοιότητας συνημιτόνου \\
             \textbf{math} & υπολογισμός λογαρίθμων \\
+            \textbf{matplotlib} & γραφικές παραστάσεις \\
+            \textbf{json} & αποθήκευση-ανάγνωση JSON αρχείων \\
+            \textbf{pickle} & αποθήκευση αντικειμένων Python
         \end{tblr}
 
-        Αυτή είναι η δομή των αρχείων όπου έχει χωριστεί η υλοποίηση:\\
-        \begin{forest}
-          for tree={
-            font=\fontCode\small,
-            grow'=00,
-            child anchor=west,
-            parent anchor=south,
-            anchor=west,
-            calign=first,
-            edge path={
-              \noexpand\path [draw, \forestoption{edge}]
-              (!u.south west) +(7.5pt,0) |- node[fill,inner sep=1.5pt] {} (.child anchor)\forestoption{edge label};
-            },
-            before typesetting nodes={
-              if n=1
-                {insert before={[,phantom]}}
-                {}
-            },
-            fit=band,
-            before computing xy={l=15pt},
-          }
-        [src
-          [compare\_docs.py]
-          [inverted\_index.py]
-          [main.py]
-          [preprocessing.py]
-          [tools.py]
-          [vector\_space\_model.py]
-        ]
-        \end{forest}
+        Αυτή είναι η δομή των αρχείων κώδικα όπου έχει χωριστεί η υλοποίηση: \\
+        \begin{minipage}{.5\textwidth}\centering
+            \begin{forest}
+              for tree={
+                font=\fontCode\small,
+                grow'=00,
+                child anchor=west,
+                parent anchor=south,
+                anchor=west,
+                calign=first,
+                edge path={
+                  \noexpand\path [draw, \forestoption{edge}]
+                  (!u.south west) +(7.5pt,0) |- node[fill,inner sep=1.5pt] {} (.child anchor)\forestoption{edge label};
+                },
+                before typesetting nodes={
+                  if n=1
+                    {insert before={[,phantom]}}
+                    {}
+                },
+                fit=band,
+                before computing xy={l=15pt},
+              }
+            [src
+              [main.py]
+              [tools.py]
+              [preprocessing.py]
+              [inverted\_index.py]
+              [vector\_space\_model.py]
+            ]
+            \end{forest}
+        \end{minipage}%
+        \begin{minipage}{.5\textwidth} \centering
+            \begin{forest}
+                for tree={
+                    font=\fontCode\small,
+                    grow'=00,
+                    child anchor=west,
+                    parent anchor=south,
+                    anchor=west,
+                    calign=first,
+                    edge path={
+                      \noexpand\path [draw, \forestoption{edge}]
+                      (!u.south west) +(7.5pt,0) |- node[fill,inner sep=1.5pt] {} (.child anchor)\forestoption{edge label};
+                    },
+                    before typesetting nodes={
+                      if n=1
+                        {insert before={[,phantom]}}
+                        {}
+                    },
+                    fit=band,
+                    before computing xy={l=15pt},
+                  }
+                [src
+                  [colBERT\_preprocessing.py]
+                  [colBERT.ipynb]
+                  [evaluation\_metrics.py]
+                ]
+            \end{forest}
+        \end{minipage}%
+
+        Η υλοποίηση του colBERT μοντέλου έχει πραγματοποιηθεί στο Google Colab ως Juputer Notebook.
 
         \section{ΠΡΟΕΠΕΞΕΡΓΑΣΙΑ ΕΓΓΡΑΦΩΝ \& ΒΟΗΘΗΤΙΚΕΣ ΣΥΝΑΡΤΗΣΕΙΣ}
 
@@ -128,32 +164,29 @@
 
             Η συνάρτηση {\fontCode\small \textbf{get\_docs}()}, χρησιμοποιώντας την {\fontCode\small os} βιβλιοθήκη
             διαβάζει το πλήθος των αρχείων της βιβλιοθήκης.\footnote{Να σημειωθεί ότι το πλήθος των εγγράφων διαφέρει από την αύξουσα αρίθμησή τους. Συγκεκριμένα έχουμε 1209 έγγραφα αριθμημένα από το {\fontCode\scriptsize 000001} ως {\fontCode\scriptsize 01239}. Με άλλα λόγια υπάρχουν αριθμοί στη συλλογή που δεν αντιστοιχούν σε έγγραφα. Συνεπώς δεν θα μπορούσαμε να χρησιμοποιήσουμε κάποια αριθμητική επανάληψη, για παράδειγμα, για την εισαγωγή των εγγράφων.}
-            Η συνάρτηση δημιουργεί και επιστρέφει μια λίστα από tuples, με κάθε tuple να αντιστοιχεί σε κάθε αρχείο-έγγραφο. Τα tuples έχουν την δομή:
-
+            Η συνάρτηση, αφού αφαιρέσει το escape character {\fontCode\small '\textbackslash n'}, ο οποίος προκύπτει από την μορφολογία των εγγράφων (η κάθε λέξη είναι τοποθετημένη σε διαφορετική γραμμή),
+            δημιουργεί \linebreak και επιστρέφει μια λίστα από tuples, με κάθε tuple να αντιστοιχεί σε κάθε αρχείο-έγγραφο. \linebreak Τα tuples έχουν την δομή:
                 \begin{graycomment} \centering
-                {\fontCode\footnotesize ('docID', ['λήμμα\_1', 'λήμμα\_2' ...])}
+                {\fontCode\footnotesize doc\_tuple = ('docID', ['λήμμα\_1', 'λήμμα\_2' ...])}
                 \end{graycomment}
 
-            \noindent όπου {\fontCode\small docID} η αρίθμηση του κάθε εγγράφου και {\fontCode\small doc\_term\_n} η κάθε λέξη-λήμμα του εγγράφου.
+            \noindent όπου {\fontCode\small docID} η αρίθμηση του κάθε εγγράφου και {\fontCode\small doc\_term\_n} η κάθε λέξη-λήμμα του εγγράφου. \linebreak
             Η συνάρτηση {\fontCode\small strip()} είναι απαραίτητη για την αφαίρεση των {\fontCode\small \textbackslash n} χαρακτήρων
             που προέκυψαν από την μορφολογία των εγγράφων (κάθε λέξη είναι σε νέα γραμμή).
-            Αντίστοιχα η συνάρτηση {\fontCode\small \textbf{get\_queries}()} επιστρέφει τη λίστα με τα ερωτήματα της συλλογής.
+            Με παρόμοιο τρόπο η συνάρτηση {\fontCode\small \textbf{get\_queries}()} επιστρέφει τη λίστα με τα ερωτήματα της συλλογής.
 
             Στις συναρτήσεις {\fontCode\small \textbf{preprocess\_collection}()} και {\fontCode\small \textbf{preprocess\_queries}()}
-            πραγματοποιείται η προεπεξεργασία των εγγράφων, συγκεκριμένη η αφαίρεση των \textbf{stopwords} και το \textbf{stemming}.
+            πραγματοποιείται η προεπεξεργασία των εγγράφων, συγκεκριμένα η αφαίρεση των stopwords και το stemming.
 
-
-            Η αφαίρεση των stopwords και το stemming γίνεται με τη χρήση της {\fontCode\small nltk} βιβλιοθήκης. Τα {\fontCode\small doc\_tuples} της
+            Χρησιμοποιούμε τη {\fontCode\small nltk} βιβλιοθήκη. Τα {\fontCode\small doc\_tuples} της
             {\fontCode\small get\_docs()} αφού περάσουν από τον {\fontCode\small PorterStemmer} της {\fontCode\small nltk} αποθηκεύονται σε μια λίστα,
-            η οποία στη συνέχεια επιστρέφεται.
+            η οποία στη συνέχεια επιστρέφεται.\linebreak
             Αντίστοιχη διαδικασία πραγματοποιείται και για την προεπεξεργασία των ερωτημάτων, στην {\fontCode\small preprocess\_queries()}.
 
         \section{ΑΝΕΣΤΡΑΜΜΕΝΟ ΕΥΡΕΤΗΡΙΟ}
 
             Το ανεστραμμένο ευρετήριο δημιουργείται στη συνάρτηση {\fontCode\small \textbf{create\_inverted\_index}()} του αρχείου {\fontCode\small inverted\_index.py}.
-            Στην συνάρτηση εισαγάγονται οι λίστες που δημιουργήθηκαν στις προηγούμενες συναρτήσεις.
-
-            Τα tuples που αντιστοιχούν σε αυτά αποθηκεύονται σε ένα dictionary που θα αποτελέσει το ανεστραμμένο ευρετήριο με την εξής δομή:
+            Στη συνάρτηση εισάγονται οι λίστες που δημιουργήθηκαν στις προηγούμενες συναρτήσεις. Τα tuples από τα οποία αποτελούνται, αποθηκεύονται σε ένα dictionary που θα αποτελέσει το ανεστραμμένο ευρετήριο με την εξής δομή:
 
                 \begin{graycomment} \centering
                     {\fontCode\footnotesize inverted\_index['λήμμα'] = \\ \{ ('docID στο οποίο εμφανίζεται' = <φορές εμφάνισης>), (\(\cdots\)), \(\ldots\) \}}
@@ -166,14 +199,15 @@
             Αυτό είναι ένα παράδειγμα του τελικού ανεστραμμένου ευρετηρίου\footnote{Τα λήμματα έχουν τη stemming μορφή τους.}:
 
                 \begin{graycomment} \centering
-                    \fontCode\scriptsize inverted\_index = \{ \(\ldots\) 'coronari': {('01217', 2), ('00779', 1), ('00164', 1)}, \\ 'graft': {('00164', 1)}, 'mobil': {('00673', 2), 'strain': {('00179', 7), \(\ldots\) \}
+                    \fontCode\footnotesize inverted\_index = \{ \(\ldots\) 'coronari': \{('01217', 2), ('00779', 1)\}, \\ 'mobil': \{('00673', 2)\}, 'strain': \{('00179', 7)\}, \(\ldots\) \}
                 \end{graycomment}
+
 
         \section{ΥΛΟΠΟΙΗΣΗ VECTOR SPACE ΜΟΝΤΕΛΟΥ}
 
             Η υλοποίηση του vector space μοντέλου γίνεται στο αρχείο {\fontCode\small vector\_space\_model.py}.
-            Η συνάρτηση {\fontCode\small \textbf{run\_vsm}(doc\_collection, queries, inverted\_index)}, μέσω μιας επανάληψης για να μπορέσουν να καλυφθούν όλα τα queries,
-            καλεί την συνάρτηση {\fontCode\small \textbf{vsm1}(doc\_collection, query, inverted\_index)} ή {\fontCode\small \textbf{vsm2}()}, ανάλογα με το σύστημα στάθμισης που θέλουμε,
+            Η συνάρτηση {\fontCode\small \textbf{run\_vsm}(doc\_collection, queries, inverted\_index)}, μέσω μιας επανάληψης ώστε να καλυφθούν όλα τα queries,
+            καλεί την συνάρτηση {\fontCode\small \textbf{vsm1}(doc\_collection, query, inverted\_index)} ή {\fontCode\small \textbf{vsm2}()}, ανάλογα με το σύστημα στάθμισης που θέλουμε να χρησιμοποιήσουμε.
 
             Πριν προχωρήσουμε στις συναρτήσεις {\fontCode\small vsmX()}, από το τρόπο που έχει δομηθεί το ανεστραμμένο ευρετήριο,
             είναι σαφές πως μπορούμε να υπολογίσουμε αμέσως το πλήθος των εγγράφων όπου υπάρχει ένα συγκεκρίμενο λήμμα ως {\fontCode\small len(inverted\_index[term])},

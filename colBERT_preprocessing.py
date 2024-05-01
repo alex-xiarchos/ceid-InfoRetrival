@@ -14,10 +14,10 @@ for i, doc in enumerate(docs):
     colBERTdocs[doc[0]] = doc[1]
 
 
-with open("colBERT_output/colBERT_docs", "w") as filename:
+with open("colBERT_input/colBERT_docs", "w") as filename:
     json.dump(colBERTdocs, filename)
     filename.close()
 
-with open("colBERT_output/colBERT_queries", "w") as filename:
+with open("colBERT_input/colBERT_queries", "w") as filename:
     json.dump(ColBERTqueries, filename)
     filename.close()
