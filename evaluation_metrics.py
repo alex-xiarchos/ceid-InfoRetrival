@@ -1,4 +1,3 @@
-from icecream import ic
 import tools
 import matplotlib.pyplot as plt
 import numpy as np
@@ -53,7 +52,7 @@ def mean_average_precision(recall_precision_values):
         average_precision = 0
 
     for j in range(1, len(recalls)):
-        average_precision += (recalls[j] - recalls[j-1]) * precisions[j]
+        average_precision += (recalls[j] - recalls[j - 1]) * precisions[j]
         average_precision_list.append(average_precision)
 
     return np.mean(average_precision_list)
@@ -70,9 +69,9 @@ def run_metrics(vsm1_results, vsm2_results):
     map_vm2 = mean_average_precision(recall_precision_vsm2)
     map_colBERT = mean_average_precision(recall_precision_colBERT)
 
-    print(map_vm1)
-    print(map_vm2)
-    print(map_colBERT)
+    print("vm1", map_vm1)
+    print("vm2", map_vm2)
+    print("colBERT", map_colBERT)
 
     for i in range(len(recall_precision_vsm1)):
         plt.figure()
@@ -84,4 +83,3 @@ def run_metrics(vsm1_results, vsm2_results):
         plt.title(f'Ερώτημα {i + 1}')
         plt.legend(loc='upper right')
         plt.savefig('Precision_Recall_Curve/' + str(i + 1) + '.png')
-

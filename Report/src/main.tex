@@ -1,7 +1,5 @@
 ﻿\documentclass[12pt]{report}
-\usepackage{arabicore}
-\usepackage{booktabs}
-\usepackage{titleps}
+
 \input{setup}
 
 \begin{document}
@@ -18,7 +16,7 @@
         \begin{headerlight}
             \begin{Din}
                 \centering
-                    {ΠΑΝΕΠΙΣΤΗΜΙΟ ΠΑΤΡΩΝ \(\cdot\) ΤΜΗΜΑ ΜΗΧΑΝΙΚΩΝ Η/Υ ΚΑΙ ΠΛΗΡΟΦΟΡΙΚΗΣ}
+                {ΠΑΝΕΠΙΣΤΗΜΙΟ ΠΑΤΡΩΝ \(\cdot\) ΤΜΗΜΑ ΜΗΧΑΝΙΚΩΝ Η/Υ ΚΑΙ ΠΛΗΡΟΦΟΡΙΚΗΣ}
             \end{Din}
         \end{headerlight}
 
@@ -32,7 +30,7 @@
         \begin{headerlight}
             \begin{Din}
                 \centering
-                    ΕΡΓΑΣΤΗΡΙΑΚΗ ΑΣΚΗΣΗ \(\cdot\) 2023 \(\textendash\) 2024
+                ΕΡΓΑΣΤΗΡΙΑΚΗ ΑΣΚΗΣΗ \(\cdot\) 2023 \(\textendash\) 2024
             \end{Din}
         \end{headerlight}
 
@@ -44,60 +42,69 @@
     \pagebreak
 
 %   ===================================================================================================================
+
+
     \chapter{ΕΙΣΑΓΩΓΗ}
-        \section{ΕΠΙΛΟΓΗ ΣΥΣΤΗΜΑΤΩΝ ΣΤΑΘΜΙΣΗΣ TF-IDF}
-        Καταρχάς πρέπει να επιλέξουμε τα δύο συστήματα στάθμισης των βαρών για τα διανύσματα που θα χρησιμοποιήσουμε.
 
-            \subsection{ΠΡΩΤΟ ΣΥΣΤΗΜΑ ΣΤΑΘΜΙΣΗΣ}
-            Το πρώτο σύστημα στάθμισης θα είναι μια παραλλαγή\footnote{Το σύστημα αναφέρεται ως παραλλαγή των Salton-Buckley για το λόγο ότι δεν έχει συμπεριληφθεί κάποιος παράγοντας κανονικοποίσης, μιας και τα έγγραφα είναι \textit{περίπου} ισομεγέθη (μέσος όρος 350 λέξεις).} του προτεινόμενου ως καλύτερου πλήρως σταθμισμένου συστήματος σύμφωνα με τους Salton-Buckley\footnote{Gerard Salton, Christopher Buckley, Term-weighting approaches in automatic text retrieval, Information Processing \& Management, Volume 24, Issue 5, 1988, Pages 513-523, ISSN 0306-4573}
-            {\fontTimes (best fully weighted system)}. \linebreak Θα χρησιμοποιήσουμε την \textbf{απλή συχνότητα εμφάνισης} {\fontTimes (raw term frequency)} για το TF βάρος των εγγράφων,
-            \[ \text{\textbf{Σύστημα \#1:}\hspace{5pt}TF}_{\scriptsize \text{εγγράφων}}=\hspace{5pt} f_{i,j} \]
-            όπου \(f_{ij}\) οι φορές που ο όρος εμφανίζεται σε ένα έγγραφο, τη \textbf{διπλή 0,5 κανονικοποίηση} για το TF βάρος των ερωτημάτων {\fontTimes(augmented normalized TF)},
-            \[ \text{\textbf{Σύστημα \#1:}\hspace{5pt}TF}_{\scriptsize \text{ερωτημάτων}}=\hspace{5pt} 0.5 + 0.5 \frac{f_{i,j}}{max_i\hspace{3pt}f_{i,j}} \]
-            και τέλος την \textbf{απλή ανάστροφη συχνότητα εμφάνισης} για το IDF βάρος και των εγγράφων και των ερωτημάτων:
-            \[\text{\textbf{Σύστημα \#1:}\hspace{5pt}IDF}_{\scriptsize\begin{matrix}\text{εγγράφων}\\\text{ερωτημάτων}\end{matrix}}=\hspace{5pt} \log{\frac{N}{n_i}} \]
-            όπου \(N\) το πλήθος των εγγράφων και \(n_i\) ο αριθμός των εγγράφων στα οποία εμπεριέχεται ο όρος.
 
-            \subsection{ΔΕΥΤΕΡΟ ΣΥΣΤΗΜΑ ΣΤΑΘΜΙΣΗΣ}
-            Ως δεύτερο σύστημα στάθμισης θα χρησιμοποιήσουμε το καλύτερα σταθμισμένο πιθανολογικό σύστημα σύμφωνα με τους Salton-Buckley\footnotemark[1]
-            {\fontTimes (best weighted probabilistic weight)} με
-            \[ \text{\textbf{Σύστημα \#2:}\hspace{5pt}βάρος όρου}_{\scriptsize \text{εγγράφων}}=\hspace{5pt} 0.5 + 0.5 \frac{f_{i,j}}{max_i\hspace{3pt}f_{i,j}}\]
-            \[ \text{\textbf{Σύστημα \#2:}\hspace{5pt}βάρος όρου}_{\scriptsize \text{ερωτημάτων}}=\hspace{5pt} \log{\frac{N - n_i}{n_i}}. \]
+    \section{ΕΠΙΛΟΓΗ ΣΥΣΤΗΜΑΤΩΝ ΣΤΑΘΜΙΣΗΣ TF-IDF}
+    Καταρχάς πρέπει να επιλέξουμε τα δύο συστήματα στάθμισης των βαρών για τα διανύσματα που θα χρησιμοποιήσουμε.
 
-            Και τα δύο αυτά συστήματα στάθμισης έχουν επιφέρει τα ακριβέστερα αποτελέσματα και στο σύνολο των συλλογών στα οποία έχουν εξεταστεί
-            αλλά και ειδικότερα σε ιατρικές {\fontTimes (MED)} συλλογές. Επομένως, συνολικά έχουμε:
+    \subsection{ΠΡΩΤΟ ΣΥΣΤΗΜΑ ΣΤΑΘΜΙΣΗΣ}
+    Το πρώτο σύστημα στάθμισης θα είναι μια παραλλαγή\footnote{Το σύστημα αναφέρεται ως παραλλαγή των Salton-Buckley για το λόγο ότι δεν έχει συμπεριληφθεί κάποιος παράγοντας κανονικοποίσης, μιας και τα έγγραφα είναι \textit{περίπου} ισομεγέθη (μέσος όρος 350 λέξεις).} του προτεινόμενου ως καλύτερου πλήρως σταθμισμένου συστήματος σύμφωνα με τους Salton-Buckley\footnote{Gerard Salton, Christopher Buckley, Term-weighting approaches in automatic text retrieval, Information Processing \& Management, Volume 24, Issue 5, 1988, Pages 513-523, ISSN 0306-4573}
+    {\fontTimes (best fully weighted system)}. \linebreak Θα χρησιμοποιήσουμε την \textbf{απλή συχνότητα εμφάνισης} {\fontTimes (raw term frequency)} για το TF βάρος των εγγράφων,
+    \[ \text{\textbf{Σύστημα \#1:}\hspace{5pt}TF}_{\scriptsize \text{εγγράφων}}=\hspace{5pt} f_{i,j} \]
+    όπου \(f_{ij}\) οι φορές που ο όρος εμφανίζεται σε ένα έγγραφο, τη \textbf{διπλή 0,5 κανονικοποίηση} για το TF βάρος των ερωτημάτων {\fontTimes(augmented normalized TF)},
+    \[ \text{\textbf{Σύστημα \#1:}\hspace{5pt}TF}_{\scriptsize \text{ερωτημάτων}}=\hspace{5pt} 0.5 + 0.5 \frac{f_{i,j}}{max_i\hspace{3pt}f_{i,j}} \]
+    και τέλος την \textbf{απλή ανάστροφη συχνότητα εμφάνισης} για το IDF βάρος και των εγγράφων και των ερωτημάτων:
+    \[\text{\textbf{Σύστημα \#1:}\hspace{5pt}IDF}_{\scriptsize\begin{matrix}
+                                                                  \text{εγγράφων}\\\text{ερωτημάτων}
+    \end{matrix}}=\hspace{5pt} \log{\frac{N}{n_i}} \]
+    όπου \(N\) το πλήθος των εγγράφων και \(n_i\) ο αριθμός των εγγράφων στα οποία εμπεριέχεται ο όρος.
 
-            \noindent
-            \begin{tblr}{
-                colspec={>{\centering\arraybackslash}m{3.5cm}>{\centering\arraybackslash}m{6.1cm}>{\centering\arraybackslash}m{6.1cm}},
-                row{2}={bg=lightgray!50}, row{3}={bg=lightgray}, row{1}={bg=black!90,fg=white}}
-                Σύστημα στάθμισης & Βάρος όρου εγγράφου &  Βάρος όρου ερωτήματος \\
-                1 & \[f_{i,j} \times \log{\frac{N}{n_i}} \] & \[(0.5 + 0.5 \frac{f_{i,j}}{max_i\hspace{3pt}f_{i,j}}) \times \log{\frac{N}{n_i}} \] \\
-                2 & \[0.5 + 0.5 \frac{f_{i,j}}{max_i\hspace{3pt}f_{i,j}} \] & \[\log{\frac{N - n_i}{n_i}} \] \\
-            \end{tblr}
-            \\\\
+    \subsection{ΔΕΥΤΕΡΟ ΣΥΣΤΗΜΑ ΣΤΑΘΜΙΣΗΣ}
+    Ως δεύτερο σύστημα στάθμισης θα χρησιμοποιήσουμε το καλύτερα σταθμισμένο πιθανολογικό σύστημα σύμφωνα με τους Salton-Buckley\footnotemark[1]
+    {\fontTimes (best weighted probabilistic weight)} με
+    \[ \text{\textbf{Σύστημα \#2:}\hspace{5pt}βάρος όρου}_{\scriptsize \text{εγγράφων}}=\hspace{5pt} 0.5 + 0.5 \frac{f_{i,j}}{max_i\hspace{3pt}f_{i,j}}\]
+    \[ \text{\textbf{Σύστημα \#2:}\hspace{5pt}βάρος όρου}_{\scriptsize \text{ερωτημάτων}}=\hspace{5pt} \log{\frac{N - n_i}{n_i}}. \]
+
+    Και τα δύο αυτά συστήματα στάθμισης έχουν επιφέρει τα ακριβέστερα αποτελέσματα και στο σύνολο των συλλογών στα οποία έχουν εξεταστεί
+    αλλά και ειδικότερα σε ιατρικές {\fontTimes (MED)} συλλογές. Επομένως, συνολικά έχουμε:
+
+    \noindent
+    \begin{tblr}{
+        colspec={>{\centering\arraybackslash}m{3.5cm}>{\centering\arraybackslash}m{6.1cm}>{\centering\arraybackslash}m{6.1cm}},
+        row{2}={bg=lightgray!50}, row{3}={bg=lightgray}, row{1}={bg=black!90,fg=white}}
+        Σύστημα στάθμισης & Βάρος όρου εγγράφου                                     & Βάρος όρου ερωτήματος                                                                \\
+        1                 & \[f_{i,j} \times \log{\frac{N}{n_i}} \]                 & \[(0.5 + 0.5 \frac{f_{i,j}}{max_i\hspace{3pt}f_{i,j}}) \times \log{\frac{N}{n_i}} \] \\
+        2                 & \[0.5 + 0.5 \frac{f_{i,j}}{max_i\hspace{3pt}f_{i,j}} \] & \[\log{\frac{N - n_i}{n_i}} \]                                                       \\
+    \end{tblr}
+    \\\\
 
 
 %   ===================================================================================================================
+
+
     \chapter{ΥΛΟΠΟΙΗΣΗ ΜΟΝΤΕΛΩΝ}
-        Η εργασία υλοποιήθηκε σε Python χρησιμοποιώντας τις βιβλιοθήκες:
+    Η εργασία υλοποιήθηκε σε Python χρησιμοποιώντας τις βιβλιοθήκες:
 
-        \begin{tblr}{
-            colspec={>{\centering\arraybackslash}m{5cm}>{\centering\arraybackslash}m{10cm}},
-            row{2,4,6,8}={bg=lightgray!50}, row{3,5,7,9}={bg=lightgray}, row{1}={bg=black!90,fg=white}}
-            Βιβλιοθήκη & Περιγραφή \\
-            \textbf{\texttt{os}} & σύνδεση με λειτουργικό σύστημα \\
-            \textbf{\texttt{json}} & αποθήκευση-ανάγνωση JSON αρχείων \\
-            \textbf{\texttt{nltk}} & αφαίρεση stopwords, stemming \\
-            \textbf{\texttt{numpy}} & υπολογισμός ομοιότητας συνημιτόνου \\
-            \textbf{\texttt{math}} & υπολογισμός λογαρίθμων \\
-            \textbf{\texttt{matplotlib}} & γραφικές παραστάσεις \\
-        \end{tblr}
+    \begin{tblr}{
+        colspec={>{\centering\arraybackslash}m{5cm}>{\centering\arraybackslash}m{10cm}},
+        row{2,4,6,8}={bg=lightgray!50}, row{3,5,7,9}={bg=lightgray}, row{1}={bg=black!90,fg=white}}
+        Βιβλιοθήκη                   & Περιγραφή                          \\
+        \textbf{\texttt{os}}         & σύνδεση με λειτουργικό σύστημα     \\
+        \textbf{\texttt{json}}       & αποθήκευση-ανάγνωση JSON αρχείων   \\
+        \textbf{\texttt{nltk}}       & αφαίρεση stopwords, stemming       \\
+        \textbf{\texttt{numpy}}      & υπολογισμός ομοιότητας συνημιτόνου \\
+        \textbf{\texttt{math}}       & υπολογισμός λογαρίθμων             \\
+        \textbf{\texttt{matplotlib}} & γραφικές παραστάσεις               \\
+    \end{tblr}
 
-        Αυτή είναι η δομή των αρχείων κώδικα όπου έχει χωριστεί η υλοποίηση: \\
-        \begin{minipage}{.5\textwidth}\centering
-            \begin{forest}
-              for tree={
+    Αυτή είναι η δομή των αρχείων κώδικα όπου έχει χωριστεί η υλοποίηση: \\
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \begin{forest}
+            for tree={
                 font=\tt,
                 grow'=00,
                 child anchor=west,
@@ -105,178 +112,227 @@
                 anchor=west,
                 calign=first,
                 edge path={
-                  \noexpand\path [draw, \forestoption{edge}]
-                  (!u.south west) +(7.5pt,0) |- node[fill,inner sep=1.5pt] {} (.child anchor)\forestoption{edge label};
+                    \noexpand\path [draw, \forestoption{edge}]
+                    (!u.south west) +(7.5pt,0) |- node[fill,inner sep=1.5pt] {} (.child anchor)\forestoption{edge label};
                 },
                 before typesetting nodes={
-                  if n=1
-                    {insert before={[,phantom]}}
-                    {}
+                    if n=1
+                        {insert before={[,phantom]}}
+                        {}
                 },
                 fit=band,
                 before computing xy={l=15pt},
-              }
+            }
             [src
-              [main.py]
-              [tools.py]
-              [preprocessing.py]
-              [inverted\_index.py]
-              [vector\_space\_model.py]
+            [main.py]
+            [tools.py]
+            [preprocessing.py]
+            [inverted\_index.py]
+            [vector\_space\_model.py]
             ]
-            \end{forest}
-        \end{minipage}%
-        \begin{minipage}{.5\textwidth} \centering
-            \begin{forest}
-                for tree={
-                    font=\tt,
-                    grow'=00,
-                    child anchor=west,
-                    parent anchor=south,
-                    anchor=west,
-                    calign=first,
-                    edge path={
-                      \noexpand\path [draw, \forestoption{edge}]
-                      (!u.south west) +(7.5pt,0) |- node[fill,inner sep=1.5pt] {} (.child anchor)\forestoption{edge label};
-                    },
-                    before typesetting nodes={
-                      if n=1
+        \end{forest}
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \begin{forest}
+            for tree={
+                font=\tt,
+                grow'=00,
+                child anchor=west,
+                parent anchor=south,
+                anchor=west,
+                calign=first,
+                edge path={
+                    \noexpand\path [draw, \forestoption{edge}]
+                    (!u.south west) +(7.5pt,0) |- node[fill,inner sep=1.5pt] {} (.child anchor)\forestoption{edge label};
+                },
+                before typesetting nodes={
+                    if n=1
                         {insert before={[,phantom]}}
                         {}
-                    },
-                    fit=band,
-                    before computing xy={l=15pt},
-                  }
-                [src
-                  [colBERT\_preprocessing.py]
-                  [colBERT.ipynb]
-                  [evaluation\_metrics.py]
-                ]
-            \end{forest}
-        \end{minipage}%
+                },
+                fit=band,
+                before computing xy={l=15pt},
+            }
+            [src
+            [colBERT\_preprocessing.py]
+            [colBERT.ipynb]
+            [evaluation\_metrics.py]
+            ]
+        \end{forest}
+    \end{minipage}%
 
-        Τέλος, η υλοποίηση του colBERT μοντέλου έχει πραγματοποιηθεί στο Google Colab ως Juputer Notebook.
-
-        \section{ΠΡΟΕΠΕΞΕΡΓΑΣΙΑ ΕΓΓΡΑΦΩΝ \& ΒΟΗΘΗΤΙΚΕΣ ΣΥΝΑΡΤΗΣΕΙΣ}
-            
-            \subsection{\tt tools.py}
-
-                Το αρχείο \texttt{tools.py} περιλαμβάνει βοηθητικές συναρτήσεις για κάποιες επαναλαμβανόμενες διαδικασίες της υλοποίησης.
-
-                Η συνάρτηση \texttt{\textbf{get\_docs}()}, χρησιμοποιώντας την \texttt{os} βιβλιοθήκη, διαβάζει το πλήθος των αρχείων της συλλογής.\footnote{Να σημειωθεί ότι το πλήθος των εγγράφων διαφέρει από την αύξουσα αρίθμησή τους. Συγκεκριμένα έχουμε 1209 έγγραφα αριθμημένα από το \texttt{000001} ως \texttt{01239}. Με άλλα λόγια υπάρχουν αριθμοί στη συλλογή που δεν αντιστοιχούν σε έγγραφα. Συνεπώς δεν θα μπορούσαμε να χρησιμοποιήσουμε κάποια αριθμητική επανάληψη, για παράδειγμα, για την εισαγωγή των εγγράφων.}
-                Η συνάρτηση, αφού αφαιρέσει το escape character \texttt{'\textbackslash n'}, το οποίο προκύπτει από την μορφολογία των εγγράφων (η κάθε λέξη είναι τοποθετημένη σε διαφορετική γραμμή),
-                δημιουργεί \linebreak και επιστρέφει μια λίστα από tuples, με κάθε tuple να αντιστοιχεί σε κάθε αρχείο-έγγραφο. \linebreak
-                Έτσι τα έγγραφα έχουν τη δομή:
-                    \begin{graycomment} \centering
-                    \verb|doc = ('docID', ['λήμμα_1', 'λήμμα_2' ...])|
-                    \end{graycomment}
-
-                \noindent όπου \texttt{docID} η αρίθμηση του κάθε εγγράφου και \verb|λήμμα_n| η κάθε λέξη-λήμμα του εγγράφου.
-                Αυτός θα είναι ο τρόπος αποθήκευσης και προσπέλασης των εγγράφων σε όλη την υλοποίηση.
-
-                Η συνάρτηση \texttt{strip()} της \verb|get_docs()| είναι απαραίτητη για την αφαίρεση των \texttt{\textbackslash n} χαρακτήρων
-                που προκύπτουν από τη μορφολογία των εγγράφων (μιας και κάθε λέξη είναι σε νέα γραμμή).
-                Με παρόμοιο τρόπο η συνάρτηση \texttt{\textbf{get\_queries}()} επιστρέφει τη λίστα με τα ερωτήματα της συλλογής,
-                η \texttt{\textbf{get\_relevant}()} τη λίστα με τα σχετικά έγγραφα ανά ερώτημα και η \texttt{\textbf{get\_json\_file}()} τα περιεχόμενα ενός JSON αρχείου.
-
-            \subsection{\tt preprocessing.py}
-
-                Στο αρχείο \texttt{preprocessing.py}, και συγκεκριμένα στις συναρτήσεις \texttt{\textbf{preprocess\_collection}()} και \texttt{\textbf{preprocess\_queries}()}
-                πραγματοποιείται η προεπεξεργασία των εγγράφων, συγκεκριμένα η αφαίρεση των stopwords και το stemming.
-
-                Χρησιμοποιούμε τη \texttt{nltk} βιβλιοθήκη. Κάθε λέξη από τη συλλογή των εγγράφων αφού περάσουν από τον \texttt{PorterStemmer} της \texttt{nltk}
-                και ελεγχθούν ότι δεν ανήκουν στη λίστα των stopwords, επιστρέφονται σε παρόμοια μορφή όπως δημιουργήθηκαν στη \verb|get_docs()|.
-                Αντίστοιχη διαδικασία πραγματοποιείται και για την προεπεξεργασία των ερωτημάτων, στη \verb|preprocess_queries()|.
-
-        \section{ΑΝΕΣΤΡΑΜΜΕΝΟ ΕΥΡΕΤΗΡΙΟ}
-
-            Το ανεστραμμένο ευρετήριο δημιουργείται στη συνάρτηση \texttt{\textbf{create\_inverted\_index}()} του αρχείου \verb|inverted_index.py|.
-            Τα έγγραφα, μετά την προεπεξεργασία τους, εισέρχονται σε μια δομή επανάληψης, \linebreak η οποία δημιουργεί το ανεστραμμένο ευρετήριο ως μορφή λεξικού ως εξής:
-
-                \begin{graycomment} \centering
-                    \texttt{\small \textbf{inverted\_index['λήμμα']} = \\ \{('docID\(_\texttt{1}\)': <φορές εμφάνισης>), ('docID\(_\texttt{2}\)': <φορές εμφάνισης>), \(\ldots\) \}}
-                \end{graycomment}
-
-            Κάθε value του dictionary είναι ένα σύνολο\footnote{Έχει επιλεχθεί set για εξοικονόμιση μνήμης, μας και δεν μας ενδιαφέρει η σειρά των tuples.} το οποίο περιλαμβάνει ένα ή περισσότερα tuples με το \texttt{docID}
-            και τη συχνότητα εμφάνισης του λήμματος στο συγκεκριμένο έγγραφο. Η συχνότητα υπολογίζεται μέσω της \texttt{count()} σε όλο το έγγραφο ανά λήμμα.
-
-            Αυτό είναι ένα παράδειγμα του τελικού ανεστραμμένου ευρετηρίου:
-
-                \begin{graycomment} \centering
-                    \tt\small \textbf{inverted\_index} = \{ \(\ldots\) 'coronari': \{('01217', 2), ('00779', 1)\}, \\ 'mobil': \{('00673', 2)\}, 'strain': \{('00179', 7)\}, \(\ldots\) \}
-                \end{graycomment}
+    Τέλος, η υλοποίηση του colBERT μοντέλου έχει πραγματοποιηθεί στο Google Colab ως Juputer Notebook.
 
 
-        \section{ΥΛΟΠΟΙΗΣΗ VECTOR SPACE ΜΟΝΤΕΛΟΥ}
+    \section{ΠΡΟΕΠΕΞΕΡΓΑΣΙΑ ΕΓΓΡΑΦΩΝ \& ΒΟΗΘΗΤΙΚΕΣ ΣΥΝΑΡΤΗΣΕΙΣ}
 
-            Η υλοποίηση του vector space μοντέλου γίνεται στο αρχείο {\fontCode\small vector\_space\_model.py}.
-            Η συνάρτηση {\fontCode\small \textbf{run\_vsm}(doc\_collection, queries, inverted\_index)}, μέσω μιας επανάληψης ώστε να καλυφθούν όλα τα queries,
-            καλεί την συνάρτηση {\fontCode\small \textbf{vsm1}(doc\_collection, query, inverted\_index)} ή {\fontCode\small \textbf{vsm2}()}, ανάλογα με το σύστημα στάθμισης που θέλουμε να χρησιμοποιήσουμε.
+    \subsection{\tt tools.py}
 
-            Πριν προχωρήσουμε στις συναρτήσεις {\fontCode\small vsmX()}, από το τρόπο που έχει δομηθεί το ανεστραμμένο ευρετήριο,
-            είναι σαφές πως μπορούμε να υπολογίσουμε αμέσως το πλήθος των εγγράφων όπου υπάρχει ένα συγκεκρίμενο λήμμα ως {\fontCode\small len(inverted\_index[term])},
-            με άλλα λόγια δηλαδή το \(n_i\). Είναι επίσης προφανές ότι \( N = \) {\fontCode\small len(inverted\_index))}.
+    Το αρχείο \texttt{tools.py} περιλαμβάνει βοηθητικές συναρτήσεις για κάποιες επαναλαμβανόμενες διαδικασίες της υλοποίησης.
 
-            Στην συνάρτηση {\fontCode\small vsm1()} αρχικά υπολογίζονται στο λεξικό {\fontCode\small query\_tfs} οι συχνότητες \(f_{i,j}\) κάθε όρου του εκάστοτε ερωτήματος:
-            \begin{graycomment}
-                \fontCode\footnotesize query\_tfs\(_{\textit{\fontCode\hspace{2pt}len(query)}}}\)\ = \{ \(\ldots\) 'calcium': 1, 'effect': 2 \(\ldots\) \}
-            \end{graycomment}
+    Η συνάρτηση \texttt{\textbf{get\_docs}()}, χρησιμοποιώντας την \texttt{os} βιβλιοθήκη, διαβάζει το πλήθος των αρχείων της συλλογής.\footnote{Να σημειωθεί ότι το πλήθος των εγγράφων διαφέρει από την αύξουσα αρίθμησή τους. Συγκεκριμένα έχουμε 1209 έγγραφα αριθμημένα από το \texttt{000001} ως \texttt{01239}. Με άλλα λόγια υπάρχουν αριθμοί στη συλλογή που δεν αντιστοιχούν σε έγγραφα. Συνεπώς δεν θα μπορούσαμε να χρησιμοποιήσουμε κάποια αριθμητική επανάληψη, για παράδειγμα, για την εισαγωγή των εγγράφων.}
+    Η συνάρτηση, αφού αφαιρέσει το escape character \texttt{'\textbackslash n'}, το οποίο προκύπτει από την μορφολογία των εγγράφων (η κάθε λέξη είναι τοποθετημένη σε διαφορετική γραμμή),
+    δημιουργεί \linebreak και επιστρέφει μια λίστα από tuples, με κάθε tuple να αντιστοιχεί σε κάθε αρχείο-έγγραφο. \linebreak
+    Έτσι τα έγγραφα έχουν τη δομή:
+    \begin{graycomment}
+        \centering
+        \verb|doc = ('docID', ['λήμμα_1', 'λήμμα_2' ...])|
+    \end{graycomment}
 
-            Στα λεξικά {\fontCode\small query\_tfidfs} και {\fontCode\small doc\_tfidfs} θα αποθηκευτούν οι τελικές τιμές-βάρη που θα αποτελέσουν τα διανύσματα ερωτήματος και εγγράφων.
-            Το λεξικό {\fontCode\small doc\_tfidfs} αρχικοποιείται με άδειες λίστες για κάθε έγγραφο.
+    \noindent όπου \texttt{docID} η αρίθμηση του κάθε εγγράφου και \verb|λήμμα_n| η κάθε λέξη-λήμμα του εγγράφου.
+    Αυτός θα είναι ο τρόπος αποθήκευσης και προσπέλασης των εγγράφων σε όλη την υλοποίηση.
 
-            Διατρέχουμε κάθε όρο του ερωτήματος {\fontCode\small query} και αν ο όρος υπάρχει στο ανεστραμμένο ευρετήριο
-            υπολογίζουμε την IDF τιμή του στην συνάρτηση {\fontCode\small idfX()}, και στη συνέχεια το TF-IDF βάρος του ερωτήματος στο {\fontCode\small query\_tfidfs}.
+    Η συνάρτηση \texttt{strip()} της \verb|get_docs()| είναι απαραίτητη για την αφαίρεση των \texttt{\textbackslash n} χαρακτήρων
+    που προκύπτουν από τη μορφολογία των εγγράφων (μιας και κάθε λέξη είναι σε νέα γραμμή).
+    Με παρόμοιο τρόπο η συνάρτηση \texttt{\textbf{get\_queries}()} επιστρέφει τη λίστα με τα ερωτήματα της συλλογής,
+    η \texttt{\textbf{get\_relevant}()} τη λίστα με τα σχετικά έγγραφα ανά ερώτημα και η \texttt{\textbf{get\_json\_file}()} τα περιεχόμενα ενός JSON αρχείου.
 
-           \begin{graycomment}
-                \fontCode\footnotesize query\_ifidf\(_{\textit{\fontCode\hspace{2pt}len(query)}}}\)\ = \{ \(\ldots\) 'calcium': 3.6318, 'effect': 1.76483 \(\ldots\) \}
-           \end{graycomment}
+    \subsection{\tt preprocessing.py}
 
-            Στη συνέχεια διατρέχουμε όλα τα έγγραφα της συλλογής. Αν το έγγραφο περιλαμβάνει τον όρο του ερωτήματος που εξετάζουμε (κάτι που ελέγχουμε από τη λίστα {\fontCode\small docs\_containing\_term}),
-            τότε μέσω του ανεστραμμένου ευρετηρίου, αποθηκεύεται η TF τιμή του, υπολογίζεται το TF-IDF βάρος του εγγράφου και αποθηκεύεται στο {\fontCode\small doc\_tfidfs[docID]}.
-            Αν το έγγραφο δεν περιλαμβάνει τον όρο, αποθηκεύουμε 0.
+    Στο αρχείο \texttt{preprocessing.py}, και συγκεκριμένα στις συναρτήσεις \texttt{\textbf{preprocess\_collection}()} και \texttt{\textbf{preprocess\_queries}()}
+    πραγματοποιείται η προεπεξεργασία των εγγράφων, συγκεκριμένα η αφαίρεση των stopwords και το stemming.
 
-            \begin{graycomment}
-                \fontCode\footnotesize doc\_ifidf\(_{\textit{\fontCode\hspace{2pt}len(doc\_collection)}}}\)\ = \{'000001': [0, 0, 0.0, 1.76, 1.5]_{\textit{\fontCode len(query)}}} \(\ldots\)\}
-            \end{graycomment}
+    Χρησιμοποιούμε τη \texttt{nltk} βιβλιοθήκη. Κάθε λέξη από τη συλλογή των εγγράφων αφού περάσουν από τον \texttt{PorterStemmer} της \texttt{nltk}
+    και ελεγχθούν ότι δεν ανήκουν στη λίστα των stopwords, επιστρέφονται σε παρόμοια μορφή όπως δημιουργήθηκαν στη \verb|get_docs()|.
+    Αντίστοιχη διαδικασία πραγματοποιείται και για την προεπεξεργασία των ερωτημάτων, στη \verb|preprocess_queries()|.
 
-            Εν τέλει έχουμε δημιουργήσει το διάνυσμα ερωτήματος και 1209 διανύσματα εγγράφων, τα οποία έχουν μήκος όσο και το διάνυσμα ερωτήματος. Στην λίστα {\fontCode\small similarity}
-            υπολογίζουμε την ομοιότητα συνημιτόνου μεταξύ του διανύσματος ερωτήματος και κάθε διανύσματος εγγράφου. Τέλος, ταξινομούμε την λίστα και επιστρέφουμε τα 100 κείμενα με την μεγαλύτερη ομοιότητα.
 
-            Η ίδια διαδικασία ακολουθείται και στην συνάρτηση {\fontCode\small vsm2()}, με τις απαραίτητες αλλαγές για το διαφορετικό σύστημα στάθμισης.
+    \section{ΑΝΕΣΤΡΑΜΜΕΝΟ ΕΥΡΕΤΗΡΙΟ}
 
-        \section{ΥΛΟΠΟΙΗΣΗ colBERT}
+    Το ανεστραμμένο ευρετήριο δημιουργείται στη συνάρτηση \texttt{\textbf{create\_inverted\_index}()} του αρχείου \verb|inverted_index.py|.
+    Τα έγγραφα, μετά την προεπεξεργασία τους, εισέρχονται σε μια δομή επανάληψης, \linebreak η οποία δημιουργεί το ανεστραμμένο ευρετήριο ως μορφή λεξικού ως εξής:
 
-            Στο αρχείο {\fontCode\small colBERT\_preprocessing.py} γίνεται η προεπεξεργασία των εγγράφων και ερωτημάτων ώστε να δωθούν ως inputs στο colBERT μοντέλο.
-            Συγκεκριμένα έγινε μετατροπή των ερωτημάτων σε κεφαλαία και αποθηκεύτηκαν σε JSON αρχεία τα έγγραφα και ερωτήματα σε λεξικά ως εξής:
+    \begin{graycomment}
+        \centering
+        \texttt{\small \textbf{inverted\_index['λήμμα']} = \\ \{('docID\(_\texttt{1}\)': <φορές εμφάνισης>), ('docID\(_\texttt{2}\)': <φορές εμφάνισης>), \(\ldots\) \}}
+    \end{graycomment}
 
-            \begin{graycomment}
-                \fontCode\footnotesize colBERTdocs = \{"docID\(_\text{i}\)": "<doc\(_\text{i}\)>", \(\ldots\) \} \\
-                \fontCode\footnotesize colBERTqueries = \{"queryID\(_\text{i}\)": "<query\(_\text{i}\)>", \(\ldots\) \}
-            \end{graycomment}
+    Κάθε value του dictionary είναι ένα σύνολο\footnote{Έχει επιλεχθεί set για εξοικονόμιση μνήμης, μας και δεν μας ενδιαφέρει η σειρά των tuples.} το οποίο περιλαμβάνει ένα ή περισσότερα tuples με το \texttt{docID}
+    και τη συχνότητα εμφάνισης του λήμματος στο συγκεκριμένο έγγραφο. Η συχνότητα υπολογίζεται μέσω της \texttt{count()} σε όλο το έγγραφο ανά λήμμα.
 
-            Η εκτέλεση του colBERT μοντέλου πραγματοποιείται μέσω του αρχείου {\fontCode\small colBERT.ipynb} στο Google Colab.
-            Τα λεξικά των JSON αρχείων μετατρέπονται σε 2 ξεχωριστές λίστες (id και περιεχόμενο). Μετά τη δημιουργία του Indexer και του Searcher,
-            επιστρέφονται τα 100 κείμενα με την μεγαλύτερη ομοιότητα.
+    Αυτό είναι ένα παράδειγμα του τελικού ανεστραμμένου ευρετηρίου:
 
-        \chapter{ΜΕΤΡΙΚΕΣ ΑΞΙΟΛΟΓΗΣΗΣ}
-            Για την σύγκριση των μοντέλων χρησιμοποιήθηκαν:
-            \begin{itemize}
-                \item \textbf{Διάγραμμα ανάκλησης-ακρίβειας} {\fontTimes(Precision-Recall curve)}. Το διάγραμμα παρουσιάζει ενδιαφέρον γιατί -συνδυάζοντας τις μετρικές ανάκλησης και ακρίβειας-
-            παρουσιάζει με ακρίβεια τα σημεία που το μοντέλο παρουσιάζει μεγαλύτερη ακρίβεια και λιγότερη ανάκληση και αντίστροφα.
+    \begin{graycomment}
+        \centering
+        \texttt{\small \textbf{inverted\_index} = \{ \(\ldots\) 'coronari': \{('01217', 2), ('00779', 1)\}, \\ 'mobil': \{('00673', 2)\}, 'strain': \{('00179', 7)\}, \(\ldots\) \}}
+    \end{graycomment}
 
-                \begin{multicols}{2} \centering
-                    \( \text{Ακρίβεια} = \frac{\text{αριθμός σχετικών ανακτηθέντων κειμένων}}{\text{αριθμός εγγράφων που ανακτήθηκαν}} \) \\
-                    \( \text{Ανάκληση} = \frac{\text{αριθμός σχετικών ανακτηθέντων κειμένων}}{\text{αριθμός σχετικών εγγράφων στη συλλογή}} \)
-                \end{multicols}
 
-                \item \textbf{???????} {\fontTimes (Mean Average Precision \textendash\hspace{1pt} mAP)}. Χρησιμοποιούμε την συγκεκριμένη μετρική λόγω των πολλαπλών ερωτημάτων όπου εφαρμόζουμε τα μοντέλο σε αυτά, για την αξιολόγηση των αποτελεσμάτων.
+    \section{ΥΛΟΠΟΙΗΣΗ VECTOR SPACE ΜΟΝΤΕΛΟΥ}
 
-                    \begin{displaymath}
-                        \sum_{i=1}^{i=k}(\text{ανάκληση}[i] - \text{ανάκληση}[i-1])\times\text{ακρίβεια}[i]
-                    \end{displaymath}
-            \end{itemize}
+    Η υλοποίηση του Vector Space μοντέλου γίνεται στο αρχείο \verb|vector_space_model.py|.
+    Η συνάρτηση \texttt{\textbf{run\_vsm}(doc\_collection, queries, inverted\_index)}, μέσω μιας επανάληψης ώστε να καλυφθούν όλα τα queries,
+    καλεί την συνάρτηση \texttt{\textbf{vsm}(doc\_collection, query, inverted\_index, model\_type)}, όπου \texttt{model\_type = '1'} ή \texttt{'2'}, ανάλογα με το σύστημα στάθμισης που θέλουμε να χρησιμοποιήσουμε.
 
-            \section{\hspace{1pt}ΑΠΟΤΕΛΕΣΜΑΤΑ\hspace{1pt}}
+    H συνάρτηση \texttt{vsm()} αρχικά υπολογίζει τις συχνότητες \(f_{i,j}\) κάθε όρου του εκάστοτε ερωτήματος:
+    \begin{graycomment}
+        \texttt{query\_tfs\(_{\textit{\hspace{2pt}len(query)}}\)\ = \{ \(\ldots\) 'calcium': 1, 'effect': 2 \(\ldots\) \}}
+    \end{graycomment}
 
+    Στη συνέχεια διατρέχεται κάθε όρος από το ερώτημα \texttt{query}. Αν ο όρος του ερωτήματος υπάρχει στο ανεστραμμένο ευρετήριο, υπολογίζεται η IDF τιμή του.
+    και στη συνέχεια το TF-IDF βάρος του ερωτήματος, όπου θα αποθηκευτεί στο λεξικό \verb|query_tfidfs|.
+
+    \begin{graycomment}
+        \texttt{\small query\_ifidf\(_{\textit{\tt\hspace{2pt}len(query)}}\)\ = \{ \(\ldots\) 'calcium': 3.6318, 'effect': 1.76483 \(\ldots\) \}}
+    \end{graycomment}
+
+    Στη συνέχεια, για κάθε όρο του ερωτήματος, διατρέχουμε όλα τα έγγραφα της συλλογής. Αν το έγγραφο περιλαμβάνει τον όρο του ερωτήματος που εξετάζουμε
+    (κάτι που ελέγχουμε μέσω της \verb|docs_containing_term|), τότε μέσω του ανεστραμμένου ευρετηρίου, αποθηκεύεται η TF τιμή του, υπολογίζεται
+    το TF-IDF βάρος του εγγράφου και αποθηκεύεται στο \verb|doc_tfidfs[docID]|. Αν το έγγραφο δεν περιλαμβάνει τον όρο, αποθηκεύουμε 0.
+
+    \begin{graycomment}
+        \texttt{\small doc\_ifidf\(_{\textit{\tt\hspace{2pt}len(doc\_collection)}}\)\ = \{'000001': [0, 0, 0.0, 1.76, 1.5]_{\textit{\tt len(query)}} \(\ldots\)\}}
+    \end{graycomment}
+
+    Η διαδικασία επαναλαμβάνεται για κάθε όρο του ερωτήματος. Επειδή τα δύο μοντέλα έχουν διαφορετικό σύστημα στάθμισης, ο υπολογισμός των βαρών βρίσκεται μέσα σε συνθήκες, ανάλογα με το \verb|model_type| που χρησιμοποιούμε.
+
+    Το αποτέλεσμα είναι να έχουμε δημιουργήσει το διάνυσμα ερωτήματος και 1209 διανύσματα εγγράφων. Στην λίστα \texttt{similarity} υπολογίζουμε
+    την ομοιότητα συνημιτόνου μεταξύ του διανύσματος ερωτήματος και κάθε διανύσματος εγγράφου. Επειδή κάποια διανύσματα αποτελούνται από μηδενικά,
+    στους υπολογισμούς οδηγούμαστε σε \texttt{nan} τιμές, που μετατρέπουμε σε \texttt{0}. Η συνάρτηση εν τέλει επιστρέφει τα 100 κείμενα με την μεγαλύτερη ομοιότητα.
+
+
+    \section{ΥΛΟΠΟΙΗΣΗ colBERT}
+
+    Στο αρχείο \verb|colBERT_preprocessing.py| γίνεται η προεπεξεργασία των εγγράφων και ερωτημάτων ώστε να δοθούν ως inputs στο colBERT μοντέλο.
+    Συγκεκριμένα γίνεται μετατροπή των ερωτημάτων σε κεφαλαία και αποθήκευση σε JSON αρχεία τα έγγραφα και ερωτήματα σε λεξικά ως εξής:
+
+    \begin{graycomment}
+        \texttt{\small colBERTdocs = \{"docID\(_\text{i}\)": "<doc\(_\text{i}\)>", \(\ldots\) \} \\}
+        \texttt{\small colBERTqueries = \{"queryID\(_\text{i}\)": "<query\(_\text{i}\)>", \(\ldots\) \}}
+    \end{graycomment}
+
+    Η εκτέλεση του colBERT μοντέλου πραγματοποιείται μέσω του αρχείου \texttt{colBERT.ipynb} στο Google Colab.
+    Τα λεξικά των JSON αρχείων αφού διαβαστούν, διασπώνται σε 2 ξεχωριστές λίστες: \verb|doc_list.keys()| για τα IDs, \verb|doc_list.values()| για το περιεχόμενο και αντίστοιχα για τα ερωτήματα.
+
+    Μετά τη δημιουργία του Indexer και του Searcher με \verb|doc_maxlen = 300|, \verb|kmeans_niters = 20| και \verb|k = 100|,
+    δημιουργείται μια λίστα τα 100 πιο σχετικά κείμενα, ο οποία γίνεται download ως JSON αρχείο.
+
+
+    \chapter{ΜΕΤΡΙΚΕΣ ΑΞΙΟΛΟΓΗΣΗΣ}
+    Μιας και ως δεδομένα έχουμε τα πραγματικά σχετικά έγγραφα (\verb|Relevant_20|), για την σύγκριση των μοντέλων χρησιμοποιήθηκαν:
+    \begin{itemize}
+        \item \textbf{Διάγραμμα ανάκλησης-ακρίβειας} {\fontTimes(Precision-Recall curve)}. Το διάγραμμα παρουσιάζει ενδιαφέρον γιατί \textendash συνδυάζοντας τις μετρικές ανάκλησης και ακρίβειας\textendash \hspace{1pt}
+        παρουσιάζει με προφανή τρόπο τα σημεία που το μοντέλο παρουσιάζει μεγαλύτερη ακρίβεια και ταυτόχρονα λιγότερη ανάκληση και αντίστροφα.
+
+        \begin{multicols}{2}
+            \centering
+            \( \text{Ακρίβεια} = \frac{\text{αριθμός σχετικών ανακτηθέντων κειμένων}}{\text{αριθμός εγγράφων που ανακτήθηκαν}} \) \\
+            \( \text{Ανάκληση} = \frac{\text{αριθμός σχετικών ανακτηθέντων κειμένων}}{\text{αριθμός σχετικών εγγράφων στη συλλογή}} \)
+        \end{multicols}
+
+        \item \textbf{Μέσος Όρος Μέσης Ακρίβειας} {\fontTimes (Mean Average Precision \textendash\hspace{1pt} MAP)}. Χρησιμοποιούμε την συγκεκριμένη μετρική
+        για τη δημιουργία μιας συνοπτικές ενιαίας τιμής της κατάταξης, χρησιμοποιώντας τα πολλαπλά ερωτήματα που έχουμε.
+        \vspace{-10pt}
+        \[ \text{Μέση Ακρίβεια} = \sum_{i=1}^{i=k}(\text{ανάκληση}[i] - \text{ανάκληση}[i-1])\times\text{ακρίβεια}[i] \]
+        \vspace{-5pt}
+        \[ \text{MAP} = \frac{\text{Μέση Ακρίβεια για κάθε ερώτημα}}{\text{Σύνολο ερωτημάτων}} \]
+    \end{itemize}
+
+    Η συνάρτηση \verb|recall_precision()| με εισόδους τα αποτελέσματα των μοντέλων και τα πραγματικά σχετικά έγγραφα,
+    υπολογίζει τις τιμές ανάκλησης και ακρίβειας για κάθε ερώτημα και τις επιστρέφει σε μία λίστα. Η λίστα αυτή εισάγεται στην \verb|mean_average_precision()|
+    όπου υπολογίζεται ο Μέσος Όρος Μέσης Ακρίβειας.
+
+
+    \section{\hspace{1pt}ΑΠΟΤΕΛΕΣΜΑΤΑ\hspace{1pt}}
+
+    Οι τιμές του Μέσου Όρου Μέσης Ακρίβειας (MAP) για τα τρία μοντέλα είναι:
+    \begin{graycomment}
+        \centering
+        \begin{tabular}{ l l }
+            \textbf{VSM #1}  & \texttt{0.016352} \\
+            \textbf{VSM #2}  & \texttt{0.008598} \\
+            \textbf{colBERT} & \texttt{0.007089}
+        \end{tabular}
+    \end{graycomment}
+
+    Τα διαγράμματα ανάκλησης-ακρίβειας που παρουσιάζονται παρακάτω ...
+
+    \begin{multicols}{2}
+        \centering
+        \noindent\includegraphics[scale=0.5]{1}
+        \includegraphics[scale=0.5]{2}
+        \includegraphics[scale=0.5]{3}
+        \includegraphics[scale=0.5]{4}
+        \includegraphics[scale=0.5]{5}
+        \includegraphics[scale=0.5]{6}
+        \includegraphics[scale=0.5]{7}
+        \includegraphics[scale=0.5]{8}
+        \includegraphics[scale=0.5]{9}
+        \includegraphics[scale=0.5]{10}
+        \includegraphics[scale=0.5]{11}
+        \includegraphics[scale=0.5]{12}
+        \includegraphics[scale=0.5]{13}
+        \includegraphics[scale=0.5]{14}
+        \includegraphics[scale=0.5]{15}
+        \includegraphics[scale=0.5]{16}
+        \includegraphics[scale=0.5]{17}
+        \includegraphics[scale=0.5]{18}
+        \includegraphics[scale=0.5]{19}
+    \end{multicols} \pagebreak
+
+
+    \chapter{ΠΑΡΑΡΤΗΜΑ}
+    \input{code.tex}
 
 \end{document}

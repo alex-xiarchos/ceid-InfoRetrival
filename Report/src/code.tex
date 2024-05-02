@@ -1,0 +1,411 @@
+﻿\subsection{\texttt{tools.py}}
+\begin{lstlisting}[language=Python]
+import json
+import os
+
+
+def get_docs():
+    docs_directory = 'Collection/docs'
+    filename_list = [file for file in os.listdir(docs_directory)]
+
+    doc_tuples_list = []
+
+    for filename in filename_list:
+        with open(os.path.join(docs_directory, filename), 'r') as doc_file:
+            doc = doc_file.readlines()
+            doc = [word.strip() for word in doc]
+            doc_tuple = (filename, doc)  # (DocID, <doc>)
+            doc_tuples_list.append(doc_tuple)
+
+    return doc_tuples_list
+
+
+def get_queries():
+    filename = 'Collection/Queries_20'
+
+    with open(filename, 'r') as queries_file:
+        queries = queries_file.readlines()
+
+    return queries
+
+
+def get_json_file(json_file):
+    with open(json_file, 'r') as file:
+        json_data = json.load(file)
+
+    return json_data
+
+
+def get_relevant():
+    relevant_docs = {}
+    with open('Collection/Relevant_20', 'r') as file:
+        for i, line in enumerate(file):
+            relevant_docs[i] = [int(item) for item in line.split()]
+
+    return relevant_docs
+\end{lstlisting}
+
+
+\subsection{\texttt{preprocessing.py}}
+\begin{lstlisting}[language=Python]
+from nltk.corpus import stopwords
+from nltk.stem.porter import PorterStemmer
+import tools
+
+
+def preprocess_collection():
+    doc_tuples_list = tools.get_docs()
+
+    stop_words = set(stopwords.words('english'))
+    stemmer = PorterStemmer()
+
+    stripped_docs = []
+
+    for doc_tuple in doc_tuples_list:
+        stripped_doc = [stemmer.stem(word.lower()) for word in doc_tuple[1] if word.lower() not in stop_words]
+        stripped_doc_tuple = (doc_tuple[0], stripped_doc)  # (DocID, <stripped_doc>)
+        stripped_docs.append(stripped_doc_tuple)
+
+    return stripped_docs
+
+
+def preprocess_queries():
+    queries = tools.get_queries()
+
+    stop_words = set(stopwords.words('english'))
+    stemmer = PorterStemmer()
+
+    stripped_queries = []
+
+    for query in queries:
+        stripped_query = [stemmer.stem(word.lower()) for word in query.split() if word.lower() not in stop_words]
+        stripped_queries.append(stripped_query)
+
+    stripped_queries_new = []
+    for query in stripped_queries:
+        query = list(set(query))
+        stripped_queries_new.append(query)
+
+    return stripped_queries_new
+\end{lstlisting}
+
+
+\subsection{\texttt{inverted\_index.py}}
+\begin{lstlisting}[language=Python]
+def create_inverted_index(stripped_docs_tuples):
+    inverted_index = {}
+
+    for doc_tuple in stripped_docs_tuples:
+        for term in doc_tuple[1]:
+            if term not in inverted_index:
+                inverted_index[term] = set()
+            inverted_index[term].add((doc_tuple[0], doc_tuple[1].count(term)))
+
+    return inverted_index
+\end{lstlisting}
+
+
+\subsection{\texttt{vector\_space\_model.py}}
+\begin{lstlisting}[language=Python]
+import math
+import numpy as np
+from numpy.linalg import norm
+
+def idf1(N, n):
+    return math.log(N / n)
+
+def idf2(N, n):
+    return math.log(N - n / n)
+
+def get_value(item):
+    return item[1]
+
+
+def vsm(doc_collection, query, inverted_index, model_type):
+    query_tfidfs = {}
+    doc_tfidfs = {}
+    for doc in doc_collection:
+        doc_tfidfs[doc[0]] = []  # Αρχικοποίηση λεξικού tf-idf τιμών με άδειες λίστες για κάθε έγγραφο
+
+    # Υπολογισμός TF όρων για το ερώτημα:
+    query_tfs = {}
+    for term in query:
+        query_tfs[term] = query.count(term)
+
+    # Υπολογισμός TF-IDF τιμών. Διατρέχουμε κάθε όρο από το ερώτημα...
+    for term in query:
+        docs_containing_term = set()
+
+        # Αν ο όρος του ερωτήματος υπάρχει στο ανεστραμμένο ευρετήριο, υπολογίζουμε την IDF τιμή του.
+        if term in inverted_index:
+            if model_type == "1":
+                idf = idf1(len(doc_collection), len(inverted_index[term]))
+            elif model_type == "2":
+                idf = idf2(len(doc_collection), len(inverted_index[term]))
+
+            # και την TF-IDF τιμή, δηλαδή το ΒΑΡΟΣ ΟΡΟΥ ΕΡΩΤΗΜΑΤΟΣ
+            if model_type == "1":
+                query_tfidfs[term] = (0.5 + 0.5 * (query_tfs[term] / max(query_tfs.values()))) * idf
+            elif model_type == "2":
+                query_tfidfs[term] = idf
+
+            # Υπολογισμός TF-IDF τιμών για τα έγγραφα:
+            for item in inverted_index[term]:
+                docs_containing_term.add(item[0])
+                # το docs_containing_term περιέχει τα έγγραφα που περιέχουν τον συγκεκριμένο όρο.
+
+            # διατρέχουμε τα έγγραφα του docs_containing_term...
+            for doc in doc_collection:
+                if doc[0] in docs_containing_term:
+                    # έγγραφο βρέθηκε - υπολογίζουμε TF
+                    for item in inverted_index[term]:
+                        if item[0] == doc[0]:
+                            doc_tf = item[1]
+                            break
+                    # υπολογισμός TFIDF
+                    if model_type == "1":
+                        doc_tfidfs[doc[0]].append(doc_tf * idf1(len(doc_collection), len(inverted_index[term])))
+                    elif model_type == "2":
+                        doc_tfidfs[doc[0]].append(0.5 + 0.5 * (query_tfs[term] / max(query_tfs.values())))
+                else:
+                    # δε βρέθηκε έγγραφο, 0 στο διάνυσμα
+                    doc_tfidfs[doc[0]].append(0)
+
+    similarity = {}
+    for doc in doc_tfidfs:
+        similarity[doc] = np.dot(list(query_tfidfs.values()), doc_tfidfs[doc]) / (
+                    norm(list(query_tfidfs.values())) * norm(doc_tfidfs[doc]))
+
+    # μετατροπή nan τιμών σε 0
+    similarity = {k: 0 if np.isnan(v) else v for k, v in similarity.items()}
+    sort_similarity = sorted(similarity.items(), key=get_value)
+
+    return sort_similarity[-100:][::-1]
+
+
+def run_vsm(doc_collection, queries, inverted_index):
+    results1 = []
+    results2 = []
+
+    for query in queries:
+        results1.append(vsm(doc_collection, query, inverted_index, "1"))
+        results2.append(vsm(doc_collection, query, inverted_index, "2"))
+
+    return results1, results2
+\end{lstlisting}
+
+
+\subsection{\texttt{colBERT\_preprocessing.py}}
+\begin{lstlisting}[language=Python]
+import json
+import tools
+
+docs = tools.get_docs()
+queries = tools.get_queries()
+
+ColBERTqueries = {}
+for i, query in enumerate(queries):
+    ColBERTqueries[str(i)] = query.strip().upper()
+
+colBERTdocs = {}
+for i, doc in enumerate(docs):
+    colBERTdocs[doc[0]] = doc[1]
+
+with open("colBERT_input/colBERT_docs", "w") as filename:
+    json.dump(colBERTdocs, filename)
+    filename.close()
+
+with open("colBERT_input/colBERT_queries", "w") as filename:
+    json.dump(ColBERTqueries, filename)
+    filename.close()
+\end{lstlisting}
+
+
+\subsection{\texttt{colBERT\_.ipynb}}
+\noindent Εισαγωγή Βιβλιοθηκών/ColBERT
+\begin{lstlisting}[language=Python]
+!git -C ColBERT/ pull || git clone https://github.com/stanford-futuredata/ColBERT.git
+import sys; sys.path.insert(0, 'ColBERT/')
+try: # When on google Colab, let's install all dependencies with pip.
+    import google.colab
+    !pip install -U pip
+    !pip install -e ColBERT/['faiss-gpu','torch']
+except Exception:
+  import sys; sys.path.insert(0, 'ColBERT/')
+  try:
+    from colbert import Indexer, Searcher
+  except Exception:
+    print("If you're running outside Colab, please make sure you install ColBERT in conda following the instructions in our README. You can also install (as above) with pip but it may install slower or less stable faiss or torch dependencies. Conda is recommended.")
+    assert False
+import colbert
+from colbert import Indexer, Searcher
+from colbert.infra import Run, RunConfig, ColBERTConfig
+from colbert.data import Queries, Collection
+\end{lstlisting}
+Εισαγωγή αρχείων
+\begin{lstlisting}[language=Python]
+import json
+
+with open('colBERT_docs', "r") as file:
+  doc_list = json.load(file)
+
+with open('colBERT_queries', "r") as file:
+  query_list = json.load(file)
+
+doc_ids = list(doc_list.keys())
+doc_content = list(doc_list.values())
+
+query_ids = list(query_list.keys())
+query_content = list(query_list.values())
+
+nbits = 2
+doc_maxlen = 300
+\end{lstlisting}
+Δημιουργία Indexer - Searcher
+\begin{lstlisting}[language=Python]
+checkpoint = 'colbert-ir/colbertv2.0'
+
+with Run().context(RunConfig(nranks=1, experiment='notebook')):  # nranks specifies the number of GPUs to use
+    config = ColBERTConfig(doc_maxlen=doc_maxlen, nbits=nbits, kmeans_niters=20) # kmeans_niters specifies the number of iterations of k-means clustering; 4 is a good and fast default.
+                                                                                # Consider larger numbers for small datasets.
+
+    indexer = Indexer(checkpoint=checkpoint, config=config)
+    indexer.index(name='index_name', collection=doc_content, overwrite=True)
+
+with Run().context(RunConfig(experiment='notebook')):
+    searcher = Searcher(index='index_name', collection=doc_content)
+\end{lstlisting}
+
+Αποτελέσματα:
+\begin{lstlisting}[language=Python]
+results = []
+for query in query_content:
+  result = searcher.search(query, k=100)
+
+  passages = []
+  for passage_id, passage_rank, passage_score in zip(*result):
+      passages.append(int(doc_ids[passage_id]))
+  results.append(passages)
+print(results)
+
+from google.colab import files
+import json
+
+with open("colBERT_output.json", "w") as file:
+  json.dump(results, file)
+
+files.download("colBERT_output.json")
+\end{lstlisting}
+
+
+\subsection{\texttt{evaluation\_metrics.py}}
+\begin{lstlisting}[language=Python]
+import tools
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+def recall_precision(results, model):
+    # results: λίστα (όλων των queries) που περιλαμβάνει λίστες με τα πιο σχετικά έγγραφα, όπως υπολογίστηκαν από το cosine similarity
+    relevant_docs = tools.get_relevant()
+    # relevant_docs: dictionary με τις τιμές των πραγματικά σχετικών εγγράφων του Relevent_20
+
+    recall_precision_values = []
+
+    if model == "vsm":
+        # Το results περιλαμβάνει συγκεντρωτικά όλα τα αποτελέσματα για κάθε query. Διατρέχουμε το κάθε query μεμονομένα...
+        for i, results_query in enumerate(results):
+            precision = []
+            recall = []
+            truly_relevant_docs = 0
+            # διατρέχουμε τα πιο σχετικά έγγραφα για το συγκεκριμένο query...
+            for j, doc in enumerate(results[i]):
+                if type(doc) == tuple:
+                    current_doc = int(doc[0])
+                    if current_doc in relevant_docs[i]:
+                        truly_relevant_docs += 1
+
+                        recall.append(truly_relevant_docs / len(results_query))
+                        precision.append(truly_relevant_docs / (j + 1))
+
+            recall_precision_values.append((recall, precision))
+
+    if model == "colBERT":
+        for i, results_query in enumerate(results):
+            precision = []
+            recall = []
+            truly_relevant_docs = 0
+            for j, doc in enumerate(results[i]):
+                if doc in relevant_docs[i]:
+                    truly_relevant_docs += 1
+
+                    recall.append(truly_relevant_docs / len(results_query))
+                    precision.append(truly_relevant_docs / (j + 1))
+
+            recall_precision_values.append((recall, precision))
+
+    return recall_precision_values
+
+
+def mean_average_precision(recall_precision_values):
+    average_precision_list = []
+    for i in range(len(recall_precision_values)):
+        recalls, precisions = recall_precision_values[i]
+        average_precision = 0
+
+    for j in range(1, len(recalls)):
+        average_precision += (recalls[j] - recalls[j - 1]) * precisions[j]
+        average_precision_list.append(average_precision)
+
+    return np.mean(average_precision_list)
+
+
+def run_metrics(vsm1_results, vsm2_results):
+    colBERT_results = tools.get_json_file("colBERT_output.json")
+
+    recall_precision_vsm1 = recall_precision(vsm1_results, "vsm")
+    recall_precision_vsm2 = recall_precision(vsm2_results, "vsm")
+    recall_precision_colBERT = recall_precision(colBERT_results, "colBERT")
+
+    map_vm1 = mean_average_precision(recall_precision_vsm1)
+    map_vm2 = mean_average_precision(recall_precision_vsm2)
+    map_colBERT = mean_average_precision(recall_precision_colBERT)
+
+    print("vm1", map_vm1)
+    print("vm2", map_vm2)
+    print("colBERT", map_colBERT)
+
+    for i in range(len(recall_precision_vsm1)):
+        plt.figure()
+        plt.plot(recall_precision_vsm1[i][0], recall_precision_vsm1[i][1], label="VSM 1")
+        plt.plot(recall_precision_vsm2[i][0], recall_precision_vsm2[i][1], label="VSM 2")
+        plt.plot(recall_precision_colBERT[i][0], recall_precision_colBERT[i][1], label="colBERT")
+        plt.xlabel('Ανάκληση')
+        plt.ylabel('Ακρίβεια')
+        plt.title(f'Ερώτημα {i + 1}')
+        plt.legend(loc='upper right')
+        plt.savefig('Precision_Recall_Curve/' + str(i + 1) + '.png')
+\end{lstlisting}
+
+
+\subsection{\texttt{main.py}}
+\begin{lstlisting}[language=Python]
+import inverted_index as ii
+import vector_space_model as vsm
+import preprocessing as prep
+import evaluation_metrics as metrics
+
+def main_app():
+    doc_collection = prep.preprocess_collection()   # stripped_docs
+    queries = prep.preprocess_queries()     # stripped_queries
+
+    inverted_index = ii.create_inverted_index(doc_collection)
+    results1, results2 = vsm.run_vsm(doc_collection, queries, inverted_index)
+
+    metrics.run_metrics(results1, results2)
+
+
+if __name__ == '__main__':
+    main_app()
+
+\end{lstlisting}

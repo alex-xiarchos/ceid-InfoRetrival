@@ -19,6 +19,11 @@
 \usepackage{graphicx} % Διαχείριση εικόνων
 \usepackage{enumitem} % Διαμόρφωση λιστών
 \usepackage{listings} % Block κώδικα
+\usepackage{arabicore}
+\usepackage{booktabs}
+\usepackage{titleps}
+\usepackage{biblatex}
+\usepackage{lstmisc}
 \graphicspath{ {./img/} }
 %\usepackage[fontsize=13pt]{fontsize}
 
@@ -117,5 +122,21 @@
 
 % Συνεχόμενη αρίθμηση ανά chapters
 \counterwithout{footnote}{chapter}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{gray!10},
+    keywordstyle=\bf\ttfamily,
+    numberstyle=\tiny\color{darkgray},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    showstringspaces=false,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+}
+\lstset{style=mystyle}
+
 
 \endinput

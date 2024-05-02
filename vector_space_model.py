@@ -30,7 +30,7 @@ def vsm(doc_collection, query, inverted_index, model_type):
     for term in query:
         docs_containing_term = set()
 
-        # Αν ο όρος του ερωτήματος υπάρχει στο ανεστραμμένο ευρετήριο, υπολογίζουμε τη IDF τιμή του.
+        # Αν ο όρος του ερωτήματος υπάρχει στο ανεστραμμένο ευρετήριο, υπολογίζουμε την IDF τιμή του.
         if term in inverted_index:
             if model_type == "1":
                 idf = idf1(len(doc_collection), len(inverted_index[term]))
@@ -62,7 +62,7 @@ def vsm(doc_collection, query, inverted_index, model_type):
                     elif model_type == "2":
                         doc_tfidfs[doc[0]].append(0.5 + 0.5 * (query_tfs[term] / max(query_tfs.values())))
                 else:
-                    # δεν βρέθηκε έγγραφο, 0 στο διάνυσμα
+                    # δε βρέθηκε έγγραφο, 0 στο διάνυσμα
                     doc_tfidfs[doc[0]].append(0)
 
     similarity = {}

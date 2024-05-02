@@ -1,4 +1,3 @@
-from icecream import ic
 import json
 import tools
 
@@ -12,7 +11,6 @@ for i, query in enumerate(queries):
 colBERTdocs = {}
 for i, doc in enumerate(docs):
     colBERTdocs[doc[0]] = doc[1]
-
 
 with open("colBERT_input/colBERT_docs", "w") as filename:
     json.dump(colBERTdocs, filename)
