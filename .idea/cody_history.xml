@@ -223,6 +223,29 @@
                   </llm>
                 </llm>
               </chat>
+              <chat>
+                <internalId value="5b2c41ab-dbca-4186-a445-28dd71f3a3ca" />
+                <llm>
+                  <llm>
+                    <model value="openai/gpt-4-turbo" />
+                    <provider value="OpenAI" />
+                    <title value="GPT-4 Turbo" />
+                  </llm>
+                </llm>
+                <messages>
+                  <list>
+                    <message>
+                      <speaker value="HUMAN" />
+                      <text value="when should i use vector space model and when colBERT. Compare the two models for me" />
+                    </message>
+                    <message>
+                      <speaker value="ASSISTANT" />
+                      <text value="The Vector Space Model (VSM) and ColBERT are both techniques used in information retrieval and natural language processing, but they serve different purposes and have different strengths and weaknesses. Here’s a comparison of the two models to help you decide when to use each:&#10;&#10;### Vector Space Model (VSM)&#10;&#10;**Overview:**&#10;- VSM represents documents and queries as vectors in a space where each dimension corresponds to a term from the document collection. The relevance of a document to a query is typically calculated using the cosine similarity between their vectors.&#10;- It often uses TF-IDF (Term Frequency-Inverse Document" />
+                    </message>
+                  </list>
+                </messages>
+                <updatedAt value="2024-05-02T15:13:06.1055129" />
+              </chat>
             </list>
           </chats>
           <defaultLlm>

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.4) (preloaded format=xelatex 2024.5.2)  2 MAY 2024 05:13
+This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.4) (preloaded format=xelatex 2024.5.2)  2 MAY 2024 16:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3166,6 +3166,19 @@ File: ./img/18.png Graphic file (type bmp)
 File: ./img/19.png Graphic file (type bmp)
 <./img/19.png>
 
+Overfull \vbox (2.35907pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (2.35907pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (2.35907pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (2.35907pt too high) has occurred while \output is active []
+
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.96603pt, for example:
 (fancyhdr)                \setlength{\headheight}{15.96603pt}.
@@ -3194,19 +3207,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [8]
 \textKappa \textepsilon \textphi \acctonos \textalpha \textlambda \textalpha \t
 extiota \textomicron  4.
-main.tex:335: Missing number, treated as zero.
+main.tex:343: Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.335     \chapter{ΠΑΡΑΡΤΗΜΑ}
+l.343     \chapter{ΠΑΡΑΡΤΗΜΑ}
                              
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-main.tex:335: Illegal unit of measure (pt inserted).
+main.tex:343: Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
-l.335     \chapter{ΠΑΡΑΡΤΗΜΑ}
+l.343     \chapter{ΠΑΡΑΡΤΗΜΑ}
                              
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, bp, or sp; but yours is a new one!
@@ -3245,6 +3258,15 @@ LaTeX Font Info:    Font shape `TU/CourierNew(0)/b/n' will be
 LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/it' will be
 (Font)              scaled to size 8.00003pt on input line 17.
 
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.96603pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.96603pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.96603pt}.
+
+[9]
 code.tex:49: Missing number, treated as zero.
 <to be read again> 
                    \protect 
@@ -3266,15 +3288,6 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.96603pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.96603pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.96603pt}.
-
-[9]
 code.tex:93: Missing number, treated as zero.
 <to be read again> 
                    \protect 
@@ -3296,6 +3309,15 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.96603pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.96603pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.96603pt}.
+
+[10]
 code.tex:108: Missing number, treated as zero.
 <to be read again> 
                    \protect 
@@ -3317,15 +3339,6 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.96603pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.96603pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.96603pt}.
-
-[10]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.89404pt, for example:
@@ -3446,7 +3459,6 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.89404pt, for example:
@@ -3455,7 +3467,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.89404pt}.
 
-[15] (W:/PycharmProjects\InfoRetriev\Report\auxil\main.aux)
+[15])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.96603pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.96603pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.96603pt}.
+
+[16] (W:/PycharmProjects\InfoRetriev\Report\auxil\main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
@@ -3467,11 +3488,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  43460 strings out of 409554
  997900 string characters out of 5779086
- 2408148 words of memory out of 5000000
+ 2287148 words of memory out of 5000000
  65045 multiletter control sequences out of 15000+600000
  566004 words of font info for 152 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  115i,14n,118p,1638b,5080s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on W:/PycharmProjects\InfoRetriev\Report\out\main.pdf (16 pages)
+Output written on W:/PycharmProjects\InfoRetriev\Report\out\main.pdf (17 pages)
 .

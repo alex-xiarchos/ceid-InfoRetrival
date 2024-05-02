@@ -14,10 +14,10 @@
 \contentsline {section}{\numberline {\if@rl \I {1.3}\else \textLR {3.1}\fi }\hspace {1pt}ΑΠΟΤΕΛΕΣΜΑΤΑ\hspace {1pt}}{6}{}%
 \contentsline {chapter}{\numberline {4}ΠΑΡΑΡΤΗΜΑ}{9}{}%
 \contentsline {subsection}{\numberline {\if@rl \I {1.0.4}\else \textLR {4.0.1}\fi }\texttt {tools.py}}{9}{}%
-\contentsline {subsection}{\numberline {\if@rl \I {2.0.4}\else \textLR {4.0.2}\fi }\texttt {preprocessing.py}}{9}{}%
+\contentsline {subsection}{\numberline {\if@rl \I {2.0.4}\else \textLR {4.0.2}\fi }\texttt {preprocessing.py}}{10}{}%
 \contentsline {subsection}{\numberline {\if@rl \I {3.0.4}\else \textLR {4.0.3}\fi }\texttt {inverted\_index.py}}{10}{}%
-\contentsline {subsection}{\numberline {\if@rl \I {4.0.4}\else \textLR {4.0.4}\fi }\texttt {vector\_space\_model.py}}{10}{}%
+\contentsline {subsection}{\numberline {\if@rl \I {4.0.4}\else \textLR {4.0.4}\fi }\texttt {vector\_space\_model.py}}{11}{}%
 \contentsline {subsection}{\numberline {\if@rl \I {5.0.4}\else \textLR {4.0.5}\fi }\texttt {colBERT\_preprocessing.py}}{12}{}%
-\contentsline {subsection}{\numberline {\if@rl \I {6.0.4}\else \textLR {4.0.6}\fi }\texttt {colBERT\_.ipynb}}{12}{}%
+\contentsline {subsection}{\numberline {\if@rl \I {6.0.4}\else \textLR {4.0.6}\fi }\texttt {colBERT\_.ipynb}}{13}{}%
 \contentsline {subsection}{\numberline {\if@rl \I {7.0.4}\else \textLR {4.0.7}\fi }\texttt {evaluation\_metrics.py}}{14}{}%
 \contentsline {subsection}{\numberline {\if@rl \I {8.0.4}\else \textLR {4.0.8}\fi }\texttt {main.py}}{15}{}%
