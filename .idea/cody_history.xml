@@ -246,6 +246,26 @@
                 </messages>
                 <updatedAt value="2024-05-02T15:13:06.1055129" />
               </chat>
+              <chat>
+                <internalId value="39226693-2e1e-4c03-882f-b98eb0ac8fb9" />
+                <llm>
+                  <llm>
+                    <model value="openai/gpt-4-turbo" />
+                    <provider value="OpenAI" />
+                    <title value="GPT-4 Turbo" />
+                  </llm>
+                </llm>
+              </chat>
+              <chat>
+                <internalId value="e01c9735-7a15-4273-bb75-267dd6a82c6d" />
+                <llm>
+                  <llm>
+                    <model value="openai/gpt-4-turbo" />
+                    <provider value="OpenAI" />
+                    <title value="GPT-4 Turbo" />
+                  </llm>
+                </llm>
+              </chat>
             </list>
           </chats>
           <defaultLlm>
