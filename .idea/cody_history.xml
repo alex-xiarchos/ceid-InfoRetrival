@@ -266,13 +266,19 @@
                   </llm>
                 </llm>
               </chat>
+              <chat>
+                <internalId value="99c0daa0-f640-4a10-98f2-456d0d1a9cd6" />
+              </chat>
+              <chat>
+                <internalId value="845152a4-2ef4-485c-a617-a18cd855fca0" />
+              </chat>
             </list>
           </chats>
           <defaultLlm>
             <llm>
-              <model value="openai/gpt-4-turbo" />
+              <model value="openai/gpt-4-turbo-preview" />
               <provider value="OpenAI" />
-              <title value="GPT-4 Turbo" />
+              <title value="GPT-4 Turbo Preview" />
             </llm>
           </defaultLlm>
         </AccountData>
