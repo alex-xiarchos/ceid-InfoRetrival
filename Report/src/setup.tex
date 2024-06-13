@@ -6,6 +6,7 @@
 \usepackage{tabularx} % Πίνακες με μεταβλητό πλάτος στηλών
 \usepackage{tabularray} % Πίνακες με πιο ευέλικτη διαμόρφωση
 \usepackage{multicol} % Πολλαπλές στήλες (όχι για μαθηματικά)
+\usepackage{hyperref} % Σύνδεσμοι στο pdf
 \UseTblrLibrary{booktabs}
 \usepackage{amstex} % Επιπλέον μαθηματικά εργαλεία
 \usepackage{amsmath} % Μαθηματικά εργαλεία
@@ -19,11 +20,13 @@
 \usepackage{graphicx} % Διαχείριση εικόνων
 \usepackage{enumitem} % Διαμόρφωση λιστών
 \usepackage{listings} % Block κώδικα
-\usepackage{arabicore}
-\usepackage{booktabs}
-\usepackage{titleps}
-\usepackage{biblatex}
-\usepackage{lstmisc}
+\usepackage{arabicore} %
+\usepackage{booktabs} % πίνακες
+\usepackage{titleps} % επικεφαλίδες και υποσέλιδα
+\usepackage{biblatex} % διαχείριση βιβλιογραφίας
+\usepackage{lstmisc} %
+\usepackage{tikz}
+
 \graphicspath{ {./img/} }
 %\usepackage[fontsize=13pt]{fontsize}
 
@@ -77,7 +80,6 @@
 \titlespacing*{\subsection}
    {0pt}{1em}{0.4em}  % left before after
 
-
 %% Setting for the column separator
 %\colorlet{shadecol}{black!20}
 %\setlength\columnsep{12pt}
@@ -123,6 +125,7 @@
 % Συνεχόμενη αρίθμηση ανά chapters
 \counterwithout{footnote}{chapter}
 
+% Για γραμμές κώδικα
 \lstdefinestyle{mystyle}{
     backgroundcolor=\color{gray!10},
     keywordstyle=\bf\ttfamily,
@@ -138,5 +141,7 @@
 }
 \lstset{style=mystyle}
 
+\usepackage{float} % Allows for more flexible positioning of floats σε πίνακες πχ
+\restylefloat{table}
 
 \endinput

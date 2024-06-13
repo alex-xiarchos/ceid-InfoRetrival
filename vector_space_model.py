@@ -86,4 +86,3 @@ def run_vsm(doc_collection, queries, inverted_index):
         results2.append(vsm(doc_collection, query, inverted_index, "2"))
 
     return results1, results2
-# fdsfds
